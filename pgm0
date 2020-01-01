@@ -1,4 +1,0 @@
- /free
-  DSPLY ('Hello World');
-  *inLR = '1';
- /end-free
