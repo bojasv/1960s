@@ -1,0 +1,9 @@
+d input_str       s             30
+d $wk_tstamp      s               z   inz
+   $wk_tstamp = %TIMESTAMP;                  
+   input_str  = '0000-00-00-00.00.00.000000';
+   // *RNF7416
+   // The types of the right and left hand side 
+   // do not match in the EVAL operation.
+   $wk_tstamp = input_str;
+   *inlr=*on;                                
