@@ -1,0 +1,8 @@
+d input_str       s             30           
+d $wk_tstamp      s               z   inz    
+   $wk_tstamp = %TIMESTAMP;                  
+   input_str  = '0000-00-00-00.00.00.000000';
+   // RNX0112
+   // Date, Time or Timestamp value is not valid (C G D F).
+   $wk_tstamp = %TIMESTAMP(input_str);       
+   *inlr=*on;                
