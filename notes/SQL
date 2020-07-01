@@ -1,0 +1,3 @@
+SQL Wildcards (usually go with LIKE)
+  _ : Represents a range of characters; c[a-b]t finds cat and cbt
+  % : Represents zero or more characters; bl% finds bl, black, blue, and blob
