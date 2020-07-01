@@ -1,0 +1,5 @@
+Declare Processing Options (DCLPRCOPT) - if it is present in source, it has to be first command followed by rest of the declare commands.
+
+This command is valid only within a CL program or ILE CL procedure. All declare commands (DCL, COPYRIGHT, DCLF, and DCLPRCOPT) 
+must follow the PGM (Program) command and must precede all other commands in the program. 
+The four types of declare commands can be intermixed in any order.
