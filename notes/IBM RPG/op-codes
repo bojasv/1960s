@@ -1,0 +1,2 @@
+EVAL (EVALuate any expression) - pushes the string to left (an alternative for MOVEL)
+EVALR (Evaluate expression with right adjust) - pushes the string to right (an alternative for MOVER)
