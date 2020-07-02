@@ -1,0 +1,24 @@
+Specs: H/F/D/I/C/O/P
+  H - Header
+    sets-up ctl-opt (control options) used during  preprocessing and compilation of the program.
+  F - File Dsc
+    defines global files
+  D - Definition
+    define items used in your program
+        arrays, 
+        tables,
+        data structures and subfields, 
+        standalone fields, 
+        constants,
+        prototypes and their parameters, and 
+        procedure interfaces and their parameters
+  I - describes input files' struct
+  C - describe calculations to be done by the program and indicate the order in which they are done.
+  O - describes output files' struct
+  P - Procedure definition
+  
+  
+  EXTPGM vs EXTPROC
+  CALL, CALLP and CALLB
+  LEAVE and ITER
+  *LDA, UDS and SDS
