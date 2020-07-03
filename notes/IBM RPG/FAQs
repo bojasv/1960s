@@ -22,3 +22,24 @@ Specs: H/F/D/I/C/O/P
   CALL, CALLP and CALLB
   LEAVE and ITER
   *LDA, UDS and SDS
+  
+  (SetLL + Read) and (SetGT + ReadP)
+  
+  Web Resources
+  Blogs
+  https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_71/rzasd/sc092508896.htm
+  https://www.ibm.com/support/pages/coding-rpg-iv-beginners-tutorial
+  http://www.go4as400.com/chapterload.aspx?cid=53
+  https://www.rpgpgm.com/2018/12/using-position-to-in-data-structure.html
+  https://www.itjungle.com/tag/as400/
+  https://www.mcpressonline.com/programming/rpg/charactertohex-conversion
+  http://www.come2as400.com/knowledge-base/multi-member-physical-file-and-different-methods-to-manipulate-it/
+  https://www.allinterview.com/showanswers/80784/q-read-multimember-file-through-rpg-400-cl-actully-know-exefile-exembr-ovrdbf-me.html
+  http://as400toibmi.blogspot.com/2017/07/sqlrpgle-upper-or-lower-function.html
+  QnA
+  https://stackoverflow.com/questions/tagged/rpgle
+  https://code400.com/forum/forum/iseries-programming-languages/rpg-rpgle/11942-rnf5343-array-has-too-many-omitted-indexes-specification-ignored
+  Video Tutorials
+  https://www.youtube.com/watch?v=9b4COSkdXm4&list=PL-cQM7QhBjZQNniKeJPL9L8KkatargVim - Mohammed Yusuf M
+  https://www.youtube.com/watch?v=Efa37PvBV1M&list=PL3W4xRdnQJHVWWmYX1Klji7QUk_PQhq0t - Shabbir Governor
+  https://www.youtube.com/playlist?list=PLaM_KQsEt0UYkaiBaWmq8HWri4piW6hlx - Metatorpt
