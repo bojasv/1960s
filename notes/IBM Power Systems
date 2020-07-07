@@ -3,3 +3,13 @@ CPU - 1000 CPW (POWER5 or newer processors recommended)
 20 GB DASD (Required for Sterling B2B Integrator plus space for operating system, spool, utilities, and so on).
 File system space will be needed if you are using the option to store documents on the file system. 
 The amount of space needed will vary depending on the size of documents to be stored and the length of time you choose to retain documents on the file system.
+
+Source member can start with any alphabet or 3 sp. chars (viz. $, # and @)
+Source members sorted in ascending order in PDM (priority: sp_char > alphabet > numeric)
+1.0 $$
+1.1 $a
+1.2 $1
+2. #
+3. @
+4. A
+5. 1 - source member can't start with a numeric
