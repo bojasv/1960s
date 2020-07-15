@@ -1,0 +1,8 @@
+                R LOG                                             
+                  SRCLIBL       10A         TEXT('Library')       
+                  SRCPFL        10A         TEXT('PF-SRC')        
+                  SRCMBRL       10A         TEXT('Member')        
+                  SRCRCDL        6P 2       TEXT('Rcds Procd')    
+                  PRCDURL       10P 0       TEXT('Procg Time')    
+                  USEDONL         Z         TEXT('Date')          
+                  USEDBYL       10A         TEXT('User')          
