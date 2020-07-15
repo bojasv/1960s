@@ -1,0 +1,4 @@
+                R XTRACTO                                          
+                  SRCSEQO        6P 2       TEXT('Sequence')       
+                  SRCDATO        6P 0       TEXT('Date')           
+                  SRCDTAO      100A         TEXT('Data')           
