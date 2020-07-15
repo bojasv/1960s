@@ -1,0 +1,38 @@
+             PGM  (&PFSRC &LIB &MBR)                                 
+             DCL        VAR(&LIB) TYPE(*CHAR) LEN(10)                
+             DCL        VAR(&PFSRC) TYPE(*CHAR) LEN(10)              
+             DCL        VAR(&MBR) TYPE(*CHAR) LEN(10)                
+             DCL        VAR(&RCD) TYPE(*DEC) LEN(10 0)               
+             DCL        VAR(&DTI) TYPE(*CHAR) LEN(20)                
+                                                                     
+             RTVSYSVAL SYSVAL(QDATETIME) RTNVAR(&DTI)                
+                                                                     
+             CRTPF      FILE(QTEMP/EXTRACTO) SRCFILE(CLNSRC/EISDDS) +
+                          SRCMBR(EXTRACTO) +                         
+                          OPTION(*NOSRC *NOLIST) MAXMBRS(*NOMAX)     
+             MONMSG     MSGID(CPF0000)                               
+                                                                     
+             CPYF       FROMFILE(&LIB/&PFSRC) TOFILE(CLNSRC/EISSRC) +
+                          FROMMBR(&MBR) TOMBR(&MBR) +                
+                          MBROPT(*REPLACE) FMTOPT(*MAP *DROP)        
+             MONMSG     MSGID(CPF0000)                               
+                                                                       
+             CPYF       FROMFILE(&LIB/&PFSRC) TOFILE(CLNSRC/EISSRCBK) +
+                          FROMMBR(&MBR) TOMBR(&MBR) +                  
+                          MBROPT(*ADD) FMTOPT(*MAP *DROP)              
+             MONMSG     MSGID(CPF0000)                                 
+             CALL       PGM(CLNSRC/CLNSRCPGMI)                         
+             CALL       PGM(CLNSRC/CLNSRCPGMO)                         
+             MONMSG     MSGID(CPF0000 RPG0000)                         
+                                                                       
+             CPYF       FROMFILE(CLNSRC/EISSRC) TOFILE(&LIB/&PFSRC) +  
+                          FROMMBR(&MBR) TOMBR(&MBR) MBROPT(*REPLACE) + 
+                          FMTOPT(*MAP *DROP)                           
+             MONMSG     MSGID(CPF0000)                                 
+             CLRPFM     FILE(QTEMP/EXTRACTO)                           
+             RMVM       FILE(CLNSRC/EISSRC) MBR(&MBR)                  
+             RTVMBRD    FILE(&LIB/&PFSRC) MBR(&MBR) NBRCURRCD(&RCD)    
+             CALL       PGM(CLNSRC/ENTERLOG) PARM(&LIB &PFSRC &MBR +   
+                          &RCD &DTI)                                   
+                                                                       
+             ENDPGM                                                    
