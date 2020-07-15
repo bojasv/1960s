@@ -1,0 +1,54 @@
+**free                                                                 
+//*-------------------------------------------------------------------*
+//*  Program Name . . . . .  :   ENTERLOG                             *
+//*  Description  . . . . .  :   Write performance log to log file    *
+//*                              at CLNSRC library                    *
+//*  Created on . . . . . .  :   2020-07-14                           *
+//*  Created by . . . . . .  :   BOJASV                               *
+//*  Compile instructions .  :   N/A                                  *
+//*-------------------------------------------------------------------*
+                                                                       
+//*-------------------------------------------------------------------*
+//*  Modifications:                                                   *
+//*-------------------------------------------------------------------*
+//*  Date      Developer   Tag      Description                       *
+//* ---------- ----------  -------- ----------------------------------*
+//* 2020.07.14 BOJASV      XX999999:Logs performance                  *
+//*-------------------------------------------------------------------*
+                                                                       
+dcl-pr ENTERLOG;                                                       
+   in_Lib    char(10);                                                     
+   in_PFSRC  char(10);                                                     
+   in_Mbr    char(10);                                                     
+   in_Rcd    packed(10:0);                                                 
+   in_DTI    char(20);                                                     
+end-pr;                                                                    
+                                                                           
+dcl-pi ENTERLOG;                                                           
+   in_Lib    char(10);                                                     
+   in_PFSRC  char(10);                                                     
+   in_Mbr    char(10);                                                     
+   in_Rcd    packed(10:0);                                                 
+   in_DTI    char(20);                                                     
+end-pi;                                                                    
+                                                                           
+dcl-s wk_DTI timestamp;                                                    
+dcl-s wk_DTO timestamp;                                                    
+dcl-s wk_DUR packed(10:0);  //processing time threshold = 16 mins          
+  //processing time threshold = 9,999,999,999 ms or 9,999 s                
+  //processing record threshold = 4,294,967,294 records or 4B (theoretical)
+  //processing record threshold = 9,999,999,999 records or 9B (actual)     
+                                                                           
+wk_DTI = %timestamp(in_DTI:*ISO0);                                         
+wk_DTO = %timestamp();                                                     
+                                                                           
+wk_Dur = %diff(wk_DTO:wk_DTI:*ms);                                         
+                                                                           
+exec sql                                                                   
+   insert into CSLOG (SRCLIBL, SRCPFL, SRCMBRL, SRCRCDL,                   
+                      PRCDURL, USEDONL, USEDBYL)                           
+   values (:in_Lib, :in_PFSRC, :in_Mbr, :in_Rcd,                           
+           :wk_Dur, current_timestamp, current_user)                       
+   with nc;                                                                
+                                                                           
+*inlr = *on;                                                               
