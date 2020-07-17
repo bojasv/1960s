@@ -2,7 +2,20 @@ SQL Wildcards (usually go with LIKE)
   _ : Represents a range of characters; c[a-b]t finds cat and cbt
   % : Represents zero or more characters; bl% finds bl, black, blue, and blob
 
+if SQLSTT = *zeros; // query executed successfully or record found.
+if SQLSTT = '02000'; // end_of_file or record not found.
+if SQLSTT = '23505';  // UNIQUE keyword used, hence can't write duplicate record.
 
-SQLSTT = '23505'  // UNIQUE keyword used, can't writeduplicate record .d
+examples
+exec sql UPDATE
+if SQLSTT = '02000';
+  exec sql INSERT
+endif;
+
+exec sql INSERT
+if SQLSTT = '23505';
+  exec sql UPDATE
+endif;  
+
 SQL/400:
 https://books.google.co.in/books?id=lqtc0c3UjIMC&pg=PA90&lpg=PA90&dq=trim+in+sql400&source=bl&ots=7MWc0gUjrC&sig=ACfU3U3POW8K8GTe1opzw4apWddTEY8Zlw&hl=en&sa=X&ved=2ahUKEwjlqafxjsrqAhWc6XMBHTx_Bw0Q6AEwE3oECAoQAQ#v=onepage&q=trim%20in%20sql400&f=false
