@@ -1,1 +1,11 @@
 RPG - quick notes
+
+
+char (99) const options(*nopass);
+//when a const field is EVAL'ed/modified.
+*RNF5346 30      1 The operation modifies the field, but the field cannot be
+                   modified.          
+                   
+//when a const field is passed as PARM
+*RNF5035 30      1 The Result-Field operand must be a field that can be        
+                   modified.                                                  
