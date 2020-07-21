@@ -12,3 +12,7 @@ char (99) const options(*nopass);
 //when a const field is passed as PARM
 *RNF5035 30      1 The Result-Field operand must be a field that can be        
                    modified.                                                  
+
+//error, if option(*nopass), but PARM not monitored using 'if %parms() >= %parmnum($PARM);'
+Pointer not set for location referenced.
+RNQ0222 - Pointer or parameter error (C G D F).
