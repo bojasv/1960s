@@ -1,5 +1,8 @@
 RPG - quick notes
 
+//variable used as PARM can't be initialized.
+ *RNF3748 20      1 Keyword is not allowed for a parameter definition; keyword is    
+                    ignored.                                                         
 
 char (99) const options(*nopass);
 //when a const field is EVAL'ed/modified.
