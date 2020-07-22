@@ -1,0 +1,32 @@
+**FREE
+ //*char
+dcl-s $Alpha1 char(10) ;
+dcl-s $Alpha2 like($Alpha1) inz(*all'*') ;
+//*unsigned numeral
+dcl-s $Packed1 packed(7) ;
+dcl-s $Packed2 packed(5:2) ;
+//*signed numeral
+dcl-s $Signed1 zoned(7:2) ;
+//*integer, unsigned integer, and float numeric variables
+dcl-s $Int1 int(3) ;
+dcl-s $Uns1 uns(3) ;
+dcl-s $Float1 float(8) ;
+//*date, time, timestamp
+dcl-s $Date1 date(*iso) ;
+dcl-s $Time1 time ;
+dcl-s $TimeStamp1 timestamp ;
+//*indicator variable
+dcl-s $Ind1 ind ;
+//*binary variable
+dcl-s $Bin1 bindec(5) ;
+//*pointer variable
+dcl-s $Pointer1 pointer inz(%addr($Alpha1));
+//*array
+dcl-s $Array1 char(3) dim(100) ;
+//*tables (or compile time array)
+dcl-s TabTable1 char(7) dim(3) ctdata ;
+//*DTAARA variable
+dcl-s $TestDa1 char(10) dtaara('TESTDA') ;
+//*Constant (hexadecimal)
+dcl-c CRLF const(x'0d25');
+*inlr = '0';
