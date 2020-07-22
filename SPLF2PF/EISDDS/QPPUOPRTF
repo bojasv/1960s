@@ -1,0 +1,11 @@
+XX999 * PF DDS for SPLF QPUOPRTF                                    
+     A          R DATA                                              
+     A            CLR            1A         TEXT('*BLANK')          
+     A            MBR           12A         TEXT('Member Name')     
+     A            TYP           12A         TEXT('Member Type')     
+     A            DTC           10A         TEXT('Create Date')     
+     A            DTU           10A         TEXT('Last Update Date')
+     A            TMU           10A         TEXT('Last Update Time')
+     A            RCD            9A         TEXT('Total Rcds.')     
+     A            RCX            9A         TEXT('Deleted Rcds.')   
+     A            DSC           50A         TEXT('Text')            
