@@ -16,3 +16,7 @@ char (99) const options(*nopass);
 //error, if option(*nopass), but PARM not monitored using 'if %parms() >= %parmnum($PARM);'
 Pointer not set for location referenced.
 RNQ0222 - Pointer or parameter error (C G D F).
+
+func_code          char(2) const options(*nopass);              
+//'LIKE' keyword doesn't go well with const/within PR.                          
+//func_code          like($FUNC) const options(*nopass);        
