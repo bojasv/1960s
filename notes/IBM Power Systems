@@ -13,3 +13,43 @@ Source members sorted in ascending order in PDM (priority: sp_char > alphabet > 
 3. @
 4. A
 5. 1 - source member can't start with a numeric
+
+5761-SS1 IBM i operating system V6.1 - generates CL/CMD's compiler listing.
+5770-WDS IBM Rational Development Studio for i V7.4 - generates RPG/SQLRPG's compiler listing
+5770-SS1 IBM i Operating System V7.4 - generates compiler listing for *FILEs (PF/LF/DSPF/PRTF)
+IBM DB2 for i (earlier DB2/400)
+
+IBM i Access Client Solutions 
+
+
+
+Processor: POWER7
+Cfg: 32-core
+
+Compiler
+CL - IBM Control Language Compiler 
+CMD - IBM iSeries Command Definition Compiler 
+PF/LF/DSPF/PRTF -  IBM System i5 Data Description Processor 
+
+You could get the following data fron Compiler listing
+1. IBM i Version/Release/Modification
+2. User/Object Name
+3. Date and Time
+4. System Name (CLLE)
+
+width of a compiler listing *SPLF is 132 character
+*FILE (PF/LF/DSPF/PRTF) have  Data Description Source
+  Buffer positions (In/Out), RCDFMT Name, Field Length, Field Name, Field Type, Field's Attributes (like Field TEXT, Field COLHDG)
+  *INdicators used, Referenced Lib/File/Fields
+*PGM (RPGLE/SQLRPGLE) have Source Specifications
+  Difference bewteen Line No. (on left) and Seq No. (on Right)
+*PGM (CLLE) has Control Language Source
+
+RPG debug source
+  starts from *MODULE ENTRY AND MAIN PROCEDURE ENTRY
+  ends at *MAIN PROCEDURE EXIT (usually followed by turning off LastRecord *INdicator i.e. *INLR)
+  
+To rename COLHDG or TEXT of a Table using SQL, no need to use ALTER, directly use LABEL
+
+Reference:
+https://www-01.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_sm/1/877/ENUS5761-SS1/index.html&request_locale=en
