@@ -17,5 +17,18 @@ if SQLSTT = '23505';
   exec sql UPDATE
 endif;  
 
+Position 1 Keyword LABEL not expected. Valid tokens: ADD 
+LOG NOT SET DATA DROP ALTER CHECK APPEND UNIQUE FOREIGN. 
+
+MSG ID  SEV  RECORD  TEXT                                                      
+SQL0199  30       2  Position 1 Keyword LABEL not expected. Valid tokens: ADD  
+                     LOG NOT SET DATA DROP ALTER CHECK APPEND UNIQUE FOREIGN.  
+                    Message Summary                                            
+                    
+                    
+                    ALTER TABLE XPDPPUPD                          
+LABEL ON COLUMN FILE0 (                    
+  FIELD0 TEXT IS 'Update Field 0');  
+
 SQL/400:
 https://books.google.co.in/books?id=lqtc0c3UjIMC&pg=PA90&lpg=PA90&dq=trim+in+sql400&source=bl&ots=7MWc0gUjrC&sig=ACfU3U3POW8K8GTe1opzw4apWddTEY8Zlw&hl=en&sa=X&ved=2ahUKEwjlqafxjsrqAhWc6XMBHTx_Bw0Q6AEwE3oECAoQAQ#v=onepage&q=trim%20in%20sql400&f=false
