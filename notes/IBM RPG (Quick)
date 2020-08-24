@@ -1,6 +1,6 @@
 RPG - quick notes
 
-Found this new tool in HelpSystems Toolbox - to quickly check a variables attributes.
+Found this new tool in HelpSystems Toolbox - to quickly check a variables attributes in a SQL/RPGLE sources.
 Run line command RV "Retrieve Variables" while in browse/edit mode in SEU.
 or
 Compile the program once in your library
