@@ -1,5 +1,7 @@
 RPG - quick notes
 
+for char fields, *HIVAL -> *blanks
+
 Found this new tool in HelpSystems Toolbox - to quickly check a variables attributes in a SQL/RPGLE sources.
 Run line command RV "Retrieve Variables" while in browse/edit mode in SEU.
 or
