@@ -1,0 +1,63 @@
+ ...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 ...+.
+*************** Beginning of data ******************************************
+             PGM        PARM(&PFSRC0 &PFSRC1 &PFSRC2 &PFSRC3 &LIB &STR &DTL)
+             DCL        VAR(&LIB) TYPE(*CHAR) LEN(10)                       
+             DCL        VAR(&PFSRC0) TYPE(*CHAR) LEN(10)                    
+             DCL        VAR(&PFSRC1) TYPE(*CHAR) LEN(10)                    
+             DCL        VAR(&PFSRC2) TYPE(*CHAR) LEN(10)                    
+             DCL        VAR(&PFSRC3) TYPE(*CHAR) LEN(10)                    
+             DCL        VAR(&STR) TYPE(*CHAR) LEN(40)                       
+             DCL        VAR(&RCD) TYPE(*DEC) LEN(10 0)                      
+             DCL        VAR(&DTI) TYPE(*CHAR) LEN(20)                       
+             DCL        VAR(&DTL) TYPE(*CHAR) LEN(1)                        
+             DCL        VAR(&JOBNAM) TYPE(*CHAR) LEN(10)                    
+             DCL        VAR(&JOBUSR) TYPE(*CHAR) LEN(10)                    
+             DCL        VAR(&JOBNBR) TYPE(*CHAR) LEN(6)                     
+                                                                            
+             RTVSYSVAL SYSVAL(QDATETIME) RTNVAR(&DTI)                       
+             RTVJOBA    JOB(&JOBNAM) USER(&JOBUSR) NBR(&JOBNBR)             
+                                                                            
+             IF         COND(&DTL *NE 'Y') THEN(DO)                         
+             SBMJOB     CMD(FNDSTRPDM STRING(&STR) +                        
+                          FILE(&LIB/&PFSRC0) MBR(*ALL) +  
+                          OPTION(*NONE) PRTMBRLIST(*YES) +
+                          PRTRCDS(*NONE)) JOB(FSRC)       
+                                                          
+             SBMJOB     CMD(FNDSTRPDM STRING(&STR) +      
+                          FILE(&LIB/&PFSRC1) MBR(*ALL) +  
+                          OPTION(*NONE) PRTMBRLIST(*YES) +
+                          PRTRCDS(*NONE)) JOB(FFUNC)      
+                                                          
+             SBMJOB     CMD(FNDSTRPDM STRING(&STR) +      
+                          FILE(&LIB/&PFSRC2) MBR(*ALL) +  
+                          OPTION(*NONE) PRTMBRLIST(*YES) +
+                          PRTRCDS(*NONE)) JOB(FFUNC)      
+                                                          
+             SBMJOB     CMD(FNDSTRPDM STRING(&STR) +      
+                          FILE(&LIB/&PFSRC3) MBR(*ALL) +  
+                          OPTION(*NONE) PRTMBRLIST(*YES) +
+                          PRTRCDS(*NONE)) JOB(FFUNC)      
+             ENDDO                                        
+             
+             IF         COND(&DTL = 'Y') THEN(DO)                   
+             SBMJOB     CMD(FNDSTRPDM STRING(&STR) +                
+                          FILE(&LIB/&PFSRC0) MBR(*ALL) +            
+                          OPTION(*NONE) PRTRCDS(*ALL *CHAR *NOMARK +
+                          *TRUNCATE)) JOB(FSRC)                     
+                                                                    
+             SBMJOB     CMD(FNDSTRPDM STRING(&STR) +                
+                          FILE(&LIB/&PFSRC1) MBR(*ALL) +            
+                          OPTION(*NONE) PRTRCDS('*ALL ' *CHAR +     
+                          *NOMARK *TRUNCATE)) JOB(FFUNC)            
+                                                                    
+             SBMJOB     CMD(FNDSTRPDM STRING(&STR) +                
+                          FILE(&LIB/&PFSRC2) MBR(*ALL) +            
+                          OPTION(*NONE) PRTRCDS('*ALL ' *CHAR +     
+                          *NOMARK *TRUNCATE)) JOB(FMOD)             
+                                                                    
+             SBMJOB     CMD(FNDSTRPDM STRING(&STR) +                
+                          FILE(&LIB/&PFSRC3) MBR(*ALL) +            
+                          OPTION(*NONE) PRTRCDS('*ALL ' *CHAR +     
+                          *NOMARK *TRUNCATE)) JOB(FPROC)            
+                          
+             ENDDO           
