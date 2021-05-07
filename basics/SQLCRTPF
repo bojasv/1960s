@@ -1,0 +1,35 @@
+CREATE OR REPLACE TABLE TESTFILE(
+ PRIMARY_KEY
+                FOR COLUMN CO#        CHAR(3) NOT NULL DEFAULT ' ',
+ X_NUMBER
+                FOR COLUMN RO#        CHAR(9) NOT NULL DEFAULT ' ',
+ ACTIVITY_TIME
+                FOR COLUMN TIMSTMP    TIMESTAMP NOT NULL WITH DEFAULT,
+ ACTIVITY_DESCRIPTION
+                FOR COLUMN NAME       CHAR(50) NOT NULL DEFAULT ' ',
+ SEND_TO_FTP
+                FOR COLUMN SFTP       CHAR(50) NOT NULL DEFAULT ' ',
+ NUMBER_OF_ITERIONS
+                FOR COLUMN COUNT      DECIMAL(3,0) NOT NULL DEFAULT 0)
+  RCDFMT TESTFILEA;
+
+ALTER TABLE TESTFILE ADD CONSTRAINT PK_TESTFILE PRIMARY KEY
+  (CO#, RO#, TIMSTMP);
+
+LABEL ON TABLE TESTFILE IS 'Test File Using SQL Source';
+
+LABEL ON COLUMN TESTFILE (
+  CO#     IS 'Corporation Number' ,
+  RO#     IS 'X Number' ,
+  TIMSTMP IS 'Timestamp',
+  NAME    IS 'Activity Description' ,
+  SFTP    IS 'Send To FTP Info',
+  COUNT   IS 'Number of Iterions');
+
+LABEL ON COLUMN TESTFILE (
+  CO#     TEXT IS 'Corporation Number',
+  RO#     TEXT IS 'X Number',
+  TIMSTMP TEXT IS 'Timestamp',
+  NAME    TEXT IS 'Activity Description',
+  SDA     TEXT IS 'Send To FTP Info',
+  COUNT   TEXT IS 'Number of Iterions');
