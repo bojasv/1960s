@@ -1,0 +1,12 @@
+RPG Versions - Target System
+RPG			     - IBM 1401 - first released in 1959
+RPG II		   - IBM S/3 (S/32, S/34, S/36 and S/370)
+RPG III		   - IBM S/38 (S/370), AS/400 and UNIVAC Series 90
+             - new features
+                IF-ENDIF blocks
+                DO loops
+                SubRoutines (opcodes: EXSR, BEGSR, ENDSR, LEAVESR, CASxx and ENDCS, where xx represents EQ, GE, GT, LE, LT, NE or *BLANK)
+             - RPG III compiled with RPG/400 compiler is called as RPG/400 (exclusive op-codes: SCAN, CAT and XLATE)
+RPG IV/RPGLE - V5R1: /free and /end-free intro'ed
+			       - V7R1: can declare file as DS
+			       - V7R1 (TR7 PTF): **free
