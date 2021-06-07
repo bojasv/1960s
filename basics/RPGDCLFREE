@@ -27,6 +27,9 @@ dcl-s $Array1 char(3) dim(100) ;
 dcl-s TabTable1 char(7) dim(3) ctdata ;
 //*DTAARA variable
 dcl-s $TestDa1 char(10) dtaara('TESTDA') ;
+//*Constant (without keyword CONST)
+dcl-c SUCCESS '00000';
+dcl-c SINGLE_RECORD_EXISTS 1;
 //*Constant (hexadecimal)
 dcl-c CRLF const(x'0d25');
 *inlr = '0';
