@@ -30,6 +30,18 @@ SQL0199  30       2  Position 1 Keyword LABEL not expected. Valid tokens: ADD
 LABEL ON COLUMN FILE0 (                    
   FIELD0 TEXT IS 'Update Field 0');  
 
+-- to get the current timestamp of the DB
+SELECT CURRENT TIMESTAMP FROM SYSIBM.SYSDUMMY1
+
+-- to get the current date of the DB
+SELECT CURRENT DATE FROM SYSIBM.SYSDUMMY1
+
+-- to get the 
+SELECT * FROM QSYS2.USER_INFO WHERE PRVSIGNON > '2021-07-02-00.05.40.000000'
+
+-- to get the activities 
+SELECT * FROM QSYS2.USER_INFO WHERE USER_NAME = 'BOJASV'
+
 -- to find fields in a file
 SELECT DBIPOS, DBIFLD, DBIITP, DBITXT FROM qsys/qadbifld WHERE  
 dbilib = 'BOJASV' and dbifil = 'TSTFILE'                        
