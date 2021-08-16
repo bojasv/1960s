@@ -21,15 +21,180 @@ dcl-s $Ind1 ind ;
 dcl-s $Bin1 bindec(5) ;
 //*pointer variable
 dcl-s $Pointer1 pointer inz(%addr($Alpha1));
-//*array
-dcl-s $Array1 char(3) dim(100) ;
-//*tables (or compile time array)
-dcl-s TabTable1 char(7) dim(3) ctdata ;
 //*DTAARA variable
 dcl-s $TestDa1 char(10) dtaara('TESTDA') ;
+
 //*Constant (without keyword CONST)
 dcl-c SUCCESS '00000';
 dcl-c SINGLE_RECORD_EXISTS 1;
 //*Constant (hexadecimal)
 dcl-c CRLF const(x'0d25');
+
+//*arrays
+//*run-time array
+dcl-s $RT_array char(3) dim(100) ;
+//*compile-time array (or tables)
+dcl-s TabTable1 char(7) dim(3) ctdata ;
+dcl-s $CT_array char(40) dim(%elem(TabTable1)) perrcd(1) ctdata;
+_______________________________________________
+.
+.
+.
+**ctdata $CT_array   
+1234567890123456789012345678901234567890
+A1        ELEM1   Test Element 1
+A2        ELEM2   Test Element 2
+_______________________________________________
+//*pre-runtime array
+_______________________________________________FlatFile with only field, FLAT1 as char(5) and holding 5 values in it
+FLAT1
+AAAAA
+BBBBB
+CCCCC
+DDDDD
+EEEEE
+_______________________________________________
+dcl-f FlatFile Usage(*Input);
+dcl-s $PR_array char(5) dim(5) fromfile(FlatFile) perrcd(1);
+_______________________________________________PF_with_2_fields, FLD1 packed(5:0), FLD2 packed(5:0) both holding 5 values
+  FLD1     FLD2
+10,001   20,001
+10,002   20,002
+10,003   20,003
+10,004   20,004
+10,005   20,005
+********  End of data  ********
+_______________________________________________
+dcl-F PF_with_2_fields Usage(*Input);
+dcl-S $PR_array packed(5:0) dim(10) fromfile(PF_with_2_fields) perrcd(2) extfmt(P);
+[extfmt(P) -> to indicate that the data for the array or table is in packed decimal format, and hence avoid decimal-data error. 
+The EXTFMT keyword is used to specify the external data type for compile-time and prerun-time numeric arrays and tables. 
+The external data type is the format of the data in the records in the file. 
+This entry has no effect on the format used for internal processing (internal data type) of the array or table in the program.
+ref: https://www.ibm.com/docs/api/v1/content/ssw_ibm_i_74/rzasd/dextfmt.htm]
+
+//*data-struct
+//*program described DS - unqualified
+dcl-ds  data_ds;                                      
+   lib   char(10)      inz;                         
+   key   char(20)      inz('&DUMMY_KEY'); 
+   appl  char(2)       inz('LN');                   
+   seq#  packed(5)     inz;                         
+   flag  char(20)      inz('Y');                                        
+end-ds; 
+lib = 'USERLIB001';
+//*program described DS - qualified (i.e. other DS can use same subfield name; subfields when used have to prefix DS name with a dot(.))
+dcl-ds serial_num qualified dim(99);
+  seq packed(9:0);  
+end-ds;
+dcl-ds folio_num qualified dim(99);
+  seq packed(9:0);  
+end-ds;
+serial_num.seq = 8085;
+folio_num.seq = 8086;
+//*program described DS - template - can only act as a reference (when used with likeDS keyword) - 
+used to inherit any DS definition to another data structure to define it (using LikeDS keyword)
+dcl-pr writeFile char(1);
+     *n likeds(ds_pref_t);  
+end-pr;
+dcl-ds ds_pref_t qualified template;                                       
+   lib   char(10)      inz;                         
+   key   char(20)      inz('&DUMMY_KEY'); 
+   appl  char(2)       inz('LN');                   
+   seq#  packed(5)     inz;                         
+   flag  char(20)      inz('Y');                                          
+end-ds;                                                                   
+dcl-proc writeFile;                           
+  dcl-pi *n  char(01);                           
+    inds_pref likeds(ds_pref_t);                 
+  end-pi;                                        
+  dcl-ds ds_pref likeds(ds_pref_t) inz(*likeds);
+  ds_pref1 = inds_pref;
+.
+.
+end-proc;                   
+//*program described DS - to break a field into subfields
+dcl-ds curtimstp;
+   curtimdate     zoned(8:0) pos(1);
+   curryear       zoned(4:0) pos(1);
+   currmonth      zoned(2:0) pos(5);
+   currday        zoned(2:0) pos(7);
+   currhrs        zoned(2:0) pos(9);
+   currmins       zoned(2:0) pos(11);
+   currsecs       zoned(4:0) pos(13);
+end-ds;
+//*program described DS - to group multiple sub-fields into a field
+dcl-ds date;
+   yy             char(4);
+   filler1        char(1)    inz('-');
+   mm             char(2);
+   filler2        char(1)    inz('-');
+   dd             char(2);
+end-ds;
+yy=%char(2012);
+mm=%char(10);
+dd=%char(15);
+dsply date;
+
+//*externally described DS - data structure is referenced from an external file definition
+dcl-ds pfile_ds extname('USERLIB001/PFILE') qualified dim(3) end-ds;
+pfile_ds.FLD1 = 10011;
+or
+dcl-ds pfile_ds ext qualified inz extname('PFILE') dim(10); end-ds;
+pfile_ds(1).FLD1 = 10011;
+or
+dcl-ds pfile_ds extname('USERLIB001/PFILE') prefix(DS_) dim(3) end-ds; 
+DS_FLD1 = 10011;
+or
+dcl-ds ds1  extname(PFILE);
+   r_FLD1                   extfld(FLD1);
+   s_FLD2                   extfld(FLD2);
+end-ds;
+r_FLD1 = 10011;
+s_FLD2 = 99999;
+
+//*data area DS (Specified In 'U')
+dcl-ds lda dtaara(*lda) qualified;  
+  lda_data char(1024)  pos(1);       
+  seq      packed(5:0) pos(1);           
+  library  char(10)    pos(1018);     
+end-ds;
+or
+dcl-ds dads1  dtaara('dta1');
+   fld1           char(4)    pos(1);
+   fld2           char(2)    pos(6);
+   fld3           char(6)    pos(9);
+   fld4           char(4)    pos(16);
+   fld5           char(10)   pos(21);
+end-ds;
+
+//*indicator DS
+//programme status DS (Specified In 'S')
+dcl-ds pgm_stat psds qualified;    
+   program      *proc;             
+   lineNumber   char(8)    pos(21);
+end-ds;
+or
+dcl-ds *n psds;                   
+   program_lib  char(10)   pos(81);  
+   job_name     char(10)   pos(244);    
+   job_user     char(10)   pos(254);    
+   job_number   zoned(6:0) pos(264);
+   program_name char(10)   pos(334);
+end-ds;                           
+//*file information DS
+dcl-f pfile usage(*update) keyed usropn infds(user_infds);  
+dcl-ds user_infds qualified;           
+  file          *file;              
+  lineNumber    char(8)    pos(30); 
+  library       char(10)   pos(93); 
+end-ds;
+//*multiple occurence DS
+dcl-ds ds1  occurs(10);
+   fld01        char(5)    pos(1);
+   fld02        char(5)    pos(6);
+end-ds;
+
+
+
 *inlr = '0';
