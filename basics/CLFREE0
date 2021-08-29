@@ -1,0 +1,31 @@
+dcl &det        *char 1     '1'        
+dcl &var        *char 1     'Y'        
+                                       
+chgvar &det '1'                        
+/* *or(|) *and(&) *eq(=) *ne(<>) */    
+if cond(&det='1' *or &det='2') then(do)
+   chgvar &var 'y'                     
+enddo                                  
+if cond(&det='1' & &det='2') then(do)  
+   chgvar &var 'y'                     
+enddo                                  
+else cmd(chgvar &var 'n')              
+                                       
+callsubr get_var                       
+                                       
+subr get_var                           
+   select                              
+      when cond(&det = '0') then(do)   
+         chgvar &var 'n'               
+      enddo                                                                  
+      when cond(&det = '2') then(do)                                         
+         chgvar &var 'n'                                                     
+      enddo                                                                  
+   otherwise do                                                              
+         chgvar &var ' '                                                     
+      enddo                                                                  
+   endselect                                                                 
+endsubr                                                                      
+                                                                             
+/*chgvar &det '9'*/                                                          
+/* CPD0308 30  Only SUBR and ENDPGM commands can follow an ENDSUBR command.*/
