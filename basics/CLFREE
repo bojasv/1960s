@@ -30,7 +30,27 @@ dcl &time_stamp *char 20
                                                                                                 
 /* chgvar &dec_space6 123456789012345                                                         */
 /* Receiver value too small to hold the result as &dec_space6 is (15,9)                       */
-                                                                                                
+
+/*  Predefined value Predefined symbol Meaning               Type                             */
+/*                   +                 Addition              Arithmetic /Character string op  */
+/*                   -                 Subtraction           Arithmetic operator              */
+/*                   *                 Multiplication        Arithmetic operator              */
+/*                   /                 Division              Arithmetic operator              */
+/*  *CAT            ||                 Concatenation         Character string operator        */
+/*  *BCAT           |>                 Blank insert + concat Character string operator        */
+/*  *TCAT           |<                 Blank trunc + concat  Character string operator        */
+/*  *AND             &                 AND                   Logical operator                 */
+/*  *OR              |                 OR                    Logical operator                 */
+/*  *NOT             ¬                 NOT                   Logical operator                 */
+/*  *EQ              =                 Equal                 Relational operator              */
+/*  *GT              >                 Greater than          Relational operator              */
+/*  *LT              <                 Less than             Relational operator              */
+/*  *GE             >=                 Greater than or equal Relational operator              */
+/*  *LE             <=                 Less than or equal    Relational operator              */
+/*  *NE             ¬=                 Not equal             Relational operator              */
+/*  *NG             ¬>                 Not greater than      Relational operator              */
+/*  *NL             ¬<                 Not less than         Relational operator              */
+
 rtvsysval QDATETIME &time_stamp                                                                 
 sndusrmsg &time_stamp                                                                           
                                                                                                 
