@@ -1,34 +1,150 @@
 PF-SRC
-  CRTSRCPF
-  CHGSRCPF
+   	Create Source Physical File (CRTSRCPF) command
+   	Change Source Physical File (CHGSRCPF) command
 
 PF
   DSPFD
+    Type (of info)
+      *MBRLIST
+        Member name, source type, size, description
+        Created on
+        Last changed on
+        Current number of records (NBRCURRCD) - often used in CL as parm of RTVMBRD
+        Number of deleted records
+      *MBR
+        Current number of records (NBRCURRCD) - often used in CL as parm of RTVMBRD
+        Number of delete records
+        Record capacity
+        Last used date
+        Days used count
+        Stat for operations performed (CRUD, CLR, RGZ, CPY, Access Path build/rebuild/reads...etc)
+        Member level ID
+        Share ODP?
+          *NO - A new ODP for the file is created and used every time a program opens the file.
+          *YES - the programs accessing the file share facilities such as the file status and the buffer.
+      *RCDFMT
+        Record format name (same as the file name, 
+        Record format description (same as file name)
+        Total number of fields and record length
+        Format level ID
+      *TRG
+      *CST
+      *ACCPTH
+        *IMMED - The path is updated each time a record is changed, added, or deleted from a member.
+        *REBLD - The path is completely rebuilt each time a file member is opened, is maintained until the member is closed, then gets deleted.
+        *DLY - The maintenance of the access path is delayed until the physical file member is opened for use.
+        The access path is changed only for records that have been added, deleted, or changed since the file was last opened.
+        While the file is open, all changes made to its members are immediately reflected in the access path of those members 
+        (no matter what is specified for the MAINT parameter.)
+        To prevent a lengthy rebuild time when the file is opened, *DLY should be specified only when the number of changes to the access path is small.
+        
+        If the number of changes between a close and the next open reaches approximately 10 percent of the access path size,
+        the system stops saving changes and the access path is completely rebuilt the next time the file is opened.
+        
+        These paths can be rebuilt...
+          during IPL (Initial Program Load, i.e. before any user can run a job)
+          after IPL, or
+          when the file is next opened (*REBLD)
+        RECOVER parm is defaulted to
+          *NO for files with non-Unique keys, and the path is rebuilt when the file is opened.
+          *AFTIPL for files with unique keys
+        
+        While the access path is being rebuilt, the file cannot be used by any job.                                                
+          
+        The access path logical page size is used by the system to determine the size of each page of the index.
+        During page fault, this much bytes of the access path data that can be movedfrom the ASP into the job's storage pool.
+        
+      *ATR
+        File level ID
+        File is currently journaled?
+        Total number of members
+        Total number of triggers (*TRG)
+        Total number of constraints (*CST)
+        Access Path Sequence
+        CCSID
+        CRUD operation authorities (ALWUPD, ALWDLT)
+        RCDFMT LVLCHK
   DSPFFD
-  DSPPFM
-  RGZPFM
+   	Display Physical File Member (DSPPFM) command
+   	Reorganize Physical File Member (RGZPFM) command
   
-  CRTPF
-  CRTSRCPF
-  CHGPF
-  CHGSRCPF
-  ADDPFM
-  CHGPFM
-  CLRPFM
-  CMPPFM (PDM Opt 54)
+   	Create Physical File (CRTPF) command
+   	Change Physical File (CHGPF) command
+   	Add Physical File Member (ADDPFM) command
+   	Change Physical File Member (CHGPFM) command
+   	Clear Physical File Member (CLRPFM) command
+   	Compare Physical File Member (CMPPFM) command - (PDM Opt 54)
 LF
-  DSPDBR
+    DSPDBR
+  	Add Logical File Member (ADDLFM) command
+   	Change Logical File (CHGLF) command
+   	Change Logical File Member (CHGLFM) command
+   	Create Logical File (CRTLF) command
 JLF
+
 Triggers
-  ADDPFTRG
-  CHGPFTRG
-  RMVPFTRG
+   	Add Physical File Trigger (ADDPFTRG) command
+   	Change Physical File Trigger (CHGPFTRG) command
+   	Remove Physical File Trigger (RMVPFTRG) command
 Journalling
-  CRTJRNRCV JRNRCV(&LIB/&JRNRCV) TEXT('My Journal Receiver')
-  CRTJRN JRN(&LIB/&JRN) JRNRCV(&LIB/&JRNRCV)
-  STRJRNPF FILE(&LIB/&MULTIFILE) JRN(&LIB/&JRN)
-  ENDJRNPF FILE(&LIB/&MULTIFILE) JRN(&LIB/&JRN)
+  Create Journal Receiver (CRTJRNRCV) command - CRTJRNRCV JRNRCV(&LIB/&JRNRCV) TEXT('My Journal Receiver')
+  Create Journal (CRTJRN) command - CRTJRN JRN(&LIB/&JRN) JRNRCV(&LIB/&JRNRCV)
+ 	Start Journal Physical File (STRJRNPF) command - STRJRNPF FILE(&LIB/&MULTIFILE) JRN(&LIB/&JRN)
+  End Journal Physical File (ENDJRNPF) command - ENDJRNPF FILE(&LIB/&MULTIFILE) JRN(&LIB/&JRN)
+  
+  Apply Journaled Changes (APYJRNCHG) command
+  Change Journal (CHGJRN) command
+  Change Journal Attributes (CHGJRNA) command
+  Change Journaled Object (CHGJRNOBJ) command
+  Compare Journal Images (CMPJRNIMG) command
+  Delete Journal (DLTJRN) command
+  Delete Journal Receiver (DLTJRNRCV) command
+  Display Journal (DSPJRN) command
+  Display Journal Receiver Attributes (DSPJRNRCVA) command
+  End Journal (ENDJRN) command
+  Receive Journal Entry (RCVJRNE) command
+  Remove Journaled Changes (RMVJRNCHG) command
+  Retrieve Journal Entry (RTVJRNE) command
+  Send Journal Entry (SNDJRNE) command
+  Start Journal (STRJRN) command
+  Work with Journal (WRKJRN) command
+  Work with Journal Attributes (WRKJRNA) command
+  Work with Journal Receivers (WRKJRNRCV) command
+  
+  Add Remote Journal (ADDRMTJRN) command
+  Analyze DataPropagator Journaling (ANZDPRJRN) command
+  Apply Journaled Changes Extend (APYJRNCHGX) command
+  Change Remote Journal (CHGRMTJRN) command
+  Copy Audit Journal Entries (CPYAUDJRNE) command
+  Dump Domain Name System Journal File (DMPDNSJRNF) command
+  Display Audit Journal Entries (DSPAUDJRNE) command
+  End Journal Access Path (ENDJRNAP) command
+  End Journal Library (ENDJRNLIB) command
+  End Journal Object (ENDJRNOBJ) command
+  Remove Remote Journal (RMVRMTJRN) command
+  Start Journal Access Path (STRJRNAP) command
+  Start Journal Library (STRJRNLIB) command
+  Start Journal Object (STRJRNOBJ) command
+
+   
 Constraint
-  ADDPFCST
-  CHGPFCST
-  RMVPFCST
+   	Work with Physical File Constraints (WRKPFCST) command
+   	Add Physical File Constraint (ADDPFCST) command
+   	Change Physical File Constraint (CHGPFCST) command
+   	Remove Physical File Constraint (RMVPFCST) command
+
+Physical File
+   	Add Physical File Variable Length Member (ADDPFVLM) command - for PASCAL programs
+   	Convert Physical File Member to Page Segment (CVTPFMPAGS) command - for Image Data Stream (IMDS) or one Image Object Content Architecture (IOCA)
+   	Initialize Physical File Member (INZPFM) command - useful to increment the member record limits using *NXTINCR keyword on TOTRCDS parm
+   	Work with Physical File DataLinks (WRKPFDL) command
+
+DB2 Extremas
+CRTSRCPF
+  minimum RCDLEN is 12 bytes (i.e 6 pos for source sequence number and rest 6 for the record change date), usually record data size is set to 100 bytes
+    for PF it's 80 - IBM System i5 Data Description Processor
+    for CL and CMD it's 96 - IBM Control Language Compiler, IBM IBM i Command Definition Compiler 
+    for RPG and SQLRPG it's 100 - IBM ILE RPG Compiler (for RPG last 20 pos are reserved for Comments)
+  while opening a device, a program can wait for max 9 hours to let the resources be allocated - when WAITFILE is set as *NOMAX 
+  while changing or deleting a record, a program can wait for max 9 hours (32767 secs) - when WAITRCD is set as *NOMAX
+
