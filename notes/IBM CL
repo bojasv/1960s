@@ -3,3 +3,8 @@ Declare Processing Options (DCLPRCOPT) - if it is present in source, it has to b
 This command is valid only within a CL program or ILE CL procedure. All declare commands (DCL, COPYRIGHT, DCLF, and DCLPRCOPT) 
 must follow the PGM (Program) command and must precede all other commands in the program. 
 The four types of declare commands can be intermixed in any order.
+
+To have the DO and SELECT nesting levels appear in the compiler listing, specify *DOSLTLVL for the OPTION parameter on the
+  Create CL Program (CRTCLPGM) command,
+  Create CL Module (CRTCLMOD) command, or 
+  Create Bound CL Program (CRTBNDCL) command
