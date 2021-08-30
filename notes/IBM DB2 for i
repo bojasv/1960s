@@ -148,3 +148,5 @@ CRTSRCPF
   while opening a device, a program can wait for max 9 hours to let the resources be allocated - when WAITFILE is set as *NOMAX 
   while changing or deleting a record, a program can wait for max 9 hours (32767 secs) - when WAITRCD is set as *NOMAX
 
+CRTPF
+   a PF can not hold more than 4 billion records (4294967288 bytes)
