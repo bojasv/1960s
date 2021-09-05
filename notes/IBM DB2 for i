@@ -92,7 +92,16 @@ Journalling
  	Start Journal Physical File (STRJRNPF) command - STRJRNPF FILE(&LIB/&MULTIFILE) JRN(&LIB/&JRN)
   End Journal Physical File (ENDJRNPF) command - ENDJRNPF FILE(&LIB/&MULTIFILE) JRN(&LIB/&JRN)
   Retrieve Journal Entry (RTVJRNE) command
-
+ 
+ RcvJrnE:                                                           
+            RCVJRNE    JRN(&JRNLIB/&JRNNAM) EXITPGM(&JRNEXIT) +    
+                         FILE(*ALLFILE) RCVRNG(&RECVRLIB/&RECVR) + 
+                         JRNCDE(*ALL) ENTTYP(*RCD) ENTFMT(*TYPE2) +
+                         DELAY(*NEXTENT 10) BLKLEN(*NONE) +        
+                         FROMENT(&JRNSEQNBR) TOENT(*NONE)          
+                                                                   
+    MonMsg     CPF7054          *N   Do                            
+    RcvMsg     MsgType( *EXCP )  Rmv( *YES )                       
  RtvJrnE    Jrn( &JrnLib/&JrnNam )      +
             File( *ALLFILE )            +
             RcvRng( *CURRENT )          +
