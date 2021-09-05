@@ -46,5 +46,23 @@ XX999D*Name++++++++++ETDsFrom+++To/L+++IDc.Keywords
      D TestDa1         S             10    dtaara('TESTDA')
       *dcl-s $TestDa1 char(10) dtaara('TESTDA') ;
 
-
        *inlr = '0';
+
+FFilename++IPEASFRlen+LKlen+AIDevice+.Keywords+++++++++++++++++++++++++++++Comments++++++++++
+FMYFILE    IF   E             DISK    INFDS(FILEFBK)
+DName+++++++++++ETDsFrom+++To/L+++IDc.Keywords+++++++++++++++++++++++++++++Comments++++++++++
+DFILEFBK          DS
+D FILE              *FILE                                                  * File name
+D OPEN_IND                9      9N                                        * File open?
+D EOF_IND                10     10N                                        * File at eof?
+D STATUS            *STATUS                                                * Status code
+D OPCODE            *OPCODE                                                * Last opcode
+D ROUTINE           *ROUTINE                                               * RPG Routine
+D LIST_NUM               30     37                                         * Listing line
+D SPCL_STAT              38     42S 0                                      * SPECIAL status
+D RECORD            *RECORD                                                * Record name
+D MSGID                  46     52                                         * Error MSGID
+D SCREEN            *SIZE                                                  * Screen size
+D NLS_IN            *INP                                                   * NLS Input?
+D NLS_OUT           *OUT                                                   * NLS Output?
+D NLS_MODE          *MODE                                                  * NLS Mode?
