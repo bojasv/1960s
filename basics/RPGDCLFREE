@@ -2,6 +2,8 @@
  //*char
 dcl-s $Alpha1 char(10) ;
 dcl-s $Alpha2 like($Alpha1) inz(*all'*') ;
+dcl-s char_dsply char(52) inz('You know what, This is a fifty two char long string.');                                                                                  
+dsply char_dsply;                                                                                                                                                           
 //*unsigned numeral
 dcl-s $Packed1 packed(7) ;
 dcl-s $Packed2 packed(5:2) ;
@@ -15,15 +17,16 @@ dcl-s $Float1 float(8) ;
 dcl-s $Date1 date(*iso) ;
 dcl-s $Time1 time ;
 dcl-s $TimeStamp1 timestamp ;
-//*indicator variable
+//*indicator variable (*on/*off)
 dcl-s $Ind1 ind ;
+//*boolean variable (true/false) - supported only in OpenRPG
+dcl-s mybool boolean;                                                               
 //*binary variable
 dcl-s $Bin1 bindec(5) ;
 //*pointer variable
 dcl-s $Pointer1 pointer inz(%addr($Alpha1));
 //*DTAARA variable
 dcl-s $TestDa1 char(10) dtaara('TESTDA') ;
-
 //*Constant (without keyword CONST)
 dcl-c SUCCESS '00000';
 dcl-c SINGLE_RECORD_EXISTS 1;
