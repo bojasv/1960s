@@ -181,7 +181,92 @@ dcl-ds *n psds;
    job_user     char(10)   pos(254);    
    job_number   zoned(6:0) pos(264);
    program_name char(10)   pos(334);
-end-ds;                           
+end-ds;
+
+**free                                                     
+Dcl-DS MYPSDS  PSDS;                   //* Program Status DS - Complete                    
+   PROC_NAME      *proc;               //* Procedure name   
+   PGM_STATUS     *status;             //* Status code      
+   PRV_STATUS     Zoned(5:0) Pos(16);  //* Previous status  
+   LINE_NUM       Char(8)    Pos(21);  //* Src list line num
+   ROUTINE        *routine;            //* Routine name     
+   PARMS          *parms;              //* Num passed parmsx
+   EXCP_TYPE      Char(3)    Pos(40);  //* Exception type   
+   EXCP_NUM       Char(4)    Pos(43);  //* Exception number 
+   PGM_LIB        Char(10)   Pos(81);  //* Program library  
+   EXCP_DATA      Char(80)   Pos(91);  //* Exception data   
+   EXCP_ID        Char(4)    Pos(171); //* Exception Id    
+   DATE           Char(8)    Pos(191); //* Date (*DATE fmt)
+   YEAR           Zoned(2:0) Pos(199); //* Year (*YEAR fmt)
+   LAST_FILE      Char(8)    Pos(201); //* Last file used  
+   FILE_INFO      Char(35)   Pos(209); //* File error info 
+   JOB_NAME       Char(10)   Pos(244); //* Job name        
+   USER           Char(10)   Pos(254); //* User name       
+   JOB_NUM        Zoned(6:0) Pos(264); //* Job number        
+   JOB_DATE       Zoned(6:0) Pos(270); //* Date (UDATE fmt)  
+   RUN_DATE       Zoned(6:0) Pos(276); //* Run date (UDATE)  
+   RUN_TIME       Zoned(6:0) Pos(282); //* Run time (UDATE)  
+   CRT_DATE       Char(6)    Pos(288); //* Create date       
+   CRT_TIME       Char(6)    Pos(294); //* Create time       
+   CPL_LEVEL      Char(4)    Pos(300); //* Compiler level    
+   SRC_FILE       Char(10)   Pos(304); //* Source file       
+   SRC_LIB        Char(10)   Pos(314); //* Source file lib   
+   SRC_MBR        Char(10)   Pos(324); //* Source file mbr   
+   PROC_PGM       Char(10)   Pos(334); //* Pgm Proc is in    
+   PROC_MOD       Char(10)   Pos(344); //* Mod Proc is in    
+   P21_28         Bindec(2)  Pos(354); //* pos 21-28 srcID   
+   P228_235       Bindec(2)  Pos(356); //* pos 228-235       
+   CURUSR         Char(10)   Pos(358); //* CURUSR            
+   XERRCDE        Zoned(4:0) Pos(368); //* external ERRCDE   
+   ELEM_XML       Zoned(8:0) Pos(372); //* XML-INTO DATA-INTO
+   INTJOBID       Char(16)   Pos(380); //* internal JOBID    
+   SYSNAME        Char(8)    Pos(396); //* SYSNAM            
+   UNUSED_26CHAR  Char(26)   Pos(404); //* Unused
+End-DS;                                          
+*inlr = *on;                        
+
+**free                                                     
+Dcl-DS MYPSDS  PSDS;                   //* Program Status DS - Complete                    
+   PROC_NAME      Char(10)   Pos(1);   //* Procedure name    
+   PGM_STATUS     Zoned(5:0) Pos(11);  //* Status code     
+   PRV_STATUS     Zoned(5:0) Pos(16);  //* Previous status  
+   LINE_NUM       Char(8)    Pos(21);  //* Src list line num
+   ROUTINE        Char(8)    Pos(29);  //* Routine name    
+   PARMS          Zoned(3:0) Pos(37);  //* Num passed parms 
+   EXCP_TYPE      Char(3)    Pos(40);  //* Exception type   
+   EXCP_NUM       Char(4)    Pos(43);  //* Exception number 
+   PGM_LIB        Char(10)   Pos(81);  //* Program library  
+   EXCP_DATA      Char(80)   Pos(91);  //* Exception data   
+   EXCP_ID        Char(4)    Pos(171); //* Exception Id    
+   DATE           Char(8)    Pos(191); //* Date (*DATE fmt)
+   YEAR           Zoned(2:0) Pos(199); //* Year (*YEAR fmt)
+   LAST_FILE      Char(8)    Pos(201); //* Last file used  
+   FILE_INFO      Char(35)   Pos(209); //* File error info 
+   JOB_NAME       Char(10)   Pos(244); //* Job name        
+   USER           Char(10)   Pos(254); //* User name       
+   JOB_NUM        Zoned(6:0) Pos(264); //* Job number        
+   JOB_DATE       Zoned(6:0) Pos(270); //* Date (UDATE fmt)  
+   RUN_DATE       Zoned(6:0) Pos(276); //* Run date (UDATE)  
+   RUN_TIME       Zoned(6:0) Pos(282); //* Run time (UDATE)  
+   CRT_DATE       Char(6)    Pos(288); //* Create date       
+   CRT_TIME       Char(6)    Pos(294); //* Create time       
+   CPL_LEVEL      Char(4)    Pos(300); //* Compiler level    
+   SRC_FILE       Char(10)   Pos(304); //* Source file       
+   SRC_LIB        Char(10)   Pos(314); //* Source file lib   
+   SRC_MBR        Char(10)   Pos(324); //* Source file mbr   
+   PROC_PGM       Char(10)   Pos(334); //* Pgm Proc is in    
+   PROC_MOD       Char(10)   Pos(344); //* Mod Proc is in    
+   P21_28         Bindec(2)  Pos(354); //* pos 21-28 srcID   
+   P228_235       Bindec(2)  Pos(356); //* pos 228-235       
+   CURUSR         Char(10)   Pos(358); //* CURUSR            
+   XERRCDE        Zoned(4:0) Pos(368); //* external ERRCDE   
+   ELEM_XML       Zoned(8:0) Pos(372); //* XML-INTO DATA-INTO
+   INTJOBID       Char(16)   Pos(380); //* internal JOBID    
+   SYSNAME        Char(8)    Pos(396); //* SYSNAM            
+   UNUSED_26CHAR  Char(26)   Pos(404); //* Unused
+End-DS;                                          
+*inlr = *on;                                     
+
 //*file information DS
 dcl-f pfile usage(*update) keyed usropn infds(user_infds);  
 dcl-ds user_infds qualified;           
@@ -195,6 +280,182 @@ dcl-ds ds1  occurs(10);
    fld02        char(5)    pos(6);
 end-ds;
 
+dcl-ds Fdbck;
+   Fdbck_Fil char(80)
+   Fdbck_Opn char(160)
+   Fdbck_IO char(126)
+   Fdbck_Dev varchar(326)
+   Fdbck_Dev varchar(443)
+end-ds
+
+
+   DCL-F MYFILE DISK(*EXT) INFDS(FILEFBK);
+
+   DCL-DS FILEFBK;
+     FILE          *FILE;                  // File name
+     OPEN_IND      IND        POS(9);      // File open?
+     EOF_IND       IND        POS(10:      // File at eof?
+     STATUS        *STATUS;                // Status code
+     OPCODE        *OPCODE;                // Last opcode
+     ROUTINE       *ROUTINE;               // RPG Routine
+     LIST_NUM      CHAR(8)    POS(30);     // Listing line
+     SPCL_STAT     ZONED(5)   POS(38);     // SPECIAL status
+     RECORD        *RECORD;                // Record name
+     MSGID         CHAR(7)    POS(46);     // Error MSGID
+     SCREEN        *SIZE;                  // Screen size
+     NLS_IN        *INP;                   // NLS Input?
+     NLS_OUT       *OUT;                   // NLS Output?
+     NLS_MODE      *MODE;                  // NLS Mode?
+   END-DS;
+
+   DCL-F MYFILE PRINTER(132) INFDS(OPNFBK);
+
+   DCL-DS OPNFBK;
+     ODP_TYPE      CHAR(2)    POS(81);     // ODP Type
+     FILE_NAME     CHAR(10)   POS(83);     // File name
+     LIBRARY       CHAR(10)   POS(93);     // Library name
+     SPOOL_FILE    CHAR(10)   POS(103);    // Spool file name
+     SPOOL_LIB     CHAR(10)   POS(113);    // Spool file lib
+     SPOOL_NUM_OLD INT(5)     POS(123);    // Spool file num
+     RCD_LEN       INT(5)     POS(125);    // Max record len
+     KEY_LEN       INT(5)     POS(127);    // Max key len
+     MEMBER        CHAR(10)   POS(129);    // Member name
+     TYPE          INT(5)     POS(147);    // File type
+     ROWS          INT(5)     POS(152);    // Num PRT/DSP rows
+     COLUMNS       INT(5)     POS(154);    // Num PRT/DSP cols
+     NUM_RCDS      INT(10)    POS(156);    // Num of records
+     SPOOL_NUM     INT(10)    POS(160);    // 6 digit Spool Nbr
+     ACC_TYPE      CHAR(2)    POS(160);    // Access type
+     DUP_KEY       CHAR(1)    POS(162);    // Duplicate key?
+     SRC_FILE      CHAR(1)    POS(163);    // Source file?
+     VOL_OFF       INT(5)     POS(184);    // Vol label offset
+     BLK_RCDS      INT(5)     POS(186);    // Max rcds in blk
+     OVERFLOW      INT(5)     POS(188);    // Overflow line
+     BLK_INCR      INT(5)     POS(190);    // Blk increment
+     FLAGS1        CHAR(1)    POS(196);    // Misc flags
+     REQUESTER     CHAR(10)   POS(197);    // Requester name
+     OPEN_COUNT    INT(5)     POS(207);    // Open count
+     BASED_MBRS    INT(5)     POS(211);    // Num based mbrs
+     FLAGS2        CHAR(1)    POS(213);    // Misc flags
+     OPEN_ID       CHAR(2)    POS(214);    // Open identifier
+     RCDFMT_LEN    INT(5)     POS(216);    // Max rcd fmt len
+     CCSID         INT(5)     POS(218);    // Database CCSID
+     FLAGS3        CHAR(1)    POS(220);    // Misc flags
+     NUM_DEVS      INT(5)     POS(227);    // Num devs defined
+   END-DS;
+
+
+   DCL-F MYFILE WORKSTN INFDS(MYIOFBK);
+
+   DCL-DS MYIOFBK;
+                                           // 241-242 not used
+     WRITE_CNT     UNS(10)    POS(243);    // Write count
+     READ_CNT      UNS(10)    POS(247);    // Read count
+     WRTRD_CNT     UNS(10)    POS(251);    // Write/read count
+     OTHER_CNT     INT(10)    POS(255);    // Other I/O count
+     OPERATION     CHAR(1)    POS(260);    // Current operation
+     IO_RCD_FMT    CHAR(10)   POS(261);    // Rcd format name
+     DEV_CLASS     CHAR(2)    POS(271);    // Device class
+     IO_PGM_DEV    CHAR(10)   POS(273);    // Pgm device name
+     IO_RCD_LEN    INT(10)    POS(283);    // Rcd len of I/O
+   END-DS;
+   
+
+
+   DCL-F MYFILE WORKSTN INFDS(DSPATRFBK);
+
+   DCL-DS DSPATRFBK;
+     PGM_DEV       CHAR(10)   POS(241);    // Program device
+     DEV_DSC       CHAR(10)   POS(251);    // Dev description
+     USER_ID       CHAR(10)   POS(261);    // User ID
+     DEV_CLASS     CHAR(1)    POS(271);    // Device class
+     DEV_TYPE      CHAR(6)    POS(272);    // Device type
+     REQ_DEV       CHAR(1)    POS(278);    // Requester?
+     ACQ_STAT      CHAR(1)    POS(279);    // Acquire status
+     INV_STAT      CHAR(1)    POS(280);    // Invite status
+     DATA_AVAIL    CHAR(1)    POS(281);    // Data available
+     NUM_ROWS      INT(5)     POS(282);    // Number of rows
+     NUM_COLS      INT(5)     POS(284);    // Number of cols
+     BLINK         CHAR(1)    POS(286);    // Allow blink?
+     LINE_STAT     CHAR(1)    POS(287);    // Online/offline?
+     DSP_LOC       CHAR(1)    POS(288);    // Display location
+     DSP_TYPE      CHAR(1)    POS(289);    // Display type
+     KBD_TYPE      CHAR(1)    POS(290);    // Keyboard type
+     CTL_INFO      CHAR(1)    POS(342);    // Controller info
+     COLOR_DSP     CHAR(1)    POS(343);    // Color capable?
+     GRID_DSP      CHAR(1)    POS(344);    // Grid line dsp?
+     // The following fields apply to ISDN.
+     ISDN_LEN      INT(5)     POS(385);    // Rmt number len
+     ISDN_TYPE     CHAR(2)    POS(387);    // Rmt number type
+     ISDN_PLAN     CHAR(2)    POS(389);    // Rmt number plan
+     ISDN_NUM      CHAR(40)   POS(391);    // Rmt number
+     ISDN_SLEN     INT(5)     POS(435);    // Rmt sub-address length
+     ISDN_STYPE    CHAR(2)    POS(437);    // Rmt sub-address type
+     ISDN_SNUM     CHAR(40)   POS(439);    // Rmt sub-address
+     ISDN_CON      CHAR(1)    POS(480);    // Connection
+     ISDN_RLEN     INT(5)     POS(481);    // Rmt address len
+     ISDN_RNUM     CHAR(32)   POS(483);    // Rmt address
+     ISDN_ELEN     INT(5)     POS(519);    // Extension len
+     ISDN_ETYPE    CHAR(1)    POS(521);    // Extension type
+     ISDN_ENUM     CHAR(40)   POS(522);    // Extension num
+     ISDN_XTYPE    CHAR(1)    POS(566);    // X.25 call type
+   END-DS;
+   
+   
+   DCL-F MYFILE WORKSTN INFDS(ICFATRFBK);
+
+   DCL-DS ICFATRFBK;
+     PGM_DEV       CHAR(10)   POS(241);    // Program device
+     DEV_DSC       CHAR(10)   POS(251);    // Dev description
+     USER_ID       CHAR(10)   POS(261);    // User ID
+     DEV_CLASS     CHAR(1)    POS(271);    // Device class
+     DEV_TYPE      CHAR(1)    POS(272);    // Device type
+     REQ_DEV       CHAR(1)    POS(278);    // Requester?
+     ACQ_STAT      CHAR(1)    POS(279);    // Acquire status
+     INV_STAT      CHAR(1)    POS(280);    // Invite status
+     DATA_AVAIL    CHAR(1)    POS(281);    // Data available
+     SES_STAT      CHAR(1)    POS(291);    // Session status
+     SYNC_LVL      CHAR(1)    POS(292);    // Synch level
+     CONV_TYPE     CHAR(1)    POS(293);    // Conversation typ
+     RMT_LOC       CHAR(10)   POS(294);    // Remote location
+     LCL_LU        CHAR(8)    POS(302);    // Local LU name
+     LCL_NETID     CHAR(8)    POS(310);    // Local net ID
+     RMT_LU        CHAR(8)    POS(318);    // Remote LU
+     RMT_NETID     CHAR(8)    POS(326);    // Remote net ID
+     APPC_MODE     CHAR(8)    POS(334);    // APPC Mode
+     LU6_STATE     CHAR(1)    POS(345);    // LU6 conv state
+     LU6_COR       CHAR(8)    POS(346);    // LU6 conv correlator
+     // The following fields apply to ISDN.
+     ISDN_LEN      INT(5)     POS(385);    // Rmt number len
+     ISDN_TYPE     CHAR(2)    POS(387);    // Rmt number type
+     ISDN_PLAN     CHAR(2)    POS(389);    // Rmt number plan
+     ISDN_NUM      CHAR(40)   POS(391);    // Rmt number
+     ISDN_SLEN     INT(5)     POS(435);    // sub-addr len
+     ISDN_STYPE    CHAR(2)    POS(437);    // sub-addr type
+     ISDN_SNUM     CHAR(40)   POS(439);    // Rmt sub-address
+     ISDN_CON      CHAR(1)    POS(480);    // Connection
+     ISDN_RLEN     INT(5)     POS(481);    // Rmt address len
+     ISDN_RNUM     CHAR(32)   POS(483);    // Rmt address
+     ISDN_ELEN     CHAR(2)    POS(519);    // Extension len
+     ISDN_ETYPE    CHAR(1)    POS(521);    // Extension type
+     ISDN_ENUM     CHAR(40)   POS(522);    // Extension num
+     ISDN_XTYPE    CHAR(1)    POS(566);    // X.25 call type
+     // The following information is available only when program was started
+     // as result of a received program start request. (P_ stands for protected)
+     TRAN_PGM      CHAR(64)   POS(567);    // Trans pgm name
+     P_LUWIDLN     CHAR(1)    POS(631);    // LUWID fld len
+     P_LUNAMELN    CHAR(1)    POS(632);    // LU-NAME len
+     P_LUNAME      CHAR(17)   POS(633);    // LU-NAME
+     P_LUWIDIN     CHAR(6)    POS(650);    // LUWID instance
+     P_LUWIDSEQ    INT(5)     POS(656);    // LUWID seq num
+     // The following information is available only when a protected conversation
+     // is started on a remote system.  (U_ stands for unprotected)
+     U_LUWIDLN     CHAR(1)    POS(658);    // LUWID fld len
+     U_LUNAMELN    CHAR(1)    POS(659);    // LU-NAME len
+     U_LUNAME      CHAR(17)   POS(660);    // LU-NAME
+     U_LUWIDIN     CHAR(6)    POS(677);    // LUWID instance
+     U_LUWIDSEQ    INT(5)     POS(683);    // LUWID seq num
+   END-DS;
 
 
 *inlr = '0';
