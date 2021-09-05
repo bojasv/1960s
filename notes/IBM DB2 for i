@@ -91,6 +91,13 @@ Journalling
   Create Journal (CRTJRN) command - CRTJRN JRN(&LIB/&JRN) JRNRCV(&LIB/&JRNRCV)
  	Start Journal Physical File (STRJRNPF) command - STRJRNPF FILE(&LIB/&MULTIFILE) JRN(&LIB/&JRN)
   End Journal Physical File (ENDJRNPF) command - ENDJRNPF FILE(&LIB/&MULTIFILE) JRN(&LIB/&JRN)
+  Retrieve Journal Entry (RTVJRNE) command
+
+ RtvJrnE    Jrn( &JrnLib/&JrnNam )      +
+            File( *ALLFILE )            +
+            RcvRng( *CURRENT )          +
+            FromEnt( *FIRST )           +
+            RtnSeqNbr( &JrnSeqNbr )      
   
   Apply Journaled Changes (APYJRNCHG) command
   Change Journal (CHGJRN) command
@@ -104,7 +111,6 @@ Journalling
   End Journal (ENDJRN) command
   Receive Journal Entry (RCVJRNE) command
   Remove Journaled Changes (RMVJRNCHG) command
-  Retrieve Journal Entry (RTVJRNE) command
   Send Journal Entry (SNDJRNE) command
   Start Journal (STRJRN) command
   Work with Journal (WRKJRN) command
