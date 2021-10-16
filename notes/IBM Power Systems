@@ -21,8 +21,6 @@ IBM DB2 for i (earlier DB2/400)
 
 IBM i Access Client Solutions 
 
-
-
 Processor: POWER7
 Cfg: 32-core
 
@@ -51,5 +49,50 @@ RPG debug source
   
 To rename COLHDG or TEXT of a Table using SQL, no need to use ALTER, directly use LABEL
 
+*BNDDIR
+QILE
+QCLLE
+QC2LE
+QUSAPIBD - APIs
+
+Subsystems...
+QINTER - for workstation (QPADEV9999) jobs
+QBATCH - for batch jobs
+QHTTPSVR - for HTTP jobs (QZ-HB-MAIN, QZ-SR-LOG, QZ-SR-HTTP, QZ-SR-CGI)
+QSPL - for spool jobs
+QCMN - for common jobs
+QCTL - for control jobs
+QSERVER - QSERVER
+QSYSWRK - QHTTP, QMSF, QSQSRVR
+QUSRWRK - QHST, QALERT, 
+
+IBM-supplied *USRPRFs....
+QSYS - system user
+QSECOFR - security officer
+QPGMR - programmer
+QUSER - common user
+QWEBADMIN - web administrator
+QLWISVR - IBM Integrated Web/Application Server (IWS/IAS)
+QTCP - 
+QTMHHTTP - HTML Workstation Gateway Profile user profile - HTTP Server Profile
+
+LIB/JOBQ...
+QGPL/QBATCH - Batch Subsystem Queue
+QGPL/QINTER - Interactive Subsystem Queue
+QGPL/QPGMR - Programmer Subsystem Queue
+QGPL/QSPL - Spooling Subsystem Queue
+QGPL/QTXTSRCH - Text Search Services Job Queue
+QHTTPSVR/QZHBHTTP - HTTP Server JOBQ
+QTCP/QTCP - 
+QWEBQRY/QWEBQRYJQ - JOBQ for DB2 Web Query Jobs
+QSYS/QUSRNOMAX - User subsystem JOBQ
+
+LIB/OUTQ...
+QGPL/QPRINT - Default Printer Output Queue
+QUSRSYS/QEZJOBLOG - Cleanup output queue for job logs
+QUSRSYS/QEZDEBUG - Cleanup output queue for dumps
+QUSRSYS/QTPPPOUTQ - TCP/IP PPP default output queue
+
 Reference:
 https://www-01.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_sm/1/877/ENUS5761-SS1/index.html&request_locale=en
+USRPRF - https://www.ibm.com/docs/en/i/7.1?topic=sup-supplied-user-profiles
