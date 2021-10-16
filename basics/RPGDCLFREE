@@ -674,4 +674,41 @@ complete file-information ds (infds)
      U_LUWIDSEQ    INT(5)     POS(683);    // LUWID seq num
    END-DS;
 
+-------------------------------------------------------------------------------------------end INFDS
+
+        d Infds           ds
+
+        d Cmd_Key               369    369
+        d  Cmd_F1         c                   Const(x'31')
+        d  Cmd_F2         c                   Const(x'32')
+        d  Cmd_F3         c                   Const(x'33')
+        d  Cmd_F4         c                   Const(x'34')
+        d  Cmd_F5         c                   Const(x'35')
+        d  Cmd_F6         c                   Const(x'36')
+        d  Cmd_F7         c                   Const(x'37')
+        d  Cmd_F8         c                   Const(x'38')
+        d  Cmd_F9         c                   Const(x'39')
+        d  Cmd_F10        c                   Const(x'3A')
+        d  Cmd_F11        c                   Const(x'3B')
+        d  Cmd_F12        c                   Const(x'3C')
+        d  Cmd_F13        c                   Const(x'B1')
+        d  Cmd_F14        c                   Const(x'B2')
+        d  Cmd_F15        c                   Const(x'B3')
+        d  Cmd_F16        c                   Const(x'B4')
+        d  Cmd_F17        c                   Const(x'B5')
+        d  Cmd_F18        c                   Const(x'B6')
+        d  Cmd_F19        c                   Const(x'B7')
+        d  Cmd_F20        c                   Const(x'B8')
+        d  Cmd_F21        c                   Const(x'B9')
+        d  Cmd_F22        c                   Const(x'BA')
+        d  Cmd_F23        c                   Const(x'BB')
+        d  Cmd_F24        c                   Const(x'BC')
+        d  Cmd_Clear      c                   Const(x'BD')
+        d  Cmd_Enter      c                   Const(x'F1')
+        d  Cmd_Help       c                   Const(x'F3')
+        d  Cmd_Up         c                   Const(x'F4')
+        d  Cmd_Down       c                   Const(x'F5')
+        d  Cmd_Print      c                   Const(x'F6')
+       
+
 *inlr = '0';
