@@ -1,0 +1,32 @@
+CLLE
+*DEC - A decimal variable that contains a packed decimal value.
+  max: 15 digits, 9 decimal positions i.e. LEN(15 9)
+  default: 15 digits, 5 decimal positions i.e. LEN(15 5)
+*CHAR - A character variable that contains a character string value
+  32767 bytes i.e. LEN(32767)
+  32 bytes i.e. LEN(32)
+*LGL - A logical variable that contains a logical value of either '1' or '0'.
+*INT - An integer variable that contains a signed binary value. 
+  LEN(2), LEN(4)  for OPM CL or LEN(8) for ILE CL
+  4 bytes i.e. LEN(4)
+*UINT - An integer variable that contains a unsigned binary value.
+    LEN(2), LEN(4)  for OPM CL or LEN(8) for ILE CL
+   4 bytes i.e. LEN(4)
+*PTR - A pointer variable that contains an address.
+  Pointers have a fixed length of 16 bytes. //&PTR = SPP:D54758217D0013E0 i.e. D547-5821-7D00-13E0 
+
+string -  char(512), char(32000), varchar(16773100)
+numeric - packed(7:2), zoned(7:0), int(3)
+
+packed decimal consumes almost half space that of zoned decimal.
+32000 character limit with rpg and xml data type.
+The maximum length for a fixed-length character field is 16773104. The maximum length for a variable-length character field is 16773100.
+
+CLLE - The IBM i CL command prompter displays a maximum input field of 512 characters, even if the parameter length is longer than 512 characters.
+CLLE - *DATE is always 7 characters long and *TIME is always 6 characters long.
+
+
+int(x)  - range  |        exact range                   | size   | nickname 
+int(3)  - // 100 | from -128 to 127                     | 8-bit  | shortint 
+int(5)  - // 30k | from -32768 to 32767                 | 16-bit | int      
+int(10) - // 2B  | from -2,147,483,648 to 2,147,483,647 | 32-bit | longint  
