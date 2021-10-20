@@ -1,0 +1,27 @@
+     A*%%TS  SD  20211018  013904  OJASVA      REL-V7R4M0  5770-WDS
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      CF03(03 'Exit')
+     A                                      CF12(12 'Cancel')
+     A          R DSPFMT
+     A*%%TS  SD  20211018  013904  OJASVA      REL-V7R4M0  5770-WDS
+     A                                  2  2USER
+     A                                  1 31'Dropping Letters'
+     A                                      COLOR(WHT)
+     A            D1SINK        30A  O 11 34
+     A            D1SOURCE      30A  B 10 34CHECK(LC)
+     A                                      CHECK(ME)
+     A                                 23  2'F3=Exit'
+     A                                      COLOR(BLU)
+     A                                 23 12'F12=Cancel'
+     A                                      COLOR(BLU)
+     A                                  7 21'Place data in source, press enter -
+     A                                      to drop.'
+     A                                      COLOR(BLU)
+     A            D1ERRMSG      79A  O 22  2COLOR(WHT)
+     A                                 10 17'Source . . . .'
+     A                                 11 17'Sink . . . . .'
+     A                                  2 58DATE
+     A                                      EDTCDE(Y)
+     A                                  2 68TIME
+     A                                  2 77'EDT'
