@@ -82,11 +82,11 @@ dcl-proc processScreen;
       k               like(count);
    end-pi;
 
-   //better to use array and it's respective index within same DS
+   //it's better to use array and it's respective index within same DS, but not here 
    dcl-ds ds_source inz;
       arr_source char(1) dim(%size(D1SOURCE));
-      i          int(5);
    end-ds;
+   dcl-s i              int(5);
    //can't refer %len(D1SOURCE) or %size(D1SOURCE) in varchar - *RNF3320 error
    //can append strings using varchar (source0 += source;)
    dcl-s source0        varchar(30);
