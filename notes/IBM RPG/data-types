@@ -15,8 +15,16 @@ CLLE
 *PTR - A pointer variable that contains an address.
   Pointers have a fixed length of 16 bytes. //&PTR = SPP:D54758217D0013E0 i.e. D547-5821-7D00-13E0 
 
-string -  char(512), char(32000), varchar(16773100)
-numeric - packed(7:2), zoned(7:0), int(3)
+RPGLE <-> CLLE data types comparison
+*DEC  <-> Packed numeric (DCL-S ... PACKED(7:0))
+*CHAR <-> Fixed length string (DCL-S ... CHAR(10))
+*LGL  <-> Indicator (DCL-S ... IND)
+*INT  <-> Integer (DCL_S ... INT(3))
+*UINT <-> Unsigned Integer (DCL-S ... UNS(3))
+*PTR  <-> Pointer (DCL-S ... POINTER)
+
+string -  char(52) - dsply-friendly, char(512), char(32000) - said max limit, varchar(16773100)
+numeric - packed(7:2), zoned(7:0), int(3), and bindec(9:x) - x is a numeric constant
 
 packed decimal consumes almost half space that of zoned decimal.
 32000 character limit with rpg and xml data type.
