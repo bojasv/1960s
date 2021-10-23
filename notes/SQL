@@ -5,16 +5,29 @@ CREATE OR REPLACE TABLE TESTSQLF(
  SUB_NO                                                                 
                 FOR COLUMN EDSUBJ       INTEGER      NOT NULL DEFAULT 0,
  STUD_MARKS                                                             
-                FOR COLUMN EDSMKS       BIGINT       NOT NULL DEFAULT 0)
+                FOR COLUMN EDSMKS       BIGINT       NOT NULL DEFAULT 0,
+ STUD_TZWT                                                            
+                FOR COLUMN EDTZWT       TIMESTAMP    NOT NULL DEFAULT,
+ STUD_DATE                                                            
+                FOR COLUMN EDDATE       DATE         NOT NULL DEFAULT,
+ STUD_TIME                                                                
+                FOR COLUMN EDTIME       TIME         NOT NULL DEFAULT,    
+ USER                                                                     
+                FOR COLUMN EDUSER       VARCHAR(10)  NOT NULL DEFAULT '')
   RCDFMT TESTSQLFA;                                                     
 
 --SMALLINT - supports values upto 32k - 32,767
 --INTEGER  - supports values upto 2B  - 2,147,483,647
 --BIGINT   - supports values upto 9Qi - 9,223,372,036,854,775,807
+--TIMESTAMP - char(29) field          - '9999-12-31 23:59:59.999999999' 
 ------------------------------------------------------------------------
 
 INSERT INTO OXBLIB/TESTSQLF VALUES(32767, 2147483647,  
-9223372036854775807)                                    
+9223372036854775807,'2014-07-02 06:14:00.742000000')  
+
+INSERT INTO OXBLIB/EXAMDTLS0 VALUES(32761, 2147483647,             
+9223372036854775807, CURRENT_TIMESTAMP, CURRENT_DATE, CURRENT_TIME,
+CURRENT_USER)                                                      
 
 SQL Wildcards (usually go with LIKE)
   _ : Represents a range of characters; c[a-b]t finds cat and cbt
