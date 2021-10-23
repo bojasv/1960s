@@ -1,3 +1,21 @@
+------------------------------------------------------------------------
+CREATE OR REPLACE TABLE TESTSQLF(                                       
+ ROLL_NO                                                                
+                FOR COLUMN EDROLL       SMALLINT     NOT NULL DEFAULT 0,
+ SUB_NO                                                                 
+                FOR COLUMN EDSUBJ       INTEGER      NOT NULL DEFAULT 0,
+ STUD_MARKS                                                             
+                FOR COLUMN EDSMKS       BIGINT       NOT NULL DEFAULT 0)
+  RCDFMT TESTSQLFA;                                                     
+
+--SMALLINT - supports values upto 32k - 32,767
+--INTEGER  - supports values upto 2B  - 2,147,483,647
+--BIGINT   - supports values upto 9Qi - 9,223,372,036,854,775,807
+------------------------------------------------------------------------
+
+INSERT INTO OXBLIB/TESTSQLF VALUES(32767, 2147483647,  
+9223372036854775807)                                    
+
 SQL Wildcards (usually go with LIKE)
   _ : Represents a range of characters; c[a-b]t finds cat and cbt
   % : Represents zero or more characters; bl% finds bl, black, blue, and blob
