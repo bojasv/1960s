@@ -56,7 +56,7 @@ Programming Languages -
 
 Scripting Languages -
 1. [CL](https://github.com/topics/cl), **[CL/400](https://github.com/topics/cl-400)**, [IBMCL](https://github.com/topics/ibmcl), [IBM CL](https://github.com/topics/ibm-cl)
-2. **[CLLE](https://github.com/topics/clle), [ILE CL](https://github.com/topics/ile-cl)
+2. **[CLLE](https://github.com/topics/clle), [ILE CL](https://github.com/topics/ile-cl)***
 
 Query Language - 
-1. [SQL](https://github.com/topics/sql), [SQL/400](https://github.com/topics/sql-400), [DB2 for i SQL](https://github.com/topics/db2-for-i-sql), [DB2 SQL](https://github.com/topics/db2-sql), [](https://github.com/topics/db2sql)
+1. [SQL](https://github.com/topics/sql), [SQL/400](https://github.com/topics/sql-400), [DB2 for i SQL](https://github.com/topics/db2-for-i-sql), [DB2 SQL](https://github.com/topics/db2-sql), [DB2SQL](https://github.com/topics/db2sql)
