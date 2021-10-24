@@ -1,0 +1,44 @@
+dcl &time_stamp *char 20 /* timestamp value as retrieved from QDATETIME */
+dcl &day        *char 4  /* '*SUN' */
+dcl &date0      *char 8  /* 'YYYYMMDD' */
+dcl &date       *char 11 /* 'YYYY-MM-DD ' */
+dcl &time0      *char 6  /* 'HHMMSS' */
+dcl &time       *char 9  /* 'HH:MM:SS ' */
+dcl &time_zone  *char 10 /* 'EDT       ' */
+dcl &user       *char 10 /* 'USER999999' */
+dcl &dsply      *char 76 /* max len displayed as on *COMP line */
+
+dcl &iso        *char 4  '*ISO'
+dcl &b          *char 1  ':'
+
+rtvsysval QDATETIME &time_stamp
+rtvsysval QDAYOFWEEK &day
+rtvjoba  TIMZONABBR(&time_zone)
+rtvjoba  CURUSER(&user)
+
+/* '20211024124420628273' - Retrieved Timestamp Value Char(20) */
+/* 'YYYYMMDDHHMMSSUUUUUU' - Decoding Timestamp */
+/* '123456789A123456789B' - Position Mapping */
+
+/* 'YYYYMMDD            ' - Date */
+chgvar &date0 %sst(&time_stamp 1 8)
+/* '        HHMMSS      ' - Time */
+chgvar &time0 %sst(&time_stamp 9 6)
+
+/* 'YYYYMMDD' -> 'YYYY-MM-DD' (as in *ISO) */
+cvtdat &date0 &date *yymd *iso
+/* 'HHMMSS' -> 'HH:MM:SS' */
+chgvar &time (%sst(&time0 1 2)||&b||%sst(&time0 3 2)||&b||%sst(&time0 5 2))
+
+/* *COMP line UI is as follows - at the bottom of screen */
+/* 123456789A123456789B123456789C123456789D123456789E123456789F123456789G123456 */
+
+/* USER999999                                                                   */
+chgvar %sst(&dsply 1 10) (&user)
+/*                          *SUN 2021-10-24 12:42:11 EDT                        */
+chgvar %sst(&dsply 26 28) (&day||' '||&date||&time||%sst(&time_zone 1 3))
+/*                                                                         *ISO */
+chgvar %sst(&dsply 73 4) (&iso)
+
+/* USER999999               *SUN 2021-10-24 12:42:11 EDT                   *ISO */
+sndpgmmsg &dsply msgtype(*comp)
