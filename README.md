@@ -59,4 +59,4 @@ Scripting Languages -
 2. **[CLLE](https://github.com/topics/clle), [ILE CL](https://github.com/topics/ile-cl)**
 
 Query Language - 
-1. [SQL](https://github.com/topics/sql), [SQL/400](https://github.com/topics/sql-400), [DB2 for i SQL](https://github.com/topics/db2-for-i-sql), [DB2 SQL](https://github.com/topics/db2-sql), [DB2SQL](https://github.com/topics/db2sql)
+1. [SQL](https://github.com/topics/sql), [SQL/400](https://github.com/topics/sql-400), [DB2 for i SQL](https://github.com/topics/db2-for-i-sql), [DB2 SQL](https://github.com/topics/db2-sql), [DB2SQL](https://github.com/topics/db2sql), [IBMSQL](https://github.com/topics/ibmsql), [IBM SQL](https://github.com/topics/ibm-sql)
