@@ -84,5 +84,14 @@ SELECT * FROM QSYS2.USER_INFO WHERE USER_NAME = 'BOJASV'
 SELECT DBIPOS, DBIFLD, DBIITP, DBITXT FROM qsys/qadbifld WHERE  
 dbilib = 'BOJASV' and dbifil = 'TSTFILE'                        
 
+5770SS1 V7R4M0 190621               Run SQL Statements             EXAMDTLS0                          10/23/21 14:28:26
+Record  *...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 ...+... 8   SEQNBR  Last change         
+MSG ID  SEV  RECORD  TEXT                                                                                              
+SQL0104  30       3  Position 41 Token REAL was not valid. Valid tokens:                                               
+                     CHARACTER FLOAT GRAPHIC BINARY DATALINK CLOB BLOB DBCLOB                                          
+                     XML DECIMAL DEC NUMERIC NUM CLOB BLOB DBCLOB VARCHAR                                              
+                     VARGRAPHIC VARBINARY.                                                                             
+SQL0104  30       7  Position 47 Token ( was not valid. Valid tokens: ) ,.                                             
+
 SQL/400:
 https://books.google.co.in/books?id=lqtc0c3UjIMC&pg=PA90&lpg=PA90&dq=trim+in+sql400&source=bl&ots=7MWc0gUjrC&sig=ACfU3U3POW8K8GTe1opzw4apWddTEY8Zlw&hl=en&sa=X&ved=2ahUKEwjlqafxjsrqAhWc6XMBHTx_Bw0Q6AEwE3oECAoQAQ#v=onepage&q=trim%20in%20sql400&f=false
