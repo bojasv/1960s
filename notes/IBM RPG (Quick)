@@ -1,5 +1,7 @@
 RPG - quick notes
 
+Observation: IBM's default indentation is of 2 chars. (as referenced from compiler listings, and RDi default value). At Times it's 0 as well (Refer: SQLRPG compiler list)
+
 for char fields, *HIVAL -> *blanks
 
 Found this new tool in HelpSystems Toolbox - to quickly check a variables attributes in a SQL/RPGLE sources.
