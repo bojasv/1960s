@@ -9,6 +9,7 @@ CLLE
 *INT - An integer variable that contains a signed binary value. 
   LEN(2), LEN(4)  for OPM CL or LEN(8) for ILE CL
   4 bytes i.e. LEN(4)
+[* CPD0306 40  Length specified not valid for integer variable.]
 *UINT - An integer variable that contains a unsigned binary value.
     LEN(2), LEN(4)  for OPM CL or LEN(8) for ILE CL
    4 bytes i.e. LEN(4)
@@ -38,3 +39,4 @@ int(x)  - range  |        exact range                   | size   | nickname
 int(3)  - // 100 | from -128 to 127                     | 8-bit  | shortint 
 int(5)  - // 30k | from -32768 to 32767                 | 16-bit | int      
 int(10) - // 2B  | from -2,147,483,648 to 2,147,483,647 | 32-bit | longint  
+
