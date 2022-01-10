@@ -1,0 +1,43 @@
+Error CPF7E12 - when a variable is declared, but not referenced
+CL Compiler Listing:  * CPD0726 10  Variable &NUM1 declared but not referred to.
+-------------------------------------------------------------------------------
+                             Display Module Source                              
+                                                                                
+ Program:   TESTPGM3       Library:   TSTLIBOJ       Module:   TESTPGM3         
+      1  pgm                                                                    
+      2  dcl &num0  *dec  2 5                                                   
+      3  dcl &num1  *int  4 5                                                   
+      4                                                                         
+      5  chgvar &num0 (6 / 3 * 2 + 2)                                           
+      6  chgvar &num0 (7 + 3 / 2 * 2)                                           
+      7  chgvar &num0 (&NUM0 - 3 / 2 * 2)                                       
+      8                                                                         
+      9  endpgm                                                                 
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                         Bottom 
+ Debug . . .   EVAL &num1                                                       
+                                                                                
+ F3=End program   F6=Add/Clear breakpoint   F10=Step   F11=Display variable     
+ F12=Resume       F17=Watch variable   F18=Work with watch   F24=More keys      
+ Identifier does not exist.                                                     
+------------------------------------------------------------------------------- 
+-------------------------------------------------------------------------------
+                         Additional Message Information                         
+                                                                                
+ Message ID . . . . . . :   CPF7E12       Severity . . . . . . . :   40         
+ Message type . . . . . :   Diagnostic                                          
+ Date sent  . . . . . . :   01/10/22      Time sent  . . . . . . :   03:11:41   
+                                                                                
+ Message . . . . :   Identifier does not exist.                                 
+ Cause . . . . . :   The identifier in position 6 in the input buffer cannot be 
+   found in the high level language symbol table encapsulated within debug data 
+   of the program object.                                                       
+ Recovery  . . . :   Check the spelling and enter the correct identifier.       
+ Technical description . . . . . . . . :   Only those identifiers recorded in   
+   the high level language symbol table can be evaluated.                       
+-------------------------------------------------------------------------------
