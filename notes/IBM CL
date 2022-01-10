@@ -8,3 +8,9 @@ To have the DO and SELECT nesting levels appear in the compiler listing, specify
   Create CL Program (CRTCLPGM) command,
   Create CL Module (CRTCLMOD) command, or 
   Create Bound CL Program (CRTBNDCL) command
+
+Common Messages in CL Compiler listing
+* CPD0740 10  PGM command missing.
+* CPD0725 10  End of source file reached without ENDPGM command.
+* CPD0726 10  Variable &NUM1 declared but not referred to.
+* CPD0791 00  No labels used in program.
