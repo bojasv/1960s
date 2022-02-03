@@ -1,2 +1,38 @@
 EVAL (EVALuate any expression) - pushes the string to left (an alternative for MOVEL)
 EVALR (Evaluate expression with right adjust) - pushes the string to right (an alternative for MOVER)
+
+MOVE and MOVEL and MOVEL(P)
+.....DName+++++++++++ETDsFrom+++To/L+++IDc.Keywords++
+     D W               s              2  0 Inz(13);  
+     D house           s              2    Inz('zz');
+.....CL0N01Factor1+++++++Opcode&ExtFactor2+++++++Result+
+OXB99 * MOVEL and MOVE with num target 
+     C     W             IFEQ      13                   
+     C                   MOVEL     9             W      
+      * W = 93 (not 90 or 09)                           
+     C                   ENDIF                          
+     C     W             IFEQ      93                   
+     C                   MOVE      8             W      
+      * W = 98 (not 83 or 80 or 08)                     
+     C                   ENDIF                          
+     C     W             IFEQ      98                   
+     C                   MOVEL(P)  2             W      
+      * W = 20 (not 02)                                 
+     C                   ENDIF                          
+      * MOVEL and MOVE with char target                 
+     C     house         IFEQ      'zz'                 
+     C                   MOVEL     9             house  
+      * house = '9z'                                    
+     C                   ENDIF                          
+     C     house         IFEQ      '9z'                 
+     C                   MOVE      8             house  
+      * house = '98'                                        
+     C                   ENDIF                          
+     C     house         IFEQ      '98'                 
+     C                   MOVEL(P)  2             house  
+      * house = '2 '                                        
+     C                   ENDIF                          
+Z-ADD
+.....CL0N01Factor1+++++++Opcode&ExtFactor2+++++++Result++++++++Len++D+HiLoEq
+     C                   Z-ADD     W             X                 2 0      
+      * CLEAR and REPLACE X                                               
