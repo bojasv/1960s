@@ -1,15 +1,27 @@
-## Welcome to GitHub Pages
+## Welcome to the computing world that started in 1970s
 
-You can use the [editor on GitHub](https://github.com/bojasv/1970/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Here you can find some tools and resources that would be helpful to you as an IBMi student or professional.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
+### About me and IBMi
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
 ```markdown
-Syntax highlighted code block
+What are some programming languages that I've used on an IBMi?
+There are two models of programming languages on IBMi, OPM and ILE
+OPM (Old Programming Model) - only supports traditional IBMi languages (like CL, RPG, SQLRPG etc.)
+1. CL (source-member type: CLP)
+2. RPG (source-member type: RPG)
+3. SQLRPG (source-member type: SQLRPG)
+
+ILE (Interactive Language Environment) - independent of programming language, hence supports collaboration with newer languages as well (like C, C++, Java, PHP, Node.js, Python etc.)
+1. CL (source-member type: CLLE)
+2. RPG (source-member type: RPGLE)
+3. SQLRPG (source-member type: SQLRPGLE)
+
+
+RPG
+
 
 # Header 1
 ## Header 2
