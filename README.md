@@ -19,6 +19,22 @@ ILE (Interactive Language Environment) - independent of programming language, he
 2. RPG (source-member type: RPGLE)
 3. SQLRPG (source-member type: SQLRPGLE)
 
+Popular technologies I'm exploring while working on IBMi
+for data-handling and data-presentation
+1. MS Excel (.csv, .xlsx, .xls)
+2. Plain text (.txt)
+3. PDF (.pdf)
+4. HTML - rarely in demand
+5. HTTP URL - rarely in demand, I used it via a ProfoundUI function pui.openURL
+
+for data-exchange
+1. XML (using SOAP API)
+2. JSON (using REST API)
+
+for data-transmission
+1. FTP (invoked using RUNRMTCMD and batch/CMD scripts present at PC)
+2. IBM IFS
+3. IBM WebServices
 
 RPG
 
