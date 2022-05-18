@@ -165,3 +165,413 @@ CRTSRCPF
 
 CRTPF
    a PF can not hold more than 4 billion records (4294967288 bytes)
+
+_______________________________________________________________________________________________________________________________________________________________________
+There are total 17 journal codes and 352 journal entry types
+The journal code.  This code is set by the system to indicate the kind of journal entry that was deposited.
+The journal codes, brief descriptions and count of resp. journal entry types for the journal codes follow:
+      o  A - System accounting entry (3)
+      o  B - Integrated file system operation (30)
+      o  C - Commitment control operation (14)
+      o  D - Database file operation (34)
+      o  E - Data area operation (22)
+      o  F - Database file member operation (37)
+      o  I - Internal operation (17)
+      o  J - Journal or journal receiver operation (29)
+      o  L - License management (3)
+      o  M - Network management data (5)
+      o  P - Performance tuning entry (1)
+      o  Q - Data queue operation (28)
+      o  R - Record level operation (9)
+      o  S - Distributed mail service for SNA distribution services (SNADS),network alerts, or mail server framework (14)
+      o  T - Audit trail entry (86) - journal code with highest journal entry types
+      o  U - User generated (1) -  User generated entry (SNDJRNE command or QJOSJRNE API)
+      o  Y - Library operation (19)
+_______________________________________________________________________________________________________________________________________________________________________
+5770SS1 V7R2M0 140418                                         HELP                               05/18/22  14:14:56     Page     1
+                                                           Type - Help
+The journal entry type.  This code is set by the system to indicate the specific type of journal entry.
+There are many different types of journal entries that can occur for each journal code.
+
+         For journal code A the possible journal entry types are:
+          o  DP - Direct print information
+          o  JB - Job accounting segment
+          o  SP - Spooled print information
+	 For journal code B the possible journal entry types are:
+          o  AA - Change audit attribute
+          o  AJ - Start of apply
+          o  AT - End of apply
+          o  BD - IFS object deleted
+          o  B0 - Begin create
+          o  B1 - Create summary
+          o  B2 - Link to existing object
+          o  B3 - Rename, move object
+          o  B4 - Remove link (parent directory)
+          o  B5 - Remove link (link)
+          o  B6 - Bytes cleared, after-image
+          o  B7 - Created object authority information
+          o  CS - IFS object closed
+          o  ET - End journaling for object
+          o  FA - IFS object attribute changed
+          o  FC - IFS object forced
+          o  FF - Storage for object freed
+          o  FR - IFS object restored
+          o  FS - IFS object saved
+          o  FW - Start of save-while-active
+          o  JA - Change journaled object attribute
+          o  JT - Start journaling for object
+          o  OA - Change object authority
+          o  OF - IFS object opened
+          o  OG - Change primary group
+          o  OI - Object in use at abnormal end
+          o  OO - Change object owner
+          o  RN - Rename file identifier
+          o  TR - IFS object truncated
+          o  WA - Write, after-image
+         For journal code C the possible journal entry types are:
+          o  BA - Commit block in use at abnormal end
+          o  BC - Commitment control environment begun
+          o  CM - Set of record changes committed
+          o  CN - End Rollback
+          o  DB - Internal entry
+          o  EC - Commitment control environment ended
+          o  LW - Logical unit of work ended
+          o  PC - Prepare commit block
+          o  RB - Set of record changes rolled back
+          o  R1 - Rollback started
+          o  SB - Start save point
+          o  SC - Commit cycle started
+          o  SQ - Release save point
+          o  SU - Rollback save point
+	 For journal code D the possible journal entry types are:
+          o  AC - Add RI constraint
+          o  CG - Change file (common)
+          o  CT - Create database file (common)
+          o  DC - Remove RI constraint
+          o  DD - End of apply or remove
+          o  DF - Delete file (common)
+          o  DG - Start of apply or remove
+          o  DH - File saved (common)
+          o  DJ - Change journaled object attribute
+          o  DT - Delete file
+          o  DW - start of save
+          o  DZ - File restored
+          o  EF - End journaling for file
+          o  FM - File moved
+          o  FN - File renamed (common)
+          o  GC - Change constraint (common)
+          o  GO - Change owner
+          o  GT - Grant authority
+          o  ID - File in use at abnormal end
+          o  JF - Start journaling for file (common)
+          o  LF - Logical file association
+          o  MA - Member added (common)
+          o  M1 - Create mask
+          o  M2 - Drop mask
+          o  M3 - Alter mask
+          o  P1 - Create permission
+          o  P2 - Drop permission
+          o  P3 - Alter permission
+          o  RV - Revoke authority
+          o  TC - Add trigger
+          o  TD - Remove trigger
+          o  TG - Change trigger
+          o  TQ - Refresh table
+          o  ZB - Object attribute change
+         For journal code E the possible journal entry types are:
+          o  EA - Update data area, after-image (common)
+          o  EB - Update data area, before-image (common)
+          o  ED - Data area deleted
+          o  EE - Data area created
+          o  EG - Start journal for data area (common)
+          o  EH - End journal for data area (common)
+          o  EI - Data area in use at abnormal end
+          o  EK - Change journaled object attribute
+          o  EL - Data area restored
+          o  EM - Data area moved
+          o  EN - Data area renamed
+          o  EQ - Data area changes applied (common)
+          o  ES - Data area saved
+          o  EU - RMVJRNCHG command started
+          o  EW - Start of save-while-active for data area
+          o  EX - Data area changes removed
+          o  EY - APYJRNCHG command started
+          o  ZA - Change authority
+          o  ZB - Object attribute change
+          o  ZO - Change owner
+          o  ZP - Change primary group
+          o  ZT - Change audit attribute
+         For journal code F the possible journal entry types are:
+          o  AY - Journaled changes applied to physical file member
+          o  CB - Physical file member changed (common)
+          o  CE - Change end of data for physical file
+          o  CH - Change file
+          o  CL - Physical file member closed
+          o  CR - Physical file member cleared (common)
+          o  C1 - End rollback
+          o  DE - Physical file member deleted record count
+          o  DM - Delete member (common)
+          o  EJ - Journaling for physical file member ended
+          o  EP - Journaling for access path ended
+          o  FD - Physical file member forced to auxiliary storage
+          o  FI - Internal journal entry format information
+          o  IT - Identity value
+          o  IU - Physical file member in use at abnormal termination
+          o  IZ - Physical file member initialized
+          o  JC - Change journaled object attribute
+          o  JM - Journaling for physical file member started (common)
+          o  JP - Journaling for access path started (common)
+          o  MC - Create member (common)
+          o  MD - Member removed from physical file (common)
+          o  MF - Storage for physical file member freed
+          o  MM - Physical file containing member moved
+          o  MN - Physical file containing member renamed
+          o  MO - Allow use with partial transaction
+          o  MR - Physical file member restored
+          o  MS - Physical file member saved
+          o  OP - Physical file member opened (common)
+          o  PD - Access path deleted
+          o  PM - Access path moved
+          o  PN - Access path renamed
+          o  RC - Journaled changes removed from physical file member
+          o  RG - Physical file member reorganized (common)
+          o  RM - Member reorganized (common)
+          o  SA - Point at which APYJRNCHG command started execution
+          o  SR - Point at which RMVJRNCHG command started execution
+          o  SS - Start of save-while-active of physical file member
+         For journal code I the possible journal entry types are:
+          o  DA - Directory in use at abnormal end
+          o  DK - Internal entry
+          o  IB - Access path protection
+          o  IC - Access path protection
+          o  IE - Directory recovery
+          o  IF - Access path protection
+          o  IG - Access path restored
+          o  IH - Access path protection
+          o  IK - Access path protection
+          o  II - Access path in use at abnormal end
+          o  IO - Access path protection
+          o  IQ - Access path protection
+          o  IV - Access path protection
+          o  IW - Access path protection
+          o  IX - Start of save for access path
+          o  IY - Access path saved
+          o  UE - Unknown entry type this release
+         For journal code J the possible journal entry types are:
+          o  CI - Journal caching started
+          o  CX - Journal caching stopped
+          o  EZ - End journaling for journal receiver
+          o  IA - System IPL after abnormal system end
+          o  IN - System IPL after normal system end
+          o  JI - Journal receiver in use at abnormal end
+          o  JR - Start journaling for journal receiver
+          o  KR - Keep journal receivers for recovery
+          o  LA - Activate journal
+          o  LI - Inactivate journal
+          o  MJ - Journal receiver moved
+          o  NK - Do not keep journal receivers for recovery
+          o  NR - Identifier for next journal receivers
+          o  PR - Identifier for previous journal receivers
+          o  RD - Journal receiver deleted (common)
+          o  RF - Storage for journal receiver freed
+          o  RR - Journal receiver restored
+          o  RS - Journal receiver saved
+          o  SI - Enter JRNSTATE(*STANDBY)
+          o  SL - Severed IASP link
+          o  SX - Exit JRNSTATE(*STANDBY)
+          o  UA - User ASP vary on abnormal
+          o  UN - User ASP vary on normal
+          o  XP - Internal entry for receiver
+          o  ZA - Change authority for receiver
+          o  ZB - Object attribute change for receiver
+          o  ZO - Change owner for receiver
+          o  ZP - Change primary group for receiver
+          o  ZT - Change audit attribute for receiver
+         For journal code L the possible journal entry types are:
+          o  LK - License key not valid
+          o  LL - Usage limit changed
+          o  LU - Usage limit exceeded
+         For journal code M the possible journal entry types are:
+          o  MP - Modification of QoS policies
+          o  SN - Simple Network Management Protocol (SNMP) information
+          o  TF - IP filter rules actions
+          o  TN - IP NAT rules actions
+          o  TS - VPN information
+         For journal code P the possible journal entry types are:
+          o  TP - Shared pool change
+         For journal code Q the possible journal entry types are:
+          o  QA - Data queue created
+          o  QB - Start data queue journaling
+          o  QC - Data queue cleared, no key
+          o  QD - Data queue deleted
+          o  QE - End data queue journaling
+          o  QF - Change journaled object attribute
+          o  QG - Data queue attribute changed
+          o  QH - Data queue changes applied (common)
+          o  QI - Queue in use at abnormal end
+          o  QJ - Data queue cleared, has key
+          o  QK - Send data queue entry, has key
+          o  QL - Receive data queue entry, has key
+          o  QM - Data queue moved
+          o  QN - Data queue renamed
+          o  QR - Receive data queue entry, no key
+          o  QS - Send data queue entry, no key
+          o  QW - APYJRNCHG command started
+          o  QX - Start of save-while-active for data queue
+          o  QY - Data queue saved
+          o  QZ - Data queue restored
+          o  VE - Internal entry
+          o  VQ - Internal entry
+          o  VW - Internal entry
+          o  ZA - Change authority
+          o  ZB - Object attribute change (common)
+          o  ZO - Change owner (common)
+          o  ZP - Change primary group
+          o  ZT - Change audit attribute
+         For journal code R the possible journal entry types are:
+          o  BR - Before-image of record updated for rollback (common)
+          o  DL - Record deleted from physical file member (common)
+          o  DR - Record deleted for rollback (common)
+          o  IL - Increment record limit
+          o  PT - Record added to physical file member (common)
+          o  PX - Record added directly to physical file member (common?)
+          o  UB - Before-image of record updated in physical file member
+          o  UP - After-image of record updated in physical file member (common)
+          o  UR - After-image of record updated for rollback (common)
+         For journal code S the possible journal entry types are:
+          o  AL - SNA alert focal point information
+          o  CF - Mail configuration information for SNA distribution
+             services (SNADS) and mail server framework
+          o  DX - X.400 debug  entry
+          o  ER - Mail error information for SNADS and mail server framework
+          o  LG - Mail logging information for SNADS and mail server
+             framework
+          o  MX - X.400 MTA configuration
+          o  NX - X.400 delivery notification
+          o  RT - Mail routing information for SNADS and mail server
+             framework
+          o  RX - X.400 Route configuration
+          o  SY - Mail system information for SNADS and mail server
+             framework
+          o  UX - X.400 User or probe MPDU
+          o  XE - DSNX error information
+          o  XL - DSNX logging information
+          o  XX - Error detected by X.400
+         For journal code T the possible journal entry types are:
+          o  AD - Object auditing attribute change
+          o  AF - Authority failure
+          o  AP - Program adopt
+          o  AU - Attribute changed
+          o  AX - Row and column access control
+          o  CA - Change of authority
+          o  CD - Command string
+          o  CO - Object created (common)
+          o  CP - User profile changed, created, or restored
+          o  CQ - Change request description object change
+          o  CU - Cluster operation
+          o  CV - Connection verification
+          o  CY - Cryptographic configuration
+          o  DI - Directory services
+          o  DO - Object deleted (common)
+          o  DS - DST password reset request
+          o  EV - Environment variable
+          o  GR - General purpose audit record
+          o  GS - Give descriptor
+          o  IM - Intrusion monitor
+          o  IP - Interprocess communication
+          o  IR - IP rules actions
+          o  IS - Internet security management
+          o  JD - CHGJOBD of user value
+          o  JS - Job data (common)
+          o  KF - Key ring file
+          o  LD - Link/unlink/lookup directory entry
+          o  ML - Office services mail audit record
+          o  NA - Change to network attribute
+          o  ND - Directory search violation
+          o  NE - End point violation
+          o  OM - Object management change
+          o  OR - Object restore
+          o  OW - Object ownership change
+          o  O1 - Single optical object access
+          o  O2 - Dual optical object access
+          o  O3 - Optical volume access
+          o  PA - CHGPGM to adopt owner
+          o  PF - PTF operations
+          o  PG - Object primary group change
+          o  PO - Printed output (common)
+          o  PS - Process user profile exchange
+          o  PU - PTF object changes
+          o  PW - Password or user ID not valid
+          o  RA - Restore object and authority change
+          o  RJ - JOBD with user restored
+          o  RO - Restore object and owner change
+          o  RP - Adopting program restored
+          o  RQ - Change request description object restored
+          o  RU - Restore of authority
+          o  RZ - Primary group change on restore
+          o  SD - Change system directory
+          o  SE - Change to subsystem routing
+          o  SF - Spooled output file
+          o  SG - Asynchronous signals
+          o  SK - Secure sockets connections
+          o  SM - System management
+          o  SO - Server security change
+          o  ST - Service tools
+          o  SV - Change to system value
+          o  VA - Access control list change
+          o  VC - Connection start and end
+          o  VF - Server files closed
+          o  VL - Account limit exceeded
+          o  VN - Network logon and logoff
+          o  VO - Actions on validation lists
+          o  VP - Network password error
+          o  VR - Network resource access
+          o  VS - Server session start or end
+          o  VU - Network profile change
+          o  VV - Service status change
+          o  XD - Directory services extension
+          o  X0 - Network authentication
+          o  X1 - Identity Token
+          o  X2 - Query manager profile changes
+          o  X3 - Reserved audit entry
+          o  X4 - Reserved audit entry
+          o  X5 - Reserved audit entry
+          o  X6 - Reserved audit entry
+          o  X7 - Reserved audit entry
+          o  X8 - Reserved audit entry
+          o  X9 - Reserved audit entry
+          o  YC - DLO change access
+          o  YR - DLO read access
+          o  ZC - Audit object change
+          o  ZR - Audit read access
+         For journal code U the possible journal entry types are:
+          o  ** - User generated entry (SNDJRNE command or QJOSJRNE API)
+         For journal code Y the possible journal entry types are:
+          o  LF - Logical file association
+          o  YA - Change library attribute
+          o  YB - Start journal for library (common)
+          o  YD - Library deleted (common)
+          o  YE - End journal for library (common)
+          o  YH - Library changes applied
+          o  YI - Library in use at abnormal end
+          o  YK - Change journaled object attribute (common)
+          o  YN - Library renamed (common)
+          o  YO - Object added to library (common)
+          o  YS - Library saved
+          o  YW - Start of save for library
+          o  YY - APYJRNCHG command started
+          o  YZ - Library restored
+          o  ZA - Change authority
+          o  ZB - Object attribute change
+          o  ZO - Change owner
+          o  ZP - Change primary group
+          o  ZT - Change audit attribute
+_______________________________________________________________________________________________________________________________________________________________________
+F-OP: File-member opened
+R-DL: Record deleted
+R-PT: Record added
+F-CL: File-member closed
+_______________________________________________________________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________________________________________________________________
