@@ -1,0 +1,113 @@
+ 5770SS1 V7R2M0  140418               Display File Description                                   5/21/22  14:22:04       Page    1
+   File  . . . . . . . . . . . : TSTFIL
+     Library . . . . . . . . . : *LIBL
+   Type of information . . . . : *ALL
+   File attributes . . . . . . : *ALL
+   System  . . . . . . . . . . : *LCL
+   Processor . . . . . . . . . : IBM AS/400 Display File Description Processor
+ File . : TSTFIL       Library . : QTEMP        Type of file . : Physical *DATA            Auxiliary Storage Pool ID . : 00001
+                                    Data Base File Attributes
+   Externally described file . . . . . . . . . :            Yes
+   SQL file type . . . . . . . . . . . . . . . :            TABLE
+   File level identifier . . . . . . . . . . . :            1220521141641
+   Creation date . . . . . . . . . . . . . . . :            05/21/22
+   Text 'description'  . . . . . . . . . . . . : TEXT
+   Distributed file  . . . . . . . . . . . . . :            No
+   Partitioned SQL Table . . . . . . . . . . . :            No
+   DBCS capable  . . . . . . . . . . . . . . . :            No
+   Maximum members . . . . . . . . . . . . . . : MAXMBRS        1
+   Number of constraints . . . . . . . . . . . :                0
+   Number of triggers  . . . . . . . . . . . . :                0
+   Number of members . . . . . . . . . . . . . :                1
+   Member size . . . . . . . . . . . . . . . . : SIZE       *NOMAX
+   Allocate storage  . . . . . . . . . . . . . : ALLOCATE   *NO
+   Contiguous storage  . . . . . . . . . . . . : CONTIG     *NO
+   Preferred storage unit  . . . . . . . . . . : UNIT       *ANY
+   Records to force a write  . . . . . . . . . : FRCRATIO   *NONE
+   Maximum file wait time  . . . . . . . . . . : WAITFILE      30
+   Maximum record wait time  . . . . . . . . . : WAITRCD       60
+   Max % deleted records allowed . . . . . . . : DLTPCT     *NONE
+   Reuse deleted records . . . . . . . . . . . : REUSEDLT   *YES
+   Coded character set identifier  . . . . . . : CCSID         37
+   Allow read operation  . . . . . . . . . . . :            Yes
+   Allow write operation . . . . . . . . . . . :            Yes
+   Allow update operation  . . . . . . . . . . : ALWUPD     *YES
+   Allow delete operation  . . . . . . . . . . : ALWDLT     *YES
+   Record format level check . . . . . . . . . : LVLCHK     *YES
+   Access path . . . . . . . . . . . . . . . . :            Arrival
+   Access path size  . . . . . . . . . . . . . : ACCPTHSIZ  *MAX1TB
+   Access path logical page size . . . . . . . : PAGESIZE   *KEYLEN
+   Maximum record length . . . . . . . . . . . :              132
+   Volatile  . . . . . . . . . . . . . . . . . :            No
+   Keep in memory  . . . . . . . . . . . . . . : KEEPINMEM  *NO
+   File is currently journaled . . . . . . . . :            No
+                                     Access Path Description
+   Access path . . . . . . . . . . . . . . . . :            Arrival
+   Sort Sequence . . . . . . . . . . . . . . . : SRTSEQ     *HEX
+   Language identifier . . . . . . . . . . . . : LANGID     ENU
+                                        Member Description
+   Member  . . . . . . . . . . . . . . . . . . : MBR        TSTFIL
+     Member level identifier . . . . . . . . . :            1220521141641
+     Member creation date  . . . . . . . . . . :            05/21/22
+     Text 'description'  . . . . . . . . . . . : TEXT
+     Expiration date for member  . . . . . . . : EXPDATE    *NONE
+     Member size . . . . . . . . . . . . . . . : SIZE       *NOMAX
+     Current number of records . . . . . . . . :                     0
+     Number of deleted records . . . . . . . . :                     0
+     Allocate storage  . . . . . . . . . . . . : ALLOCATE   *NO
+     Contiguous storage  . . . . . . . . . . . : CONTIG     *NO
+     Preferred storage unit  . . . . . . . . . : UNIT       *ANY
+     Records to force a write  . . . . . . . . : FRCRATIO   *NONE
+     Share open data path  . . . . . . . . . . : SHARE      *NO
+     Max % deleted records allowed . . . . . . : DLTPCT     *NONE
+     Data Space Activity Statistics  . . . . . :
+       Data space size in bytes  . . . . . . . :              12288
+       Physical file open accesses . . . . . . :
+       Physical file close accesses  . . . . . :
+       Write operations  . . . . . . . . . . . :
+       Update operations . . . . . . . . . . . :
+       Delete operations . . . . . . . . . . . :
+       Logical Reads . . . . . . . . . . . . . :
+       Physical Reads  . . . . . . . . . . . . :
+       Clear operations  . . . . . . . . . . . :
+       Data space copy operations  . . . . . . :
+       Reorganize operations . . . . . . . . . :
+       Access paths builds/rebuilds  . . . . . :
+       Records rejected by key selection . . . :
+       Records rejected by non-key selection . :
+       Records rejected by group-by selection. :
+     Access Path Activity Statistics . . . . . :
+       Access path logical reads . . . . . . . :
+       Access path physical reads  . . . . . . :
+       Implicit access path sharing  . . . . . :            No
+     Last change date/time . . . . . . . . . . :            05/21/22  14:16:41
+     Last save date/time . . . . . . . . . . . :
+     Last restore date/time  . . . . . . . . . :
+     Last used date  . . . . . . . . . . . . . :
+     Days used count . . . . . . . . . . . . . :                0
+       Reset date  . . . . . . . . . . . . . . :
+     Object restored with partial transactions,
+       apply journal changes required  . . . . :            *NO
+     Partial transaction exists,
+       roll back ended . . . . . . . . . . . . :            *NO
+     Starting journal receiver for apply . . . :
+       Library . . . . . . . . . . . . . . . . :
+       ASP Device  . . . . . . . . . . . . . . :
+                                         Record Format List
+                      Record  Format Level
+ Format       Fields  Length  Identifier
+ TSTFIL           1     132   242BE9854588E
+    Text . . . :
+    Total number of formats  . . . . . . . . . :           1
+    Total number of fields . . . . . . . . . . :           1
+    Total record length  . . . . . . . . . . . :         132
+                                           Member List
+                              Source Creation    Last Change                  Deleted
+  Member           Size        Type  Date       Date     Time      Records    Records
+  TSTFIL                12288        05/21/22 05/21/22 14:16:41          0          0
+    Text:
+  Total number of members  . . . . . . . . . :                 1
+  Total number of members not available  . . :                 0
+  Total records  . . . . . . . . . . . . . . :                 0
+  Total deleted records  . . . . . . . . . . :                 0
+  Total of member sizes  . . . . . . . . . . :             12288
