@@ -1,0 +1,16 @@
+/* runs ENDJOB for a job submitted in loop */
+/* i.e. specific jobname and user, and incrementing job# */
+/* no. of jobs in JOBQ = &limit (here 10k, line# 9) */
+
+dcl &jobnam *char 10 'QPADEV000K'
+dcl &jobusr *char 10 'TESTUSER'
+dcl &jobnum *dec  (6 0) 035153
+dcl &jobnbr *char 6
+dcl &limit  *int 4 10000
+dcl &k      *int 4
+dofor &k from(1) to(&limit)                                                 
+  chgvar &jobnbr &jobnum
+  ENDJOB     JOB(&JOBNBR/&JOBUSR/&JOBNAM) OPTION(*IMMED) DELAY(1)
+  monmsg cpf0000
+  chgvar &jobnum (&jobnum + 1)                                              
+enddo
