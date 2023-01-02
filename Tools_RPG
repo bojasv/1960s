@@ -26,17 +26,17 @@ or use native PF DDS as follows...
 dcl-s TimeInZ         timestamp;
 
 TimeInZ = %TIMESTAMP;
-exec sql INSERT INTO XTESTF/XTESTF (TimeInX, SrcDtaX)
+exec sql INSERT INTO XTESTL/XTESTF (TimeInX, SrcDtaX)
          VALUES(:TimeInZ,'Description or Comment');
 
 //prc();
 
-exec sql UPDATE XTESTF/XTESTF SET TimeOutX = CURRENT_TIMESTAMP
+exec sql UPDATE XTESTL/XTESTF SET TimeOutX = CURRENT_TIMESTAMP
          WHERE TimeInX = :TimeInZ;
  ...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 ...+... 8 ...+... 9 ...+... 0
 SELECT ROUND(SUM(TimeOutX-TimeInX),2),
   SUM (TimeOutX-TimeInX) AS Diff_in_Microsecs, 
   SUBSTR(SrcDtaX,1,50) AS Data
-FROM XTESTF/XTESTF
+FROM XTESTL/XTESTF
 GROUP BY TimeInX, SrcDtaX ORDER BY Diff_in_Microsecs DESC
 ****************** End of data ******************************************************************************************
