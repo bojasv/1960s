@@ -1,0 +1,29 @@
+*************** Beginning of data ***************************************************************************************
+      * SQL Performace Recorder
+*************************************************************************************************************************
+.....A*. 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 ...+... 8 ...+... 9 ...+... 0
+     A* DDS to be copied and compiled as a PF with name as XTESTF
+     A* CRTLIB LIB(XTESTL) TEXT('test lib for SQL perf data')
+     A          R XTESTFA
+     A            TimeInX         Z
+     A            TimeOutX        Z
+     A            SrcDtaX     2000 
+ ...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 ...+... 8 ...+... 9 ...+... 0
+     D TimeInZ         S               Z
+dcl-s TimeInZ         timestamp;
+
+TimeInZ = %TIMESTAMP;
+exec sql INSERT INTO XTESTF/XTESTF (TimeInX, SrcDtaX)
+         VALUES(:TimeInZ,'Description or Comment');
+
+//prc();
+
+exec sql UPDATE XTESTF/XTESTF SET TimeOutX = CURRENT_TIMESTAMP
+         WHERE TimeInX = :TimeInZ;
+ ...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 ...+... 8 ...+... 9 ...+... 0
+SELECT ROUND(SUM(TimeOutX-TimeInX),2),
+  SUM (TimeOutX-TimeInX) AS Diff_in_Microsecs, 
+  SUBSTR(SrcDtaX,1,50) AS Data
+FROM XTESTF/XTESTF
+GROUP BY TimeInX, SrcDtaX ORDER BY Diff_in_Microsecs DESC
+****************** End of data ******************************************************************************************
