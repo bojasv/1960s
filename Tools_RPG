@@ -1,6 +1,11 @@
 *************** Beginning of data ***************************************************************************************
       * SQL Performace Recorder
 *************************************************************************************************************************
+ ...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 ...+... 8 ...+... 9 ...+... 0
+CREATE TABLE XTEXTL/XTESTF (
+  TimeInX TIMESTAMP,
+  TimeOutX TIMESTAMP,
+  SrcDtaX CHAR(2000));
 .....A*. 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 ...+... 8 ...+... 9 ...+... 0
      A* DDS to be copied and compiled as a PF with name as XTESTF
      A* CRTLIB LIB(XTESTL) TEXT('test lib for SQL perf data')
