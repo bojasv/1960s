@@ -1,0 +1,24 @@
+while CRTSRVPGM
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                                                                                
+ Message ID . . . . . . :   CPD5D03       Severity . . . . . . . :   30         
+ Message type . . . . . :   Diagnostic                                          
+ Date sent  . . . . . . :   01/02/23      Time sent  . . . . . . :   08:08:14   
+                                                                                
+ Message . . . . :   Definition supplied multiple times for symbol              
+   'PARSEPFLFSRC'.                                                            
+ Cause . . . . . :   Definition PARSEPFLFSRC was found to be exported from    
+   both *MODULE object SRV01SV in library DSSUBFL and *SRVPGM object          
+   IASRV01SV in library *LIBL.                                                  
+ Recovery  . . . :   Try the Create Program (CRTPGM) or Create Service Program  
+   (CRTSRVPGM) command again, supplying only one of these objects, or try the   
+   CRTPGM or CRTSRVPGM command again, specifying one or both of OPTION(*DUPVAR) 
+   and OPTION(*DUPPROC).                                                        
+                                                                                
+                                                                                
+                                                                                
+                                                                         Bottom 
+ Press Enter to continue.                                                       
+                                                                                
+ F3=Exit   F6=Print   F9=Display message details   F12=Cancel                   
+ F21=Select assistance level                                                    
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                                                                                
