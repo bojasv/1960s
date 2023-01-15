@@ -1,0 +1,3 @@
+             STRPGMEXP  SIGNATURE('TEST_SRVPGM_01')
+                EXPORT     SYMBOL('XSRV01_Proc01')    
+             ENDPGMEXP
