@@ -1,3 +1,22 @@
+Little legacy timeline...
+XXX 1964 - S/360, last delivered on 1978
+XXX 1969 - System/3 marketed until 1985
+Jan 1975 - S/32 (5320)
+XXX 1977 + 5250 (TN5250)
+XXX 1978 - S/38 announced
+    XXX 1978 - S/360 last delivered
+XXX 1980 - IBM's green-screen aka TN5250 emulator copyright begin
+Oct 1983 + S/36 - RPGII - 3270PC (TN3270) running Intel 8088 @ 4.77 MHz
+    XXX 1985 - System/3 discont
+    Feb 1985 - S/34 (aka 5250) withdrawn from marketing
+Jun 1988 + AS/400 announced, first released on Aug 1988
+    XXX 1988 - S/38 discont
+    XXX 2000 - S/36 - 3270PC (TN3270) withdrawn from marketing
+XXX 2008 - System p + System i = IBM Power Systems
+    XXX 2009 - IBM's green-screen aka TN5250 emulator copyright end; Wiki
+    Sep 2013 - AS/400 Discontinued - AS/400e, eServer iSeries, eServer i5, System i
+    XXX 2021 - IBM's green-screen aka TN5250 emulator copyright end; (C) COPYRIGHT IBM CORP. 1980, 2021. - PUB400
+
 CPU - 1000 CPW (POWER5 or newer processors recommended)
 4 GB memory (in a private (non-shared) pool dedicated to Sterling B2B Integrator)
 20 GB DASD (Required for Sterling B2B Integrator plus space for operating system, spool, utilities, and so on).
