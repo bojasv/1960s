@@ -1,0 +1,81 @@
+DSPJOB
+
+1. Job Status Attributes
+      Status - ACTIVE, SCD, OUTQ, JOBQ
+      Job started at
+      Job subsystem
+      Job type - INTER, BATCH (Immediate-BCI, Prestart-PJ, Command_event-CMNEVK, Adv_36_server-M36), SYS, AUTO, Writer-WTR, Reader-RDR, Subsystem_monitor-SBS
+      System
+
+2. Job Run Attributes
+      CPU time used (in milliseconds) - 36,00,000 ms -> 60 mins of CPU time
+      Temporary storage (in MBs) - 1,000 MB -> 1GB of temp storage
+      Threads
+
+3. DSPJOBD - Job Definition Attributes
+      JOBD - QHTTPSVR/QZHBHTTP; 
+      Job will create a log on end or not - *JOBEND 
+      attached Printer device
+      Job DATFMT and TIMFMT
+      Timezone (and resp offset)
+      Spools to *KEEP or not
+      MSGQ will be wrapped or not
+      Current Time (Use this opt rather WRKACTJOB or other method to know the system time)
+      Job language, country, CCSID
+      Job Day of week, Date and Time
+    
+4. DSPSPLF - Job Spooled File
+      can give the copy of first and last spool generated
+      provides info about the OUTQ, spool page size
+      can also help to get most recent activity by the job
+
+10. DSPJOBLOG
+
+11. Call Stack
+      Job Thread
+      Procedure Name and Program Statement ID
+      *MODULE, resp *LIB and Program Statement ID
+      *ACTGRP name and number
+      type of invocation of a program/proc; level of the request-processing (Blank - OPM/ILE; P-PASE; J-Java; L-Licensed; K-Kernal)
+
+12. Job Locks - objects locked by the job (with object lib, object type)
+      type of the lock
+      status of the lock
+      weather member is locked?
+      scope and thread of the lock
+
+13. Library List (*LIBL) - gives library sequence
+      CURrent Library
+      USeR libraries
+
+14. Open Files
+      Number of open ODPs
+      File Type
+      Library, File and RCDFMT 
+
+15. File Overrides
+      Call level
+    
+16. Commitment control status - with commitment definition
+
+17. Communication status
+      Communication ID
+      Communication method
+      Communication operation (I/O)
+
+18. *ACTGRP - name, number, program and lib
+      ACTGRP in use or not?
+
+19. Job mutexes
+      Thread
+
+20. Threads - name, user-defined thread name
+      Thread Attributes - User, *CURLIB and Type (*USER or *SYSTEM)
+      Status - RUN, THDW, TIMW, JVAW, SELW
+        Blank -> the thread is in transition
+      Total CPU time consumed (in seconds)
+      Number of auxiliary storage I/O (aka R/W) operations - incl. both DB and Non-DB paging
+      
+21. Media Library (MLB) attributes
+22. WRKENVVAR LEVEL(*JOB or *SYS)
+      Variable name, value and CCSID
