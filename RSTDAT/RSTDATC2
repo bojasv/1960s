@@ -1,0 +1,20 @@
+pgm (&lib +                          
+     &pfsrc +                        
+     &mbr +                          
+     &date)                          
+                                     
+dcl &lib       *char 10              
+dcl &pfsrc     *char 10              
+dcl &mbr       *char 10              
+dcl &yymmdd    *char 6               
+dcl &date      *dec  9               
+dcl &date_str  *char 11              
+                                     
+chgvar &date_str  %char(&date)       
+chgvar &yymmdd    %sst(&date_str 4 6)
+call RSTDATR (&lib +                   
+            &pfsrc +                 
+            &mbr +                   
+            &yymmdd)                 
+                                     
+endpgm                                             
