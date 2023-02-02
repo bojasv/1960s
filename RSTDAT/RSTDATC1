@@ -1,0 +1,16 @@
+pgm (&lib +            
+     &pfsrc +          
+     &mbr +            
+     &date)            
+                       
+dcl &lib       *char 10
+dcl &pfsrc     *char 10
+dcl &mbr       *char 10
+dcl &date      *dec  6 
+                       
+call RSTDATR (&lib +     
+            &pfsrc +   
+            &mbr +     
+            &date)     
+                       
+endpgm   
