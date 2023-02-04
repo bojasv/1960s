@@ -1,1 +1,9 @@
+CRTLIB LIB(OXBLIB) TYPE(*PROD)
+
+/* 121 is the length of the longest command record for file QAUOOPT */
+CRTSRCPF FILE(OXBLIB/QSQLSRC) RCDLEN(121)
+
+/* will fail at first, run this pgm twice */
+/* in order to execute the below cmd sucessfully */
 RUNSQLSTM SRCFILE(OXBLIB/QSQLSRC) SRCMBR(SRCSQL0)
+MONMSG     MSGID(SQL0000 SQL9999)
