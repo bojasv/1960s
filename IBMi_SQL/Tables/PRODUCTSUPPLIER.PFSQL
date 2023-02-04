@@ -1,0 +1,4 @@
+CREATE TABLE PRODUCTSUPPLIER
+           ( PID         VARCHAR(10) NOT NULL, 
+             SID         VARCHAR(10) NOT NULL, 
+             PRIMARY KEY (PID, SID) ) ;
