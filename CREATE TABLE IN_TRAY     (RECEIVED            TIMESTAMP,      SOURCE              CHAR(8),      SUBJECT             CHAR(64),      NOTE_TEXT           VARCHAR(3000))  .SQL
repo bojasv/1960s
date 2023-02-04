@@ -1,0 +1,6 @@
+CREATE TABLE ORG 
+             (DEPTNUMB SMALLINT NOT NULL, 
+              DEPTNAME VARCHAR(14),
+              MANAGER SMALLINT, 
+              DIVISION VARCHAR(10), 
+              LOCATION VARCHAR(13)) ;
