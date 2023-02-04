@@ -1,0 +1,12 @@
+CREATE TABLE ACT 
+             (ACTNO SMALLINT NOT NULL, 
+              ACTKWD CHAR(6) NOT NULL, 
+              ACTDESC VARCHAR(20) NOT NULL, 
+              PRIMARY KEY (ACTNO)) ;
+
+CREATE UNIQUE INDEX XACT1 
+              ON ACT (ACTNO) ;
+
+CREATE UNIQUE INDEX XACT2 
+              ON ACT (ACTKWD) ;
+
