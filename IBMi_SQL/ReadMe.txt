@@ -3,3 +3,7 @@
 -- This could be a lib that doesn't already exist on the sys
 
 CALL QSYS.CREATE_SQL_SAMPLE ('OXBLIB')
+
+-- Similarly for XML tables, use the following
+
+CALL QSYS.CREATE_XML_SAMPLE ('OXBXMLLIB')
