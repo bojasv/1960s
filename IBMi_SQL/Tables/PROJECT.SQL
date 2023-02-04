@@ -1,0 +1,33 @@
+CREATE TABLE PROJECT
+      (PROJNO    CHAR(6)        NOT NULL,
+       PROJNAME  VARCHAR(24)    NOT NULL DEFAULT,
+       DEPTNO    CHAR(3)        NOT NULL,
+       RESPEMP   CHAR(6)        NOT NULL,
+       PRSTAFF   DECIMAL(5,2)           ,
+       PRSTDATE  DATE                   ,
+       PRENDATE  DATE                   ,
+       MAJPROJ   CHAR(6)                ,
+       PRIMARY KEY (PROJNO)) ;
+
+ALTER TABLE PROJECT 
+              ADD FOREIGN KEY (DEPTNO) 
+              REFERENCES DEPARTMENT 
+              ON DELETE RESTRICT ;
+
+ALTER TABLE PROJECT 
+              ADD FOREIGN KEY (RESPEMP) 
+              REFERENCES EMPLOYEE 
+              ON DELETE RESTRICT ;
+
+ALTER TABLE PROJECT 
+              ADD FOREIGN KEY  RPP (MAJPROJ) 
+              REFERENCES PROJECT 
+              ON DELETE CASCADE ;
+
+CREATE UNIQUE INDEX XPROJ1 
+              ON PROJECT (PROJNO) ;
+
+CREATE INDEX XPROJ2 
+              ON PROJECT (RESPEMP) ;
+
+CREATE ALIAS PROJ FOR PROJECT ;
