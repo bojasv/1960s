@@ -1,0 +1,9 @@
+CREATE TABLE PRODUCT
+           ( PID         VARCHAR(10) NOT NULL, 
+             NAME        VARCHAR(128), 
+             PRICE       DECIMAL(30,2),
+             PROMOPRICE  DECIMAL(30,2),
+             PROMOSTART  DATE, 
+             PROMOEND    DATE, 
+             DESCRIPTION XML, 
+             PRIMARY KEY (PID) ) ;
