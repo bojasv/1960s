@@ -1,0 +1,5 @@
+CREATE TABLE INVENTORY
+           ( PID         VARCHAR(10) NOT NULL, 
+             QUANTITY    INTEGER, 
+             LOCATION    VARCHAR(128),
+             PRIMARY KEY (PID) ) ;
