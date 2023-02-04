@@ -1,0 +1,4 @@
+CREATE TABLE SUPPLIERS
+           ( SID         VARCHAR(10) NOT NULL, 
+             ADDR        XML, 
+             PRIMARY KEY (SID) ) ;
