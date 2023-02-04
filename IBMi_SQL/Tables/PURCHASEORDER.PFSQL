@@ -1,0 +1,13 @@
+CREATE TABLE PURCHASEORDER
+           ( POID        BIGINT NOT NULL, 
+             STATUS      VARCHAR(10) NOT NULL WITH DEFAULT 'Unshipped', 
+             CUSTID      BIGINT
+             ORDERDATE   DATE
+             PORDER      XML
+             COMMENTS    VARCHAR(1000),
+             PRIMARY KEY (POID) ) ;
+
+ALTER TABLE PURCHASEORDER
+           ADD FOREIGN KEY FK_PO_CUST(CUSTID)
+               REFERENCES CUSTOMER(CID)
+           ON DELETE CASCADE ;
