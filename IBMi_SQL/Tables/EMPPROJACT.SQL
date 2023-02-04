@@ -1,0 +1,16 @@
+CREATE TABLE EMPPROJACT
+      (EMPNO     CHAR(6)          NOT NULL,
+       PROJNO    CHAR(6)          NOT NULL,
+       ACTNO     SMALLINT         NOT NULL,
+       EMPTIME   DECIMAL(5,2)             ,
+       EMSTDATE  DATE                     ,
+       EMENDATE  DATE                     ) ;
+
+ALTER TABLE EMPPROJACT 
+              ADD FOREIGN KEY REPAPA (PROJNO, ACTNO, EMSTDATE) 
+              REFERENCES PROJACT 
+              ON DELETE RESTRICT ;
+
+CREATE ALIAS EMPACT FOR EMPPROJACT ;
+
+CREATE ALIAS EMP_ACT FOR EMPPROJACT ;
