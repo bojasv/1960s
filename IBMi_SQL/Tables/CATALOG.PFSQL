@@ -1,0 +1,4 @@
+CREATE TABLE CATALOG
+           ( NAME        VARCHAR(128) NOT NULL, 
+             CATLOG      XML, 
+             PRIMARY KEY (NAME) ) ;
