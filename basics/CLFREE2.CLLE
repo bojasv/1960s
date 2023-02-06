@@ -12,7 +12,7 @@ enddo
 /* WRKOBJ shows text as 123456789a123456789b1234567                                           */
 /* DTAARA can hold upto 123456789a123456789b123456789c123456789d12345678                      */
                                                                                                 
-chgdtaara (qtemp/usrdtaara0 (1 10)) '123456789a'                                                
+chgdtaara (qtemp/usrdtaara0 (1 10)) '123456789a'
 chgdtaara (qtemp/usrdtaara0 (11 1)) 'x'                                                         
 rtvdtaara (qtemp/usrdtaara0 (1 10)) &curVer                                                     
 rtvdtaara qtemp/usrdtaara0 &data_32                                                             
