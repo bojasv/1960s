@@ -70,5 +70,4 @@ exec sql
                                     
 exec sql execute immediate :sqlstmt;
                                     
-*inlr = *on;                        
-return;                             
+*inlr = *on;
