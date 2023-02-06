@@ -8,4 +8,4 @@ XX999 * PF DDS for SPLF QPUOPRTF
      A            TMU           10A         TEXT('Last Update Time')
      A            RCD            9A         TEXT('Total Rcds.')     
      A            RCX            9A         TEXT('Deleted Rcds.')   
-     A            DSC           50A         TEXT('Text')            
+     A            DSC           50A         TEXT('Text')
