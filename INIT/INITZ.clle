@@ -22,15 +22,15 @@
              IF         COND(&EXIST *NE 1) THEN(DO)                                    
              CRTSRCPF   FILE(&LIB/APPSRC) RCDLEN(112) TEXT(&DSC)                       
              MONMSG     MSGID(CPF0000 CPF9999)                                         
-             CPYSRCF    FROMFILE(FALDEVPF/APPSRC) +                                    
+             CPYSRCF    FROMFILE(TSTLIB/APPSRC) +                                    
                           TOFILE(&LIB/APPSRC) FROMMBR(&MBR1) +                         
                           MBROPT(*ADD)                                                 
              MONMSG     MSGID(CPF0000 CPF9999)                                         
-             CPYSRCF    FROMFILE(FALDEVPF/APPSRC) +                                    
+             CPYSRCF    FROMFILE(TSTLIB/APPSRC) +                                    
                           TOFILE(&LIB/APPSRC) FROMMBR(&MBR2) +                         
                           MBROPT(*ADD)                                                 
              MONMSG     MSGID(CPF0000 CPF9999)                                         
-             CPYSRCF    FROMFILE(FALDEVPF/APPSRC) +                                    
+             CPYSRCF    FROMFILE(TSTLIB/APPSRC) +                                    
                           TOFILE(&LIB/APPSRC) FROMMBR(&MBR3) +                         
                           MBROPT(*ADD)                                                 
              MONMSG     MSGID(CPF0000 CPF9999)                                         
