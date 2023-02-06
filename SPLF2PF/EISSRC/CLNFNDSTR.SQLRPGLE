@@ -66,6 +66,5 @@ exec sql
      closqlcsr = *endmod;           
                                     
 exec sql execute immediate :sqlstmt;
-                                    
-                                    
-*inlr = *on;                        
+
+*inlr = *on;
