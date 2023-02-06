@@ -15,4 +15,4 @@ dow not %eof(ExtractO);
    read XtractO;                                                              
 enddo;                                                                        
                                                                               
-*inLR = *on;                                                                  
+*inLR = *on;
