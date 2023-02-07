@@ -118,6 +118,13 @@ SELECT * FROM QSYS2.USER_INFO WHERE USER_NAME = 'BOJASV'
 SELECT DBIPOS, DBIFLD, DBIITP, DBITXT FROM qsys/qadbifld WHERE  
 dbilib = 'BOJASV' and dbifil = 'TSTFILE'                        
 
+-- to Add string '//0002' as a comment to a source member, starting last 7 char based on the date in YYMMDD  
+-- First create a new PF-SRC MBR@ and copy the desired member there, then run the following statement 
+UPDATE TSTLIB/MBR@ SET SRCDTA = CONCAT(SUBSTR(Srcdta,1,LENGTH(Srcdta)-7),'//0002') WHERE SRCDAT = 230202;
+
+-- to review your updated comments
+SELECT CONCAT(SUBSTR(SRCDTA,90,6),'//0002') FROM TSTLIB/MBR@ WHERE SRCDAT = 230202;
+
 5770SS1 V7R4M0 190621               Run SQL Statements             EXAMDTLS0                          10/23/21 14:28:26
 Record  *...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 ...+... 8   SEQNBR  Last change         
 MSG ID  SEV  RECORD  TEXT                                                                                              
