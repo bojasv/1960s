@@ -28,11 +28,58 @@ RNF5346 - due to 'CONST' keyword, use 'VALUE' instead
 RNF7542
   inquote(in_string :i :Ch_inquote);
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                     R.P.G. C o m p i l e  L i s t i n g  S e c t i o n s
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  5770WDS V7R3M0  160422 RN        IBM ILE RPG             DSSUBFL/IASRV03SV        P1365XPV   02/09/23 07:55:12        Page      2
 Line   <---------------------- Source Specifications ----------------------------------------------------->  Do  Change Src Seq   
 Number ....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10  Num Date   Id  Number
                           S o u r c e   L i s t i n g                                                                             
      1 **free                                                                                                               000100
+        * * * * *   E N D   O F   S O U R C E   * * * * *                                                                           
+           A d d i t i o n a l   D i a g n o s t i c   M e s s a g e s                                                              
+  * * * * *   E N D   O F   A D D I T I O N A L   D I A G N O S T I C   M E S S A G E S   * * * * *                                 
+                           C r o s s   R e f e r e n c e                                                                            
+       File and Record References:                                                                                                  
+          File              Device             References (D=Defined)                                                               
+            Record                                                                                                                  
+          No references in the source.                                                                                              
+       Global Field References:                                                                                                     
+          Field             Attributes         References (D=Defined M=Modified)                                                    
+       Field References for subprocedure PROC1
+          Field             Attributes         References (D=Defined M=Modified)                                                    
+       Indicator References:                                                                                                        
+          Indicator                            References (D=Defined M=Modified)                                                    
+        * * * * *   E N D   O F   C R O S S   R E F E R E N C E   * * * * *                                                         
+                       E x t e r n a l   R e f e r e n c e s                                                                        
+       Statically bound procedures:                                                                                                 
+          Procedure                            References                                                                           
+       Imported fields:                                                                                                             
+          Field             Attributes         Defined                                                                              
+          No references in the source.                                                                                              
+       Exported fields:                                                                                                             
+          Field             Attributes         Defined                                                                              
+          No references in the source.                                                                                              
+    * * * * *   E N D   O F   E X T E R N A L   R E F E R E N C E S   * * * * *                                                     
+                           M e s s a g e   S u m m a r y                                                                            
+  Msg id  Sv Number Message text                                                                                                    
+ *RNF7031 00    646 The name or indicator is not referenced.                                                                        
+        * * * * *   E N D   O F   M E S S A G E   S U M M A R Y   * * * * *                                                         
+                             F i n a l   S u m m a r y                                                                              
+   Message Totals:                                                                                                                  
+     Information  (00) . . . . . . . :      646                                                                                     
+     Warning      (10) . . . . . . . :        0                                                                                     
+     Error        (20) . . . . . . . :        4                                                                                     
+     Severe Error (30+)  . . . . . . :        0                                                                                     
+     ---------------------------------  -------                                                                                     
+     Total . . . . . . . . . . . . . :      650                                                                                     
+   Source Totals:                                                                                                                   
+     Records . . . . . . . . . . . . :    11830                                                                                     
+     Specifications  . . . . . . . . :     9413                                                                                     
+     Data records  . . . . . . . . . :        0                                                                                     
+     Comments  . . . . . . . . . . . :     2322                                                                                     
+          * * * * *   E N D   O F   F I N A L   S U M M A R Y   * * * * *                                                           
+ Compilation stopped. Severity 20 errors found in program.                                                                          
+           * * * * *   E N D   O F   C O M P I L A T I O N   * * * * *                                                              
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Cause: when 'VALUE' is used in MODULE, but not in PR
 
