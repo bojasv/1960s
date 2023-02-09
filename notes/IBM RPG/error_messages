@@ -1,0 +1,58 @@
+dcl-pr PROC1;                           
+   in_string  char(5000) const options(*trim);
+end-pr;
+
+Dcl-proc PROC1 Export;                     
+   dcl-pi PROC1;                           
+    //in_string  char(5000);                     
+      in_string  char(5000) const options(*trim);
+   end-pi
+
+  in_string = %xlate(LOWER :UPPER :in_string);
+  inquote(in_string :i :Ch_inquote);
+End-proc;
+
+
+*RNF5346 30      2 The operation modifies the field, but the field cannot be
+                   modified.                                                
+*RNF7542 30      3 Parameter cannot be passed by reference when it can be   
+                   changed during the call.                                 
+          A d d i t i o n a l   D i a g n o s t i c   M e s s a g e s       
+ Msg id  Sv   Statement    Message text                                     
+*RNF7542 30        002650  Parameter 1 is not valid as a parameter passed by
+                           reference.                                       
+
+Note: search for ' A d d ' to get all error messages statements
+
+RNF5346 - due to 'CONST' keyword, use 'VALUE' instead
+  in_string = %xlate(LOWER :UPPER :in_string);
+RNF7542
+  inquote(in_string :i :Ch_inquote);
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Cause: when 'VALUE' is used in MODULE, but not in PR
+
+*RNF3774 20      1 Specified passing mode is not the same on prototype and  
+                   procedure interface definitions.                         
+*RNF3907 20      1 The CONST keyword is not specified the same as for the   
+                   corresponding prototype parameter.                       
+*RNF5346 30      2 The operation modifies the field, but the field cannot be
+                   modified.                                                
+*RNF7542 30      3 Parameter cannot be passed by reference when it can be   
+                   changed during the call.                                 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Cause: when 'VALUE' is used in PR, but not in MODULE
+
+ *RNF3774 20      1 Specified passing mode is not the same on prototype and
+                    procedure interface definitions.                       
+ *RNF3907 20      1 The CONST keyword is not specified the same as for the 
+                    corresponding prototype parameter.                     
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*RNF0273 40      2 Compiler not able to open the /COPY or /INCLUDE file;
+                   directive ignored.
+Resolution: Set the *LIB with the copybook in *LIBL
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*RNF3773 20      1 The value of the OPTIONS keyword does not match the value
+                   specified on the prototype.                              
+*RNF3774 20      1 Specified passing mode is not the same on prototype and  
+                   procedure interface definitions.                         
+Resolution: Match the PARM type in dcl-pr and dcl-pi
