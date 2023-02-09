@@ -28,6 +28,41 @@ RNF5346 - due to 'CONST' keyword, use 'VALUE' instead
 RNF7542
   inquote(in_string :i :Ch_inquote);
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                                    Diagnostic check
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ Line   <---------------------- Source Specifications ----------------------------------------------------->  Do  Change Src Seq    
+ Number ....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10  Num Date   Id  Number 
+                             / C o p y   M e m b e r s                                                                              
+ Line   Src  RPG name   <-------- External name -------> CCSID  <- Last change ->                                                   
+ Number Id              Library    File       Member            Date     Time                                                       
+     94    1 COPYBOOK1  TSTLIB1    QMODSRC    COPYBOOK1     37  01/27/23 06:22:03                                                   
+    606    2 COPYBOOK2  DSSUBFL    QMODSRC    COPYBOOK2     37  02/09/23 07:55:05                                                   
+          * * * * *   E N D   O F   / C O P Y   M E M B E R S   * * * * *                                                           
+ Line   <---------------------- Data Records -------------------------------------------------------------->      Change Src Seq    
+ Number ....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10      Date   Id  Number 
+                        C o m p i l e   T i m e   D a t a                                                                           
+     * * * * *   E N D   O F   C O M P I L E   T I M E   D A T A   * * * * *                                                        
+                           M e s s a g e   S u m m a r y                                                                            
+  Msg id  Sv Number Message text                                                                                                    
+        * * * * *   E N D   O F   M E S S A G E   S U M M A R Y   * * * * *                                                         
+  5770WDS V7R3M0  160422 RN        IBM ILE RPG             DSSUBFL/IASRV03SV        P1365XPV   02/09/23 07:55:11        Page    200 
+                             F i n a l   S u m m a r y                                                                              
+   Message Totals:                                                                                                                  
+     Information  (00) . . . . . . . :        0                                                                                     
+     Warning      (10) . . . . . . . :        0                                                                                     
+     Error        (20) . . . . . . . :        0                                                                                     
+     Severe Error (30+)  . . . . . . :        0                                                                                     
+     ---------------------------------  -------                                                                                     
+     Total . . . . . . . . . . . . . :        0                                                                                     
+   Source Totals:                                                                                                                   
+     Records . . . . . . . . . . . . :    10884                                                                                     
+     Specifications  . . . . . . . . :     8571                                                                                     
+     Data records  . . . . . . . . . :        0                                                                                     
+     Comments  . . . . . . . . . . . :     2242                                                                                     
+          * * * * *   E N D   O F   F I N A L   S U M M A R Y   * * * * *                                                           
+ Diagnostic check of source is complete. Highest severity is 00.                                                                    
+           * * * * *   E N D   O F   C O M P I L A T I O N   * * * * *                                                              
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
                                      R.P.G. C o m p i l e  L i s t i n g  S e c t i o n s
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  5770WDS V7R3M0  160422 RN        IBM ILE RPG             DSSUBFL/IASRV03SV        P1365XPV   02/09/23 07:55:12        Page      2
