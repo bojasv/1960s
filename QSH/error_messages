@@ -7,4 +7,58 @@ trying to close the STRQSH display
  > bye                                                                            
    qsh: 001-0019 Error found searching for command bye. No such path or directory.
 
+ QSH0003 - New QSH session started.                                                     + 
+ QSH0005 - Command ended normally with exit status 127.                                 + 
+ QSH0004 - Current QSH session ended.                                                     
+
+                            Display Message Details                             
+                                                                                
+ Message ID . . . . . . :   QSH0003       Severity . . . . . . . :   00         
+ Date sent  . . . . . . :   02/10/23      Time sent  . . . . . . :   01:17:12   
+ Message type . . . . . :   Information                                         
+ From . . . . . . . . . :   TSTDEV1       CCSID  . . . . . . . . :   65535      
+                                                                                
+ From program . . . . . . . . . :   QUOCMD                                      
+   From library . . . . . . . . :     QSYS                                      
+   Instruction  . . . . . . . . :     047E                                      
+                                                                                
+ To program . . . . . . . . . . :   QUOMAIN                                     
+   To library . . . . . . . . . :     QPDA                                      
+   Instruction  . . . . . . . . :     011E                                      
+                                                                                
+ Time sent  . . . . . . . . . . :   01:17:12.541153                             
+   Time zone abbreviated name . :     UTC-06:00S                                
+                                                                                
+                                                                                
+                                                                         Bottom 
+ Press Enter to continue.                                                       
+                                                                                
+ F1=Help   F3=Exit   F12=Cancel                                                  
+
+>> strqsh                                              
+   Object QP0ZTRML type *DTAQ created in library QTEMP. (CPC9801)
+   New QSH session started.                            
+   Object QP0ZTRML in QTEMP type *DTAQ deleted. (CPC2191)
+   Command ended normally with exit status 127.        
+   Current QSH session ended.                          
+   New QSH session started.                            
+   Command ended normally with exit status 127.        
+   Current QSH session ended.                          
+                            Display Message Details                             
+                                                                                
+ Message ID . . . . . . :   CPC9801       Severity . . . . . . . :   00         
+ Date sent  . . . . . . :   02/10/23      Time sent  . . . . . . :   01:08:04   
+ Message type . . . . . :   Completion                                          
+ From . . . . . . . . . :   TSTDEV1       CCSID  . . . . . . . . :   65535      
+                                                                                
+ From program . . . . . . . . . :   QMHQCRTQ                                    
+   From library . . . . . . . . :     QSYS                                      
+   Instruction  . . . . . . . . :     0902                                      
+                                                                                
+ To program . . . . . . . . . . :   QC2SYS                                      
+   To library . . . . . . . . . :     QSYS                                      
+   To module  . . . . . . . . . :     QC2SYS                                    
+   To procedure . . . . . . . . :     system                                    
+   To statement . . . . . . . . :     13                                        
+                                                                                
 Ref: https://github.com/tryggingamidstodin/node-jt400/issues/27
