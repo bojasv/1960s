@@ -1,0 +1,62 @@
+> help                                    
+  Qshell, V7R3M0 (powerpc-ibm-os400)      
+  : [ argument ... ]                      
+  . name [argument ...]                   
+  [ expression ]                          
+  alias [-p] [name [=value] ...]          
+  break [n]                               
+  builtin [utility [argument ...]]        
+  cd [directory]                          
+  command [-p] command_name [argument ...]
+  command [-vV] command_name              
+  continue [n]                            
+  declare [-Filrux] name [=value] ...     
+  declare [+Filrux] name [=value] ...     
+  declare [-p] [name ...]                 
+  echo [argument ...]               
+  eval [argument ...]               
+  exec [-c] [command [argument ...]]
+  exit [n]                          
+  export [-ps] [name [=value] ...]  
+  false                             
+  getconf [name [pathname]]         
+  getopts optstring varname         
+  hash [-p filename] [utility ...]  
+  hash -r                           
+  help [utility ...]                
+  jobs [-ln] [job ...]              
+  kill [-s signame] job ...         
+  kill [-n signum] job ...          
+  kill [-sig] job ...               
+  kill -l [signal ...]              
+  let arg ...                       
+  liblist [-acdfl] [library ...]                  
+  local [name [=value] ...]                       
+  print [-nrR] [-u [n]] [argument ...]            
+  printf format [argument ...]                    
+  pwd                                             
+  read [-r] [-p prompt] [-u [n]] [name ...]       
+  readonly [-p] [name [=value] ...]               
+  return [n]                                      
+  set [-abCefFjmntuvx-] [-o option] [argument ...]
+  set [+abCefFjmntuvx-] [+o option] [argument ...]
+  shift [n]                                       
+  sleep time                                      
+  source name [argument ...]                      
+  test expression                                 
+  trace                                           
+  trap [action condition ...]                     
+  trap -p [condition ...]                         
+  trap -l                            
+  true                               
+  type [-apt] name ...               
+  typeset [-Filrux] name [=value] ...
+  typeset [+Filrux] name [=value] ...
+  typeset [-p] [name ...]            
+  ulimit [-HS] [-acdfmnst] [limit]   
+  umask [-S] [mask]                  
+  unalias name ...                   
+  unalias -a                         
+  unset [-fv] [name ...]             
+  wait [job ...]                     
+  whence [-afpv] name ...            
