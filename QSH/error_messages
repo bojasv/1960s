@@ -1,5 +1,10 @@
+trying to find a string in all the dir and subdirs (aka folders and sub-folders)                                                                   
    $                                                                   
  > grep -F -R "oauth" /                                                
    grep: 001-2104 Error found reading from file ntpd. Conversion error.
+
+trying to close the STRQSH display
+ > bye                                                                            
+   qsh: 001-0019 Error found searching for command bye. No such path or directory.
 
 Ref: https://github.com/tryggingamidstodin/node-jt400/issues/27
