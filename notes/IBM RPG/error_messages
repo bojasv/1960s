@@ -1,3 +1,196 @@
+Code:
+     1 **free                                                                        
+     2                                                                               
+     3 dcl-s div_    packed(9:0) inz(999999999);                                     
+     4 dcl-s mul_    packed(9:0) inz(999999999);                                     
+     5 dcl-s res_    zoned(64:0) inz;                                                
+======>                    aa                                                        
+*RNF0503 20 a      000500  Length of numeric item is greater than 63 digits; defaults
+                           to 63.                                                    
+     6                                                                               
+     7 res_ = mul_ * mul_;                                                           
+     8                                                                               
+     9 dsply %char(res_);                                                            
+    10 dsply 'Run Complete';                                                         
+    11                                                                               
+    12 *inlr = *on;                                                                  
+    
+          A d d i t i o n a l   D i a g n o s t i c   M e s s a g e s                             
+ Msg id  Sv Number Seq     Message text                                                           
+*RNF7016 20      9 000900  Display length 64 greater than maximum allowed of 52;                  
+                           specification is ignored.                                              
+ * * * * *   E N D   O F   A D D I T I O N A L   D I A G N O S T I C   M E S S A G E S   * * * * *                           
+                          M e s s a g e   S u m m a r y                          
+ Msg id  Sv Number Message text                                                  
+*RNF7031 00      1 The name or indicator is not referenced.                      
+*RNF0503 20      1 Length of numeric item is greater than 63 digits; defaults to 
+                   63.                                                           
+*RNF7016 20      1 Display Length is greater than maximum allowed.
+
+Note: 'dsply %subst(%char(res_):1:51);' doesn't resolve the error.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+      7 div_ = 9999999999999999999999999999999999999999999999999999999999999999;      
+ ======>                                                                      a       
+ ======>                                                                      b       
+ *RNF0266 20 a      000700  Numeric literal is too long; remainder of literal ignored.
+ *RNF5377 20 b      000700  The end of the expression is expected.                    
+
+div_ (earlier)
+TYPE = PACKED(32,0), LENGTH = 17 BYTES
+div_ (now)
+TYPE = PACKED(63,0), LENGTH = 32 BYTES
+res_
+TYPE = ZONED(63,0), LENGTH = 63 BYTES                                          
+QPPGMDMP
+                                                                                                                           Page    1
+ ILE RPG FORMATTED DUMP
+ Program Status Area:
+ Procedure Name . . . . . . . . . . . . :   XSRCMBR8
+ Program Name . . . . . . . . . . . . . :   XSRCMBR8
+    Library . . . . . . . . . . . . . . :   OJAY1
+ Module Name. . . . . . . . . . . . . . :   XSRCMBR8
+ Program Status . . . . . . . . . . . . :   00103
+              The target for a numeric operation is too small to hold the result (C G D F).
+ Previous Status  . . . . . . . . . . . :   00000
+ Statement in Error . . . . . . . . . . :   00000010
+ RPG Routine  . . . . . . . . . . . . . :   *DETC
+ Number of Parameters . . . . . . . . . :
+ Message Type . . . . . . . . . . . . . :   MCH
+ Additional Message Info  . . . . . . . :   1210
+ Message Data . . . . . . . . . . . . . :
+              Receiver value too small to hold result.
+ Status that caused RNX9001 . . . . . . :
+ Last File Used . . . . . . . . . . . . :
+ Last File Status . . . . . . . . . . . :
+ Last File Operation  . . . . . . . . . :
+ Last File Routine  . . . . . . . . . . :
+ Last File Statement  . . . . . . . . . :
+ Last File Record Name  . . . . . . . . :
+ Job Name . . . . . . . . . . . . . . . :   QPAD223212
+ User Name  . . . . . . . . . . . . . . :   OJAY
+ Job Number . . . . . . . . . . . . . . :   320117
+ Date Entered System  . . . . . . . . . :   02102023
+    Century . . . . . . . . . . . . . . :   20
+ Date Started . . . . . . . . . . . . . :   *N/A*
+ Time Started . . . . . . . . . . . . . :   *N/A*
+ Compile Date . . . . . . . . . . . . . :   021023
+ Compile Time . . . . . . . . . . . . . :   230741
+ Compiler Level . . . . . . . . . . . . :   0001
+ Source File  . . . . . . . . . . . . . :   QRPGLESRC
+    Library . . . . . . . . . . . . . . :   OJAY1
+ Member . . . . . . . . . . . . . . . . :   XSRCMBR8
+                                                   -=* http://pub400.com *=-
+                                                                                                                           Page    2
+ ILE RPG FORMATTED DUMP
+ Module Name. . . . . . . . . . . . . . :   XSRCMBR8
+ Optimization Level . . . . . . . . . . :   *NONE
+ Halt Indicators:
+ H1 '0'    H2 '0'    H3 '0'    H4 '0'    H5 '0'    H6 '0'    H7 '0'    H8 '0'    H9 '0'
+ Command/Function Key Indicators:
+ KA '0'    KB '0'    KC '0'    KD '0'    KE '0'    KF '0'    KG '0'    KH '0'    KI '0'    KJ '0'
+ KK '0'    KL '0'    KM '0'    KN '0'    KP '0'    KQ '0'    KR '0'    KS '0'    KT '0'    KU '0'
+ KV '0'    KW '0'    KX '0'    KY '0'
+ Control Level Indicators:
+ L1 '0'    L2 '0'    L3 '0'    L4 '0'    L5 '0'    L6 '0'    L7 '0'    L8 '0'    L9 '0'
+ Overflow Indicators:
+ OA '0'    OB '0'    OC '0'    OD '0'    OE '0'    OF '0'    OG '0'    OV '0'
+ External Indicators:
+ U1 '0'    U2 '0'    U3 '0'    U4 '0'    U5 '0'    U6 '0'    U7 '0'    U8 '0'
+ General Indicators:
+ 01 '0'    02 '0'    03 '0'    04 '0'    05 '0'    06 '0'    07 '0'    08 '0'    09 '0'    10 '0'
+ 11 '0'    12 '0'    13 '0'    14 '0'    15 '0'    16 '0'    17 '0'    18 '0'    19 '0'    20 '0'
+ 21 '0'    22 '0'    23 '0'    24 '0'    25 '0'    26 '0'    27 '0'    28 '0'    29 '0'    30 '0'
+ 31 '0'    32 '0'    33 '0'    34 '0'    35 '0'    36 '0'    37 '0'    38 '0'    39 '0'    40 '0'
+ 41 '0'    42 '0'    43 '0'    44 '0'    45 '0'    46 '0'    47 '0'    48 '0'    49 '0'    50 '0'
+ 51 '0'    52 '0'    53 '0'    54 '0'    55 '0'    56 '0'    57 '0'    58 '0'    59 '0'    60 '0'
+ 61 '0'    62 '0'    63 '0'    64 '0'    65 '0'    66 '0'    67 '0'    68 '0'    69 '0'    70 '0'
+ 71 '0'    72 '0'    73 '0'    74 '0'    75 '0'    76 '0'    77 '0'    78 '0'    79 '0'    80 '0'
+ 81 '0'    82 '0'    83 '0'    84 '0'    85 '0'    86 '0'    87 '0'    88 '0'    89 '0'    90 '0'
+ 91 '0'    92 '0'    93 '0'    94 '0'    95 '0'    96 '0'    97 '0'    98 '0'    99 '0'
+ Internal Indicators:
+ LR '0'    MR '0'    RT '0'    1P '0'
+ NAME                  ATTRIBUTES           VALUE
+ DIV_                  PACKED(63,0)         999999999999999999999999999999999999999999999999999999999999999.
+                       VALUE IN HEX         '999999999999999999999999999999999999999999999999999999999999999F'X
+ MUL_                  PACKED(63,0)         999999999999999999999999999999999999999999999999999999999999999.
+                       VALUE IN HEX         '999999999999999999999999999999999999999999999999999999999999999F'X
+ RES_                  ZONED(63,0)          000000000000000000000000000000000000000000000000000000000000000.
+                       VALUE IN HEX         'F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0'X
+                         41                 'F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0'X
+             * * * * *   E N D   O F   R P G   D U M P   * * * * *
+             
+      6 dcl-s $Float1 float(9) ;                                                                                  230210     000600 
+ ======>                    a                                                                                                       
+ *RNF3358 30 a      000600  The length of the float field is not valid.                                                             
+      Global Field References:                                                 
+         Field             Attributes         References (D=Defined M=Modified)
+*RNF7031 $FLOAT1           F(8)                    6D                          
+
+Cause: FLOAT could be of either 4 or 8 byte long.
+ $FLOAT1 =   0.000000000000E+000
+ TYPE = REAL, LENGTH = 8 BYTES
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*Error by debugger *
+MCH1210 - Receiver value too small to hold result.
+                            Display Message Details                             
+                                                                                
+ Message ID . . . . . . :   MCH1210       Severity . . . . . . . :   40         
+ Date sent  . . . . . . :   02/10/23      Time sent  . . . . . . :   22:49:36   
+ Message type . . . . . :   Diagnostic                                          
+ From . . . . . . . . . :   OJAY          CCSID  . . . . . . . . :   65535      
+                                                                                
+ From program . . . . . . . . . :   QTENPTS                                     
+   From library . . . . . . . . :     QSYS                                      
+   From module  . . . . . . . . :     TESCREN                                   
+   From procedure . . . . . . . :     CheckArgs                                 
+   From statement . . . . . . . :     57                                        
+                                                                                
+ To program . . . . . . . . . . :   QTESTOPH                                    
+   To library . . . . . . . . . :     QSYS                                      
+   To module  . . . . . . . . . :     QTESTOPH                                  
+   To procedure . . . . . . . . :     main                                      
+   To statement . . . . . . . . :     200                                       
+*Hard error as follows*   
+                         Additional Message Information                         
+                                                                                
+ Message ID . . . . . . :   RNQ0103       Severity . . . . . . . :   99         
+ Message type . . . . . :   Inquiry                                             
+ Date sent  . . . . . . :   02/10/23      Time sent  . . . . . . :   22:46:06   
+                                                                                
+ Message . . . . :   The target for a numeric operation is too small to hold    
+   the result (C G D F).                                                        
+ Cause . . . . . :   RPG procedure XSRCMBR8 in program OJAY1/XSRCMBR8 at        
+   statement 7 performed an arithmetic operation which resulted in a value that 
+   is too large to fit in the target.  If this is a numeric expression, the     
+   overflow could be the result of the calculation of some intermediate result. 
+ Recovery  . . . :   Contact the person responsible for program maintenance to  
+   determine the cause of the problem.                                          
+ Possible choices for replying to message . . . . . . . . . . . . . . . :       
+   D -- Obtain RPG formatted dump.                                              
+   S -- Obtain system dump.                                                     
+   F -- Obtain full formatted dump.                                             
+   C -- Cancel.                       
+   G -- Continue processing at *GETIN.
+
+Code:
+ 1  **free                                   
+ 2                                           
+ 3  dcl-s div_    packed(9:0) inz(999999999);
+ 4  dcl-s mul_    packed(9:0) inz(999999999);
+ 5  dcl-s res_    packed(9:0) inz;           
+ 6                                           
+ 7  res_ = mul_ * mul_;                      
+ 8                                           
+ 9  dsply %char(res_);                       
+10  dsply 'Run Complete';                    
+11                                           
+12  *inlr = *on;                             
+
+Cause: The size of the result variable is small.
+Resolution: Either increment the size of result variable or decrease/trim the data moved into result variable.
+Explanation: Here, the res_ variable gets the data which exceeds its limits,
+             also the limits of the packed data-type (i.e. 16 bytes) 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 dcl-pr PROC1;                           
    in_string  char(5000) const options(*trim);
 end-pr;
