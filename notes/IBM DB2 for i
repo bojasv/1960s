@@ -572,6 +572,61 @@ R-DL: Record deleted
 R-PT: Record added
 F-CL: File-member closed
 _______________________________________________________________________________________________________________________________________________________________________
+ACCPTH (Access Path)
+ Message ID . . . . . . :   CPI4323       Severity . . . . . . . :   00         
+ Message . . . . :   The query access plan has been rebuilt.                    
+ Cause . . . . . :   The access plan was rebuilt for reason code 1. The reason  
+   codes and their meanings follow:                                             
+     0 - A new access plan was created.                                         
+     1 - A file or member is not the same object as the one referred to in the  
+   access plan. Some reasons include the object being re-created, restored, or  
+   overriden to a new object.                                                   
+     2 - Access plan was using a reusable Open Data Path (ODP), and the         
+   optimizer chose to use a non-reusable ODP.                                   
+     3 - Access plan was using a non-reusable Open Data Path (ODP) and the      
+   optimizer chose to use a reusable ODP.                                       
+     4 - The number of records in member *N of file *N in library *N has        
+   changed by more than 10%.                                                    
+     5 - A new access path exists over member *N of file *N in library *N.      
+     6 - An access path over member *N of file *N in library *N that was used   
+   for this access plan no longer exists or is no longer valid.                 
+     7 - The query access plan had to be rebuilt because of system programming  
+   changes.                                                                     
+     8 - The CCSID (Coded Character Set Identifier) of the current job is       
+   different than the CCSID used in the access plan.                            
+     9 - The value of one of the following is different in the current job:     
+   date format, date separator, time format, or time separator.                 
+     10 - The sort sequence table specified has changed.                        
+     11 - The number of active processors or the size or paging option of the   
+   storage pool has changed.                                                    
+     12 - The system feature DB2 Symmetric Multiprocessing has either been      
+   installed or removed.                                                        
+     13 - The value of the degree query attribute has changed either by the     
+   CHGSYSVAL or CHGQRYA CL commands or with the query options file *N in        
+   library *N.                                                                  
+     14 - A view is either being opened by a high level language open, or is    
+   being materialized.                                                          
+     15 - A global variable or sequence object or user-defined type or function 
+   is not the same object as the one referred to in the access plan; or, the    
+   SQL path used to generate the access plan is different than the current SQL  
+   path.                                                                        
+     16 - Query attributes have been specified from the query options file *N   
+   in library *N.                                                               
+     17 - The access plan was generated with a commitment control level that is 
+   different in the current job.                                                
+     18 - The access plan was generated with a different static cursor answer   
+   set size.                                                                    
+     19 - This is the first run of the query since a prepare or compile.        
+     20 and greater -- View the second level message text of the next message   
+   issued (CPI4351) for an explanation of these reason codes.                   
+     If the reason code is 4, 5, 6, 20, or 21 and the file specified in the     
+   reason code explanation is a logical file, then member *N of physical file   
+   *N in library *N is the file with the specified change.                      
+ Recovery  . . . :   Excessive rebuilds should be avoided and may indicate an   
+   application design problem.                                                  
+ Technical description . . . . . . . . :   The access plan was rebuilt because  
+   of reason code 1. This reason code has a sub-type identifier of X'0001' that 
+   is used for internal system tracking.                                        
 _______________________________________________________________________________________________________________________________________________________________________
 _______________________________________________________________________________________________________________________________________________________________________
 _______________________________________________________________________________________________________________________________________________________________________
