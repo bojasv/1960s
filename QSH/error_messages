@@ -1,0 +1,5 @@
+   $                                                                   
+ > grep -F -R "oauth" /                                                
+   grep: 001-2104 Error found reading from file ntpd. Conversion error.
+
+Ref: https://github.com/tryggingamidstodin/node-jt400/issues/27
