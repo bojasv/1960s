@@ -134,5 +134,39 @@ SQL0104  30       3  Position 41 Token REAL was not valid. Valid tokens:
                      VARGRAPHIC VARBINARY.                                                                             
 SQL0104  30       7  Position 47 Token ( was not valid. Valid tokens: ) ,.                                             
 
+                                                Commitment control (COMMIT) - Help                                                  
+      Specifies whether SQL statements are run under commitment control.                                                            
+      *NONE    or   *NC                                                                                                             
+          Specifies that commitment control is not used.  Uncommitted changes                                                       
+          in other jobs can be seen.  If the SQL DROP SCHEMA statement is                                                           
+          included in the program, *NONE or *NC must be used.                                                                       
+      *CHG    or   *UR                                                                                                              
+          Specifies the objects referred to in SQL ALTER, CALL, COMMENT ON,                                                         
+          CREATE, DROP, GRANT, LABEL ON, RENAME, and REVOKE statements and                                                          
+          the rows updated, deleted, and inserted are locked until the end of                                                       
+          the unit of work (transaction).  Uncommitted changes in other jobs                                                        
+          can be seen.                                                                                                              
+      *CS                                                                                                                           
+          Specifies the objects referred to in SQL ALTER, CALL, COMMENT ON,                                                         
+          CREATE, DROP, GRANT, LABEL ON, RENAME, and REVOKE statements and                                                          
+          the rows updated, deleted, and inserted are locked until the end of                                                       
+          the unit of work (transaction).  A row that is selected, but not                                                          
+          updated, is locked until the next row is selected.  Uncommitted                                                           
+          changes in other jobs cannot be seen.                                                                                     
+      *ALL    or   *RS                                                                                                              
+          Specifies the objects referred to in SQL ALTER, CALL, COMMENT ON,                                                         
+          CREATE, DROP, GRANT, LABEL ON, RENAME, and REVOKE statements and                                                          
+          the rows selected, updated, deleted, and inserted are locked until                                                        
+          the end of the unit of work (transaction).  Uncommitted changes in                                                        
+          other jobs cannot be seen.                                                                                                
+      *RR                                                                                                                           
+          Specifies the objects referred to in SQL ALTER, CALL, COMMENT ON,                                                         
+          CREATE, DROP, GRANT, LABEL ON, RENAME, and REVOKE statements and                                                          
+          the rows selected, updated, deleted, and inserted are locked until                                                        
+          the end of the unit of work (transaction).  Uncommitted changes in                                                        
+          other jobs cannot be seen.  All tables referred to in SELECT,                                                             
+          UPDATE, DELETE, and INSERT statements are locked exclusively until                                                        
+          the end of the unit of work (transaction).                                                                                
+                                        * * * * *   E N D   O F   L I S T I N G   * * * * *                                         
 SQL/400:
 https://books.google.co.in/books?id=lqtc0c3UjIMC&pg=PA90&lpg=PA90&dq=trim+in+sql400&source=bl&ots=7MWc0gUjrC&sig=ACfU3U3POW8K8GTe1opzw4apWddTEY8Zlw&hl=en&sa=X&ved=2ahUKEwjlqafxjsrqAhWc6XMBHTx_Bw0Q6AEwE3oECAoQAQ#v=onepage&q=trim%20in%20sql400&f=false
