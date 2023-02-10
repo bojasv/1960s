@@ -1,0 +1,9 @@
+/* this pgm check for tool *LIBs */
+/* it has DBU in it */                    
+WRKOBJ *ALL/TAATOOL* *LIB                 
+/* to talk SOAP to websites using RPGLE */
+WRKOBJ *ALL/LIBHTTP* *LIB
+/* to write Common Gateway Interfaces */
+WRKOBJ *ALL/CGIDEV* *LIB
+/* to know TR level QSYS2/GROUP_PTF_INFO*/
+STRSQL
