@@ -14,3 +14,54 @@ Common Messages in CL Compiler listing
 * CPD0725 10  End of source file reached without ENDPGM command.
 * CPD0726 10  Variable &NUM1 declared but not referred to.
 * CPD0791 00  No labels used in program.
+
+RUNSQL or RUNSQLSTM
+                         Additional Message Information                         
+                                                                                
+ Message ID . . . . . . :   SQL0084                                             
+ Date sent  . . . . . . :   02/10/23      Time sent  . . . . . . :   12:46:19   
+                                                                                
+ Message . . . . :   SQL statement not allowed.                                 
+                                                                                
+ Cause . . . . . :   The SQL statement is not allowed for one of the following  
+   reasons:                                                                     
+     -- DECLARE CURSOR, DECLARE STATEMENT, FETCH, OPEN, CLOSE, WHENEVER,        
+   PREPARE, EXECUTE, EXECUTE IMMEDIATE, INCLUDE, SELECT INTO, VALUES INTO,      
+   DECLARE VARIABLE, DECLARE PROCEDURE, DESCRIBE, GET DIAGNOSTICS, SIGNAL,      
+   RESIGNAL, ALLOCATE CURSOR, ASSOCIATE LOCATOR, ALLOCATE DESCRIPTOR,           
+   DEALLOCATE DESCRIPTOR, GET DESCRIPTOR, and SET DESCRIPTOR are not allowed in 
+   interactive SQL, dynamic SQL, or when using the RUNSQLSTM or RUNSQL          
+   commands.                                                                    
+     -- BEGIN DECLARE SECTION and END DECLARE SECTION are not allowed in        
+   interactive SQL, in dynamic SQL, in RPG, or in REXX.                         
+     -- A blocked INSERT statement is not allowed in interactive SQL or dynamic 
+   SQL.                                                                         
+     -- The CONNECT, SET CONNECTION, RELEASE, and DISCONNECT statements are not 
+   allowed in dynamic SQL or REXX. CONNECT with constants specified for user ID 
+   and password is not allowed in a precompiled program.                        
+     -- SET ENCRYPTION PASSWORD with constants specified for user ID or hint is 
+   not allowed in a precompiled program.                                        
+     -- SELECT and VALUES cannot be issued from an EXECUTE IMMEDIATE statement  
+   or the RUNSQLSTM or RUNSQL commands.                                         
+     -- The SET OPTION statement is only allowed in REXX, in a precompiled      
+   program, or in SQL routines.  In a precompiled program, it must be the first 
+   SQL statement in the program.                                                
+     -- ALLOCATE CURSOR, ASSOCIATE LOCATORS, DECLARE STATEMENT, DECLARE         
+   VARIABLE, DECLARE PROCEDURE, GET DIAGNOSTICS, INCLUDE, SELECT INTO, SET      
+   CURRENT DEGREE, SET RESULT SETS, SIGNAL, WHENEVER, blocked INSERT, blocked   
+   FETCH, locator statements, and SQL descriptor statements are not allowed in  
+   REXX.                                                                        
+     -- The SET TRANSACTION statement is not allowed when the current           
+   connection is to a remote database.                                          
+     -- The SET SESSION AUTHORIZATION statement can only be run in the default  
+   activation group.  It is not allowed in REXX, or when using the RUNSQLSTM or 
+   RUNSQL commands.                                                             
+     -- The WRAPPED keyword for functions, procedures, and triggers is not      
+   allowed in a precompiled program.                                            
+     -- The SQL statement specified is not a valid statement on the current     
+   release of DB2 for IBM i.  The statement may be valid on a future release of 
+   DB2 for IBM i or on some other system's implementation of SQL.               
+ Recovery  . . . :   The statement cannot be run in this mode. For a CONNECT or 
+   SET ENCRYPTION PASSWORD statement in a precompiled program, specify host     
+   variables instead of constants. If in interactive SQL, you may syntax check  
+   a statement by setting the statement processing value to *SYN.               
