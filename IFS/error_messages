@@ -1,0 +1,20 @@
+CPYTOSTMF FROMMBR('/QSYS.LIB/QGPL.LIB/QAUOOPT.FILE/QAUOOPT.MBR') 
+TOSTMF('/home/TSTDEV1/QAUOOPT.TXT') STMFOPT(*ADD) STMFCCSID(*PCASCII)
+
+                         Additional Message Information                         
+                                                                                
+ Message ID . . . . . . :   CPDA082                                             
+ Date sent  . . . . . . :   02/10/23      Time sent  . . . . . . :   11:52:53   
+                                                                                
+ Message . . . . :   Object is not a file or is a file with attributes not      
+   supported by this command.                                                   
+                                                                                
+ Cause . . . . . :   Object /QSYS.LIB/QGPL.LIB/QAUOOPT.FILE/QAUOOPT.MBR must be 
+   either a source physical file that has three fields or a program described   
+   file. Externally described files and source physical files containing fewer  
+   or more than three fields are not permitted by this command.                 
+ Recovery  . . . :   Specify the name of an existing source physical file with  
+   correct attributes, or specify a program described file, then try the        
+   command again.
+ 
+ Cause: The QAUOOPT file has fewer than 3 fields 
