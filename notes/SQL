@@ -125,6 +125,129 @@ UPDATE TSTLIB/MBR@ SET SRCDTA = CONCAT(SUBSTR(Srcdta,1,LENGTH(Srcdta)-7),'//0002
 -- to review your updated comments
 SELECT CONCAT(SUBSTR(SRCDTA,90,6),'//0002') FROM TSTLIB/MBR@ WHERE SRCDAT = 230202;
 
+5770SS1 V7R3M0 160422                                         HELP                               02/13/23  11:39:46     Page     1
+                                                   Select SQL Statement - Help
+         The Select SQL Statement menu lets you select the SQL statement
+         that you want to use.
+     Selection
+         Type an option number in the blank and press Enter.
+     ALTER TABLE
+         Select this option to show the ALTER TABLE Statement display where
+         you can alter a defined table (file) by adding a constraint,
+         dropping a constraint, adding a column (field), altering a column
+         (field), or dropping a column (field).
+     CALL
+         Select this option to show the Specify CALL Statement display where
+         you can call an external procedure.
+     COMMENT ON
+         Select this option to show the Specify COMMENT ON Statement display
+         where you can supply information about a table (physical file),
+         view (logical file), column (field), package, or alias to refer to
+         later.
+     COMMIT
+         Select this option to show the Specify COMMIT Statement display
+         where you can commit the database changes made by the unit of work.
+     CONNECT
+         Select this option to show the Specify CONNECT Statement display
+         where you can select a relational database to access.
+     CREATE ALIAS
+         Select this option to show the Specify CREATE ALIAS Statement
+         display where you can define an alias for a table (physical file)
+         or a view (logical file).
+     CREATE COLLECTION
+         Select this option to show the Specify CREATE COLLECTION Statement
+         display where you can define a collection.
+     CREATE INDEX
+         Select this option to show the Specify CREATE INDEX Statement
+         display where you can define an index on a table (file).
+     CREATE PROCEDURE
+         Select this option to show the Specify CREATE PROCEDURE Statement
+         display where you can create an SQL procedure.
+     CREATE TABLE
+         Select this option to show the Specify CREATE TABLE Statement
+         display where you can define a table (file).
+     CREATE VIEW
+         Select this option to show the Specify CREATE VIEW Statement
+         display where you can define a view (logical file) on one or more
+         tables (files).
+     DELETE
+         Select this option to show the Specify DELETE Statement display
+         where you can delete one or more rows (records) from a table
+         (file).
+     DISCONNECT
+         Select this option to show the Specify DISCONNECT Statement display
+         where you can end one or more unprotected conversations.
+     DROP ALIAS
+         Select this option to show the Specify DROP ALIAS Statement display
+         where you can delete an alias.
+     DROP COLLECTION
+         Select this option to show the Specify DROP COLLECTION Statement
+         display where you can delete a collection.
+     DROP INDEX
+         Select this option to show the Specify DROP INDEX Statement display
+         where you can delete an index.
+     DROP PACKAGE
+         Select this option to show the Specify DROP PACKAGE Statement
+         display where you can delete a package.
+     DROP TABLE
+         Select this option to show the Specify DROP TABLE Statement display
+         where you can delete a table (physical file).
+     DROP VIEW
+         Select this option to show the Specify DROP VIEW Statement display
+         where you can delete a view (logical file).
+     GRANT PACKAGE
+         Select this option to show the Specify GRANT PACKAGE Statement
+         display where you can grant package (program) privileges to users.
+     GRANT TABLE
+         Select this option to show the Specify GRANT TABLE Statement
+         display where you can grant table (physical file) and view (logical
+         file) privileges to users.
+     INSERT
+         Select this option to show the Specify INSERT Statement display
+         where you can insert one or more rows (records) into a table
+         (file).
+     LABEL ON
+         Select this option to show the Specify LABEL ON Statement display
+         where you can change or add a label on the description of the table
+         (physical file), view (logical file), column (field), package, or
+         alias.
+     LOCK TABLE
+         Select this option to show the Specify LOCK TABLE Statement display
+         where you can lock a table (file).
+     RENAME
+         Select this option to show the Specify RENAME Statement display
+         where you can rename a table, view, or index.
+     RELEASE
+         Select this option to show the Specify RELEASE Statement display
+         where you can place one or more connections in the released state.
+     REVOKE PACKAGE
+         Select this option to show the Specify REVOKE PACKAGE Statement
+         display where you can remove user privileges on packages
+         (programs).
+     REVOKE TABLE
+         Select this option to show the Specify REVOKE TABLE Statement
+         display where you can remove user privileges on tables (physical
+         files) and views (logical files).
+     ROLLBACK
+         Select this option to show the Specify ROLLBACK Statement display
+         where you can end a unit of work and roll back the changes made to
+         the table (file) by that unit of work.
+     SELECT
+         Select this option to show the Specify SELECT Statement display
+         where you can do a subselect query, which specifies a result table
+         (file) or intermediate result table (file).
+     SET CONNECTION
+         Select this option to show the Specify SET CONNECTION Statement
+         display where you can change the state of a connection from dormant
+         to current.
+     SET TRANSACTION
+         Select this option to show the Specify SET TRANSACTION Statement
+         display where you can set the isolation level (commitment control).
+     UPDATE
+         Select this option to show the Specify UPDATE Statement display
+         where you can update the values of one or more columns (fields) in
+         one or more rows (records) of a table (file).
+
 5770SS1 V7R4M0 190621               Run SQL Statements             EXAMDTLS0                          10/23/21 14:28:26
 Record  *...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 ...+... 8   SEQNBR  Last change         
 MSG ID  SEV  RECORD  TEXT                                                                                              
