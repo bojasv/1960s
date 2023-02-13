@@ -1,0 +1,50 @@
+OAuth (pronounced “oh-auth”, short for Open Authentication) is a technological standard that allows you to share information between services without exposing your password. - Hewlett Packard
+OAuth is an open standard for access delegation, commonly used as a way for internet users to grant websites or applications access to their information on other websites but without giving them the passwords. - Wikipedia
+OAuth is an open-standard authorization protocol or framework that describes how unrelated servers and services can safely allow authenticated access to their assets without actually sharing the initial, related, single logon credential. - CSOOnline
+
+OAuth is like a velt key to your car - Varonis.com
+
+OAuth 2 architecture are
+  the resource owner (user)
+  the Client (interfaced web-app)
+  the authorization server (Intuit? or same as API)
+  the resource server (API)
+
+Token vs API key
+The main distinction between these two is: 
+  API keys identify the calling project — the application or site — making the call to an API. 
+  (Authentication) tokens identify a user — the person — that is using the app or site.
+
+The two token types involved in OAuth 2 authentication are Access Token and Refresh Token.
+
+OAuth vs Single Sign On (SSO)
+To Start, OAuth is not the same thing as SSO. 
+While they have some similarities — they are very different. OAuth is an authorization protocol. 
+SSO is a high-level term used to describe a scenario in which a user uses the same credentials to access multiple domains.
+
+JSON Web Token (JWT) is a compact URL-safe means of representing claims to be transferred between two parties.
+JWT is mainly used for APIs while OAuth can be used for web, browser, API, and various apps or resources. 
+JWT token vs oauth token: 
+  JWT defines a token format while 
+  OAuth deals in defining authorization protocols. 
+  JWT is simple and easy to learn from the initial stage while 
+  OAuth is complex.
+a JWT consists of three parts: a header, payload, and signature.
+JWT is excellent for API authentication and server-to-server authorization, OAuth 2.0 takes the lead in session management.
+
+SAML supports both user authentication and authorization while OAuth is only for authorization. 
+If the business priority is confirming user identity, SAML is the only choice. 
+If the business priority is securely and easily managing user privileges, OAuth may be the better choice
+
+There are two versions of OAuth authorization (ref: SOAPui.org)
+  OAuth 1 (using HMAC-SHA signature strings)
+    Hash-based Message Authentication Code (HMAC)
+    Secure Hash Algorithm (SHA)
+  OAuth 2 (using tokens over HTTPS)
+
+About SHA - functions introduced in 1993 by National Institute of Standards and Technology (NIST) as a U.S. Federal Information Processing Standard (FIPS) 
+A cryptographic hash (sometimes called ‘digest’) is a kind of ‘signature’ for a text or a data file. SHA-256 generates an almost-unique 256-bit (32-byte) signature for a text. 
+for the source code - https://www.movable-type.co.uk/scripts/sha256.html#src-code
+
+Other:
+Hydra is the most advanced OAuth 2.0 and OIDC Certified® Server, and the only one that is open source. It integrates with any login system and allows you to interface with any application, anywhere. - Ory Hydra
