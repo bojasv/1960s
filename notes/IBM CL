@@ -14,6 +14,55 @@ Common Messages in CL Compiler listing
 * CPD0725 10  End of source file reached without ENDPGM command.
 * CPD0726 10  Variable &NUM1 declared but not referred to.
 * CPD0791 00  No labels used in program.
+ *...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+....0....+....1....+....2....+....3 
+-------------------------------------------------------------------- The source from debugger
+Program:   OPSEQ          Library:   OJAY1          Module:   OPSEQ
+------  nnnnnnYYMMDD_______________________________________________
+     1  000100230212pgm                                            
+     2  000200230212dcl &parm *uint                                
+     3  000300230213dcl &var1 *lgl                                 
+     4  000400230212                                               
+     5  000500230213if (^&var1) then(do)                           
+     6  000600230213  chgvar &parm (2+3*4)                         
+     7  000700230213  /* 14 */                                     
+     8  000800230213enddo                                          
+     9  000900230212                                               
+    10  001000230212endpgm                                         
+-------------------------------------------------------------------- 
+Program:   OPSEQ          Library:   OJAY1          Module:   OPSEQ
+     1  000100230212pgm                                            
+     2  000200230212dcl &parm *uint                                
+     3  000300230213dcl &var1 *lgl                                 
+     4  000400230212                                               
+     5  000500230213if (^&var1) then(do)                           
+     6  000600230213  chgvar &parm (2+3*4)                         
+     7  000700230213  /* 14 */                                     
+     8  000800230213enddo                                          
+     9  000900230212                                               
+    10  999999230212endpgm                                         
+-------------------------------------------------------------------- 
+dcl &parm *uint       
+dcl &var1 *lgl        
+                      
+if (^&var1) then(do)  
+  chgvar &parm (2+3*4)
+  /* 14 */            
+enddo                
+--------------------------------------------------------------------
+* CPD0022 30  ^ not in expression enclosed in parentheses.
+* CPD0707 30  No matching DO command for ENDDO command. ENDDO ignored.
+Resolution: use parentheses to encapsulate the condition
+
+* CPD0712 30  Operand  does not have valid type for operator.
+Resolution: use the correct data-type for the expression
+
+*...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+....0....+....1....+....2....+....3 
+ SEQNBR  *...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7 ...+... 8 ...+... 9 ...+.  DATE   
+ 999999- pgm                                                                                              02/12/23
+* CPD0780 30  Source sequence numbers not valid.                                                                  
+    200- dcl &parm *uint                                                                                  02/12/23
+    300- dcl &var1 *lgl                                                                                   02/13/23
+    400-                                                                                                  02/12/23
 
 RUNSQL or RUNSQLSTM
                          Additional Message Information                         
