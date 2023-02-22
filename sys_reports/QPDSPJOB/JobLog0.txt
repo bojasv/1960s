@@ -1,0 +1,200 @@
+ 5770SS1 V7R3M0 160422                      Work with Job                                        2/22/23  2:17:15         Page   1
+ Job . . . :   QPADEV000L   User . . . :   OJASVA        Number . . . . :   022229
+                                      Job Status Attributes
+   Status of job  . . . . . . . . . . . . . . . :   ACTIVE
+   Current user profile . . . . . . . . . . . . :   OJASVA
+   Job user identity  . . . . . . . . . . . . . :   OJASVA
+     Set by . . . . . . . . . . . . . . . . . . :     *DEFAULT
+   Entered system:
+     Date . . . . . . . . . . . . . . . . . . . :   02/22/23
+     Time . . . . . . . . . . . . . . . . . . . :   02:13:11
+   Started:
+     Date . . . . . . . . . . . . . . . . . . . :   02/22/23
+     Time . . . . . . . . . . . . . . . . . . . :   02:13:11
+   Subsystem  . . . . . . . . . . . . . . . . . :   QINTER
+     Subsystem pool ID  . . . . . . . . . . . . :   2
+   Type of job  . . . . . . . . . . . . . . . . :   INTER
+   Special environment  . . . . . . . . . . . . :   *NONE
+   Program return code  . . . . . . . . . . . . :   0
+   Controlled end requested . . . . . . . . . . :   NO
+   System . . . . . . . . . . . . . . . . . . . :   P1306XPV
+ 5770SS1 V7R3M0 160422                      Work with Job                                        2/22/23  2:17:15         Page   2
+ Job . . . :   QPADEV000L   User . . . :   OJASVA        Number . . . . :   022229
+                                    Job Definition Attributes
+   Job description  . . . . . . . . . . . . . . :   JOBD         QDFTJOBD
+     Library  . . . . . . . . . . . . . . . . . :                  QGPL
+     ASP device . . . . . . . . . . . . . . . . :                  *SYSBAS
+   Job queue  . . . . . . . . . . . . . . . . . :   JOBQ
+     Library  . . . . . . . . . . . . . . . . . :
+     ASP device . . . . . . . . . . . . . . . . :
+   Job priority (on job queue)  . . . . . . . . :   JOBPTY       5
+   Output priority (on output queue). . . . . . :   OUTPTY       5
+   End severity . . . . . . . . . . . . . . . . :   ENDSEV       30
+   Message logging:                                 LOG
+     Level  . . . . . . . . . . . . . . . . . . :                4
+     Severity . . . . . . . . . . . . . . . . . :                0
+     Text . . . . . . . . . . . . . . . . . . . :                *NOLIST
+   Log CL program commands  . . . . . . . . . . :   LOGCLPGM     *NO
+   Job log output . . . . . . . . . . . . . . . :   LOGOUTPUT    *JOBEND
+   Printer device . . . . . . . . . . . . . . . :   PRTDEV       PRT01
+   Default output queue . . . . . . . . . . . . :   OUTQ         *DEV
+     Library  . . . . . . . . . . . . . . . . . :
+   Job date . . . . . . . . . . . . . . . . . . :   DATE         02/22/2023
+   Date format  . . . . . . . . . . . . . . . . :   DATFMT       *MDY
+   Date separator . . . . . . . . . . . . . . . :   DATSEP       /
+   Time separator . . . . . . . . . . . . . . . :   TIMSEP       :
+   Job time:                                        DATETIME
+     Current date . . . . . . . . . . . . . . . :                02/22/2023
+     Current time . . . . . . . . . . . . . . . :                02:17:15
+   Day of week  . . . . . . . . . . . . . . . . :   DAYOFWEEK    *WED
+   Time zone  . . . . . . . . . . . . . . . . . :   TIMZON       QN0500EST3
+     Offset . . . . . . . . . . . . . . . . . . :   TIMOFFSET      -05:00
+     Full name  . . . . . . . . . . . . . . . . :   TIMZONFULL     Eastern Standard Time
+     Abbreviated name . . . . . . . . . . . . . :   TIMZONABBR     EST
+   Year offset  . . . . . . . . . . . . . . . . :   YEAROFS      0
+   Job switches . . . . . . . . . . . . . . . . :   SWS          00000000
+   Inquiry message reply  . . . . . . . . . . . :   INQMSGRPY    *RQD
+   Accounting code  . . . . . . . . . . . . . . :   ACGCDE
+   Print text . . . . . . . . . . . . . . . . . :   PRTTXT       '                              '
+   DDM conversation . . . . . . . . . . . . . . :   DDMCNV       *KEEP
+   Break message handling . . . . . . . . . . . :   BRKMSG       *NORMAL
+   Status message . . . . . . . . . . . . . . . :   STSMSG       *NORMAL
+   Device recovery action . . . . . . . . . . . :   DEVRCYACN    *DSCMSG
+   Time slice end pool  . . . . . . . . . . . . :   TSEPOOL      *NONE
+   Print key format . . . . . . . . . . . . . . :   PRTKEYFMT    *PRTHDR
+   Sort sequence  . . . . . . . . . . . . . . . :   SRTSEQ       *HEX
+     Library  . . . . . . . . . . . . . . . . . :
+   Language identifier  . . . . . . . . . . . . :   LANGID       ENU
+   Country or region identifier . . . . . . . . :   CNTRYID      US
+   Coded character set ID . . . . . . . . . . . :   CCSID        65535
+   Default coded character set ID . . . . . . . :   DFTCCSID     37
+   Job message queue maximum size . . . . . . . :   JOBMSGQMX    16
+   Job message queue full action  . . . . . . . :   JOBMSGQFL    *WRAP
+   Allow multiple threads . . . . . . . . . . . :   ALWMLTTHD    *NO
+   Decimal format . . . . . . . . . . . . . . . :   DECFMT       *BLANK
+   Character identifier control . . . . . . . . :   CHRIDCTL     *DEVD
+   Auxiliary storage pool group . . . . . . . . :   ASPGRP       *NONE
+ 5770SS1 V7R3M0 160422                      Work with Job                                        2/22/23  2:17:15         Page   3
+ Job . . . :   QPADEV000L   User . . . :   OJASVA        Number . . . . :   022229
+   Spooled file action  . . . . . . . . . . . . :   SPLFACN      *KEEP
+   Workload group . . . . . . . . . . . . . . . :   WLCGRP       *NONE
+   Processor resources priority . . . . . . . . :   PRCRSCPTY    *SYSCTL
+                                        Job Run Attributes
+   Run priority  . . . . . . . . . . . . . . . . . . . . :   RUNPTY       20
+   Time slice in milliseconds  . . . . . . . . . . . . . :   TIMESLICE    2000
+   Eligible for purge  . . . . . . . . . . . . . . . . . :   PURGE        *YES
+   Default wait time in seconds  . . . . . . . . . . . . :   DFTWAIT      30
+   Maximum CPU time in milliseconds  . . . . . . . . . . :   CPUTIME      *NOMAX
+     CPU time used . . . . . . . . . . . . . . . . . . . :                12
+   Maximum temporary storage in megabytes  . . . . . . . :   MAXTMPSTG    *NOMAX
+     Temporary storage used  . . . . . . . . . . . . . . :                2
+     Peak temporary storage used . . . . . . . . . . . . :                3
+   Maximum threads . . . . . . . . . . . . . . . . . . . :   MAXTHD       *NOMAX
+     Threads . . . . . . . . . . . . . . . . . . . . . . :                1
+   Thread resources affinity:                                THDRSCAFN
+     Group . . . . . . . . . . . . . . . . . . . . . . . :                *NOGROUP
+     Level . . . . . . . . . . . . . . . . . . . . . . . :                *NORMAL
+   Resources affinity group  . . . . . . . . . . . . . . :   RSCAFNGRP    *NO
+ 5770SS1  V7R3M0   160422                   Work with Job                                        2/22/23  2:17:15         Page   4
+ Job . . . :   QPADEV000L  User . . . :   OJASVA     Number . . . . :   022229
+                                                     Spooled Output Files
+            Device or                    Total   Cur                                         File
+ File       Queue      User Data  Status Pages  Page Copies Form Type  Pty Date     Time     Nbr    Queue      Library
+ QPDSPJOB   QPRINT                 OPN       2           1  *STD        5  02/22/23 02:17:15      1 QPRINT     QGPL
+                                               Job Call Stack
+ Thread  . :   0000006B
+                                                                                                    Module or              Ctl
+ Type Program                 Statement Identifiers    Instruction      Activation Group            Expanded Type          Bdy
+      QCMD       QSYS                                              0519 *DFTACTGRP 0000000000000001                         Y
+      QUICMENU   QSYS                                              00C1 *DFTACTGRP 0000000000000001                         N
+    1 QUIMNDRV   QSYS                                              061E *DFTACTGRP 0000000000000001                         N
+    2 QUIMGFLW   QSYS                                              04D9 *DFTACTGRP 0000000000000001                         N
+    3 QUICMD     QSYS                                              056F *DFTACTGRP 0000000000000001                         N
+                                            Job Locks
+ Job Status . . . . . . . :  ACTIVE
+                              Object                                    Member        ASP
+  Object        Library       Type          Lock          Status        Locks         Device        Scope         Thread
+  AIDEV         QSYS          *USRPRF       *SHRRD        HELD                                      *JOB
+                                            *SHRRD        HELD                                      *JOB
+                                            *SHRRD        HELD                                      *JOB
+  MAIN          QSYS          *MENU         *SHRNUP       HELD                                      *JOB
+                                            *SHRNUP       HELD                                      *JOB
+  OJASVA        QSYS          *USRPRF       *SHRRD        HELD                                      *JOB
+                                            *SHRRD        HELD                                      *JOB
+                                            *SHRRD        HELD                                      *JOB
+  OJASVA        QUSRSYS       *MSGQ         *EXCL         HELD                                      *THREAD       0000006B
+  QDUI132       QSYS          *FILE-DSP     *SHRNUP       HELD                                      *JOB
+  QGPL          QSYS          *LIB          *SHRRD        HELD                                      *JOB
+  QHLPSYS       QSYS          *LIB          *SHRRD        HELD                                      *JOB
+  QPADEV000L    QSYS          *DEVD         *EXCLRD       HELD                                      *JOB
+                                            *EXCLRD       HELD                                      *JOB
+  QPDSPJOB      QSYS          *FILE-PRT     *SHRNUP       HELD                                      *JOB
+  QSYS          QSYS          *LIB          *SHRRD        HELD                                      *JOB
+  QSYS2         QSYS          *LIB          *SHRRD        HELD                                      *JOB
+  QTEMP         QSYS          *LIB          *SHRRD        HELD                                      *JOB
+  QUSRSYS       QSYS          *LIB          *SHRRD        HELD                                      *JOB
+  Q04079N002    QSPL          *FILE-PHY     *SHRRD        HELD          YES                         *JOB
+ 5770SS1 V7R3M0 160422                      Work with Job                                        2/22/23  2:17:15         Page   5
+ Job . . . :   QPADEV000L   User . . . :   OJASVA        Number . . . . :   022229
+                                         Job Member Locks
+  File . . . . :   Q04079N002     Library . . . . . : QSPL           Type . . . . :   PHY            ASP device . . :   *SYSBAS
+                 Lock
+  Member         Type            Lock            Status                          Scope           Thread
+  Q048599364     MBR             *SHRRD          HELD                            *JOB
+                 DATA            *SHRUPD         HELD                            *JOB
+                                         Job Record Locks
+                                                Record
+ File        Library     Member                 Number    Status
+   (Job has no record locks)
+                                          Job Library List
+                          ASP
+   Library     Type       Device      Text
+   QSYS        SYS                    System Library
+   QSYS2       SYS                    System Library for CPI's
+   QHLPSYS     SYS
+   QUSRSYS     SYS                    System Library for Users
+   QGPL        USR                    General Purpose Library
+   QTEMP       USR
+                                             Open Files
+ Number of open data paths . . . . . . . . . . :      2
+                         Member/     Record      File     I/O   ---Open----  Relative
+ File        Library     Device      Format      Type    Count  Opt Shr-Nbr   Record   Scope       Activation Group
+ QDUI132     QSYS        QPADEV000L  USRRCD      DSP        35  IO  NO                 *ACTGRPDFN  *DFTACTGRP 0000000000000002
+ QPDSPJOB    QSYS        *SPOOL      DETAIL      PRT       143  O   YES  1             *ACTGRPDFN  *DFTACTGRP 0000000000000002
+                                           All File Overrides
+ Call level  . . . . . . . . . . . . . :   *
+ File           Level   Type  Keyword Specifications
+     (No file overrides)
+ 5770SS1 V7R3M0 160422                      Work with Job                                        2/22/23  2:17:15         Page   6
+ Job . . . :   QPADEV000L   User . . . :   OJASVA        Number . . . . :   022229
+                                    Commitment Control Status
+ (No commitment definitions are active)
+                                  Display Communications Status
+ ---------Communications---------  --------Number of operations---------
+ Identifier        Method               Output        Input        Other  Operation
+     (No communications identifiers are active)
+                                            Job Activation Groups
+ -------Activation Group--------
+ Name           Number             In Use Indicator   Program      Library
+ *DFTACTGRP     0000000000000001      Y
+ *DFTACTGRP     0000000000000002      Y
+ QLGLOCAL       0000000000000011      N               QLGLOCAL     QSYS
+                                             Job Mutexes
+ Mutex
+ Status           Mutex
+   (Job has no mutexes)
+                                               Threads
+                                       Total        Aux         Run
+ Thread         Name        Status      CPU         I/O       Priority
+0000006B                    RUN            .010        308       20
+                                           MLB attributes
+Library           Resource            Initial mount      End of volume mount
+Device       allocation priority        wait time             wait time
+   (No MLB attributes list available .)
+ 5770SS1 V7R3M0 160422                      Work with Job                                        2/22/23  2:17:15         Page   7
+ Job . . . :   QPADEV000L   User . . . :   OJASVA        Number . . . . :   022229
+                                      Environment variables
+ Name                                    Value                                                                             CCSID
+ PASE_USRGRP_LIMITED                     'N'                                                                                  37
+ LANG                                    '/QSYS.LIB/EN_US.LOCALE'                                                             37
+                          * * * * *  E N D  O F  L I S T I N G  * * * * *
