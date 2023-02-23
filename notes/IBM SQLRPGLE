@@ -1,1 +1,5 @@
-exec sql
+EXEC SQL
+INSERT INTO file (url)
+(VALUES TRIM(SELECT url FROM file WHERE REQTYPE='GET')
+CONCAT
+URL_ENCODE(TRIM(:urlSqlStatmnt));
