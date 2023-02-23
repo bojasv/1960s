@@ -149,3 +149,47 @@ These are just some of the most common interfaces available for IBM i. The speci
 dsppfm QSYSINC/SYS ERRNO - check for ERRMSG such as 3471 for IFS/CPFA0D4
 or use
 DSPMSGD CPExxxx i.e DSPMSGD CPE3471
+--------------------------------------------------------------------------- IFS Authorities (Object & Data) - WRKOBJOWN
+                               Display Authority                                
+                                                                                
+ Object . . . . . . . . . . . . :   /tmp/vscodetemp-O_ZUCPz0bb                  
+ Type . . . . . . . . . . . . . :   STMF                                        
+ Owner  . . . . . . . . . . . . :   OJASVA                                      
+ Primary group  . . . . . . . . :   *NONE                                       
+ Authorization list . . . . . . :   *NONE                                       
+                                                                                
+               Data     -------------Data Authorities-------------              
+ User        Authority  Objopr  Read  Add  Update  Delete  Execute              
+ *PUBLIC     *NONE                                                              
+ OJASVA      *RWX         X      X     X     X       X        X                 
+ 
+ F3=Exit   F11=Display object authorities   F12=Cancel   F17=Top   F18=Bottom   
+               Data     --Object Authorities--                                  
+ User        Authority  Exist  Mgt  Alter  Ref                                  
+ *PUBLIC     *NONE        X     X     X     X                                   
+ OJASVA      *RWX         X     X     X     X                                   
+                                                                                
+ F3=Exit   F11=Display detail data authorities   F12=Cancel   F17=Top           
+ F18=Bottom                                                                     
+ (C) COPYRIGHT IBM CORP. 1980, 2015.                                            
+ --------------------------------------------------------------------------- DB2 Authorities (Object)
+                             Display Object Authority                            
+                                                                                
+ Object . . . . . . . :   OJASVA          Owner  . . . . . . . :   OJASVA       
+   Library  . . . . . :     QUSRSYS       Primary group  . . . :   *NONE        
+ Object type  . . . . :   *MSGQ           ASP device . . . . . :   *SYSBAS      
+                                                                                
+ Object secured by authorization list  . . . . . . . . . . . . :   *NONE        
+                                                                                
+                          Object    ----------Object-----------                 
+ User        Group       Authority  Opr  Mgt  Exist  Alter  Ref                 
+ *PUBLIC                 *CHANGE     X                                          
+ OJASVA                  *ALL        X    X     X      X     X                  
+ USRX                    *ALL        X    X     X      X     X                  
+                                                                                
+                          Object    ---------------Data---------------          
+ User        Group       Authority  Read  Add  Update  Delete  Execute          
+ *PUBLIC                 *CHANGE     X     X     X       X        X             
+ OJASVA                  *ALL        X     X     X       X        X             
+ USRX                    *ALL        X     X     X       X        X             
+                                                                                
