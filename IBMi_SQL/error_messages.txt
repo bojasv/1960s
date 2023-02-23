@@ -1,0 +1,27 @@
+MSG ID  SEV  RECORD  TEXT
+ SQL0952  30       1  Position 1 Processing of the SQL statement ended.
+                      Reason code 10.
+Why this error? When you change a file and RUNSQLSTM using ODBC (say Code for i)
+What is this error? Try running RUNSQLSTM on green screen
+RUNSQLSTM SRCFILE(TSTLIB/QDDLSRC) SRCMBR(FILE1) COMMIT(*NONE) NAMING(*SQL)
+It throws error 'CPA32B2 - Change of file EVQBCFG may cause data to be lost. (C I)'
+
+                         Additional Message Information                         
+                                                                                
+ Message ID . . . . . . :   CPA32B2       Severity . . . . . . . :   99         
+ Message type . . . . . :   Inquiry                                             
+                                                                                
+ Message . . . . :   Change of file EVQBCFG may cause data to be lost. (C I)    
+ Cause . . . . . :   A change file operation was requested for file FILE1 in  
+   library TSTLIB. Either fields will be dropped or the attributes of fields    
+   have changed such that either precision may be lost, truncation may occur,   
+   or character conversion may cause substitution characters. See message       
+   CPD32CD for more information.                                                
+ Recovery  . . . :   Enter one of the following:                                
+     C -- The file will not be changed.                                         
+     I -- The file will be changed and data may be lost.                        
+ Possible choices for replying to message . . . . . . . . . . . . . . . :       
+   C -- The file will not be changed.                                           
+   I -- The file will be changed. Data may be lost.
+
+Resolution? Reply I to proceed with the re-compilation of the file.
