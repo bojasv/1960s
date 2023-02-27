@@ -16,10 +16,13 @@ CREATE OR REPLACE TABLE TESTSQLF(
                 FOR COLUMN EDUSER       VARCHAR(10)  NOT NULL DEFAULT '')
   RCDFMT TESTSQLFA;                                                     
 
---SMALLINT - supports values upto 32k - 32,767
---INTEGER  - supports values upto 2B  - 2,147,483,647
---BIGINT   - supports values upto 9Qi - 9,223,372,036,854,775,807
---TIMESTAMP - char(29) field          - '9999-12-31 23:59:59.999999999' 
+--SMALLINT - supports values upto 32k - 32,767 - 32767 - BINARY(4,0) - 2 Bytes
+--INTEGER or INT - supports values upto 2B  - 2,147,483,647 - 2147483647 - BINARY(9,0) - 4 Bytes
+--BIGINT   - supports values upto 9Qi - 9,223,372,036,854,775,807 - 9223372036854775807 - BINARY(18,0) - 8 Bytes
+--TIMESTAMP - char(29) field          - '9999-12-31 23:59:59.999999999'
+--REAL - FLTSNG(8,7) - 4 Bytes
+--FLOAT - FLTDBL(16,15) - 8 Bytes - same as DOUBLE
+--DECFLOAT - DECFLOAT(34,0) - 16 Bytes
 ------------------------------------------------------------------------
 
 CREATE TABLE QTEMP/TSTFIL (
