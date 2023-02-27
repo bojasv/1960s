@@ -193,3 +193,25 @@ DSPMSGD CPExxxx i.e DSPMSGD CPE3471
  OJASVA                  *ALL        X     X     X       X        X             
  USRX                    *ALL        X     X     X       X        X             
                                                                                 
+--------------------------------------------------------------------------- IWS
+QHTTPSVR - HTTP Subsystem, HTTP Library
+QTMHHTTP - HTTP (Group) User
+
+// CPPLE -> ILE C++ programs
+// CLE   -> ILE C programs
+
+QZSRHTTP - Program (CPPLE)
+QZHBMAIN - Program (CPPLE)
+QZSRLOG  - Program (CLE)
+QZSRCGI  - Program (CLE)
+
+Probable Call Stack Order:
+
+QCMD
+QZHBMAIN - _CXX_PEP__Fv
+QZSRHTTP - main
+QZSRCORE - apche_main
+QZSRAPR  - apr_signal_thread
+QP0SSRV1 - sleep
+
+QWEBADMIN - Web Administrator
