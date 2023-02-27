@@ -23,6 +23,12 @@ CREATE OR REPLACE TABLE TESTSQLF(
 --REAL - FLTSNG(8,7) - 4 Bytes
 --FLOAT - FLTDBL(16,15) - 8 Bytes - same as DOUBLE
 --DECFLOAT - DECFLOAT(34,0) - 16 Bytes
+--DATALINK - VARCHAR(200) - Allocated Length CHAR(50) CCSID 37 - 224 Bytes
+
+--CLOB - VARCHAR(1048576) CCSID 37 - Max 2147483647 - 32 Bytes - 
+--BLOB - VARCHAR(1048576) CCSID 37 - 32 Bytes
+--DBCLOB - VARCHAR(1048576) CCSID 835 - 32 Bytes
+--XML - VARCHAR(2147483647) CCSID 1208 UCS2/Unicode *CONVERT Normalize_data *NO - 32 Bytes
 ------------------------------------------------------------------------
 
 CREATE TABLE QTEMP/TSTFIL (
