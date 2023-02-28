@@ -1,7 +1,9 @@
+-- Open this file in ACS's 'Run SQL Scripts'
 -- Replace 'OXBLIB' with your test library
+-- To run all statements at once, press Ctrl+Shift+A 
 SET SCHEMA OXBLIB ;
 
-CREATE TABLE QAUOOPT LIKE QGPL/QAUOOPT ;
+CREATE TABLE QAUOOPT LIKE QGPL.QAUOOPT ;
 
 -- Can also use the following statement
 -- CREATE TABLE OXBLIB/QAUOOPT AS (SELECT * FROM QGPL/QAUOOPT) WITH NO DATA ;
