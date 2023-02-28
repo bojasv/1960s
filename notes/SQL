@@ -31,6 +31,19 @@ CREATE OR REPLACE TABLE TESTSQLF(
 --XML - VARCHAR(2147483647) CCSID 1208 UCS2/Unicode *CONVERT Normalize_data *NO - 32 Bytes
 
 -- for CURRENT USER, use VARCHAR(19)
+
+------------------------------------------------------------------------
+Character encoding
+
+Normally, we use ASCII to represent latin alphabets globally such as 
+English, French, Spanish etc.. As the character-set of these languages
+doesn't exceed the ceiling of 256 characters offered by ASCII, they
+are called as Single-byte character set (SBCS).
+
+While non-latin languages like, Chinese, Japanese, Korean etc. have 
+complex char-set, hence they require values beyond 256, hence comes
+the 2nd byte to extend the range of the char-set to 65,536 (65536)
+It's called as Double-byte Character Set (DBCS)
 ------------------------------------------------------------------------
 
 CREATE TABLE QTEMP/TSTFIL (
