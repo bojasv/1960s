@@ -29,6 +29,8 @@ CREATE OR REPLACE TABLE TESTSQLF(
 --BLOB - VARCHAR(1048576) CCSID 37 - 32 Bytes
 --DBCLOB - VARCHAR(1048576) CCSID 835 - 32 Bytes
 --XML - VARCHAR(2147483647) CCSID 1208 UCS2/Unicode *CONVERT Normalize_data *NO - 32 Bytes
+
+-- for CURRENT USER, use VARCHAR(19)
 ------------------------------------------------------------------------
 
 CREATE TABLE QTEMP/TSTFIL (
