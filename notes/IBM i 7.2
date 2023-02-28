@@ -30,6 +30,12 @@ Option file  . . . . . . . .   QAUOOPT      Name
 Member . . . . . . . . . . .   QAUOOPT      Name                      
 Full screen mode . . . . . .   N            Y=Yes, N=No               
 ---------------------------------------------------------------------------
+SBCS, DBCS, and MBCS represent different code page layouts
+
+SBCS: EBCDIC IBM-037, ASCII IBM-850
+DBCS: IBM-932 (Japanese)
+MBCS: IBM-eucJP (Japanese)
+---------------------------------------------------------------------------
 
 QZDASOINIT - a job that starts as you connect to relational database (say XSYSDB01) on a client IP; This job gets submitted by QUSER
 Probably this could be IBM i Database Host Server Prestart Job.
@@ -215,3 +221,6 @@ QZSRAPR  - apr_signal_thread
 QP0SSRV1 - sleep
 
 QWEBADMIN - Web Administrator
+
+
+ref: https://www.ibm.com/docs/en/txseries/8.2?topic=conversion-sbcs-dbcs-mbcs-data-considerations
