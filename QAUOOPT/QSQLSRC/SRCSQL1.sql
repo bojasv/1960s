@@ -2,7 +2,7 @@
 -- Replace 'OXBLIB' with your test library
 -- To run all statements at once, press Ctrl+Shift+A 
 
-CL: CRTLIB CRTLIB LIB(OJASVA) TYPE(*PROD) TEXT('Work Lib for Ojasva') ;
+CL: CRTLIB LIB(OJASVA) TYPE(*PROD) TEXT('Work Lib for Ojasva') ;
 CL: CRTSRCPF FILE(OJASVA/QRPGLESRC) RCDLEN(112) TEXT('RPGLE Source Members') ;
 CL: MKDIR DIR('/home/OJASVA') ;
 -- *SECADM required to create or change user profiles.
