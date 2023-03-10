@@ -33,6 +33,11 @@ dcl-c SINGLE_RECORD_EXISTS 1;
 //*Constant (hexadecimal)
 dcl-c CRLF const(x'0d25');
 
+//*PLIST - no need to supplu pgm name; no need to declare the parmx1 outside the PI; Dcl-Pr is optional
+Dcl-Pi *n ;               
+  parmx1 VarChar(100) ; 
+End-Pi ;
+
 //*arrays
 //*run-time array
 dcl-s $RT_array char(3) dim(100) ;
