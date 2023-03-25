@@ -22,3 +22,6 @@
 # Enable syntax highlighting for files with `.gitattributes` extensions.
 #
 *.gitattributes linguist-language=gitattributes
+
+# Apply override to all files in the directory
+*.md linguist-detectable
