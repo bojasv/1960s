@@ -9,7 +9,14 @@
 # These files are text and should be normalized (Convert crlf => lf)
 *.gitattributes text
 .gitignore      text
-*.md            text diff=markdown
+*.md            text eol=lf -diff
+*.markdown        text diff=markdown
+*.mdwn            text diff=markdown
+*.mdown           text diff=markdown
+*.mkd             text diff=markdown
+*.mkdn            text diff=markdown
+*.mdtxt           text
+*.mdtext          text
 
 #
 # Exclude files from exporting
