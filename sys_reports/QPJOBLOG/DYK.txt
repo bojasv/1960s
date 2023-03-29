@@ -1,0 +1,12 @@
+time and space complexity assessment in IBM i using QPJOBLOGs
+
+SPUT (sput) - seconds processing unit time
+MTSU (mtsu) - max temp storage used - in megabytes (MBs)
+
+CPF1164    Completion              00   03/29/23  05:25:07.275241  QWTMCEOJ     QSYS        0161     *EXT                    *N 
+                                     Message . . . . :   Job 047459/OJASVA/UDMT0 ended on 03/29/23 at 05:25:07;                 
+                                       71.884 seconds used; end code 0 .                                                        
+                                     Cause . . . . . :   Job 047459/OJASVA/UDMT0 completed on 03/29/23 at 05:25:07              
+                                       after it used 71.884 seconds processing unit time. The maximum temporary                 
+                                       storage used was 95 megabytes. The job had ending code 0. The job ended                  
+                                       after 1 routing steps with a secondary ending code of 0.  The job ending
