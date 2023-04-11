@@ -578,6 +578,8 @@ QUSRSYS/QTPPPOUTQ - TCP/IP PPP default output queue
          the object.
                                        * * * * *   E N D   O F   L I S T I N G   * * * * *
 
+Abbreviations
+SSW - System SoftWare (e.g. IBM i 7.5)
 
 Reference:
 https://www-01.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_sm/1/877/ENUS5761-SS1/index.html&request_locale=en
