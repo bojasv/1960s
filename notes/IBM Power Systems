@@ -580,6 +580,15 @@ QUSRSYS/QTPPPOUTQ - TCP/IP PPP default output queue
 
 Abbreviations
 SSW - System SoftWare (e.g. IBM i 7.5)
+HA/DR - High Availability / Disaster Recovery
+HA/CA - High Availability / Contineous Availability
+DBE - DataBase Engineers
+BRMS - Backup and Recovery Management System
+CPW - Commercial Processing Workload (CPW) is a simplified variant of the industry-wide TPC-C benchmarking standard 
+      originally developed by IBM to compare the performance of their various AS/400 (now IBM i) server offerings.
+TPC - TPC-C, short for Transaction Processing Performance Council Benchmark C, is a benchmark used to compare the performance of 
+      online transaction processing (OLTP) systems.
+
 
 Reference:
 https://www-01.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_sm/1/877/ENUS5761-SS1/index.html&request_locale=en
