@@ -4,6 +4,9 @@
 
 CL: CRTLIB LIB(OJASVA) TYPE(*PROD) TEXT('Work Lib for Ojasva') ;
 CL: CRTSRCPF FILE(OJASVA/QRPGLESRC) RCDLEN(112) TEXT('RPGLE Source Members') ;
+-- WRKMBRPDM FILE(OJASVA/QRPGLESRC)
+-- Upload the *SAVF (say PRODLSAVF) to the path '/qsys.lib/ojasva.lib'
+-- RSTLIB SAVLIB(PRODL) DEV(*SAVF) SAVF(OJASVA/PRODLSAVF)
 CL: MKDIR DIR('/home/OJASVA') ;
 -- *SECADM required to create or change user profiles.
 CL: CHGUSRPRF USRPRF(OJASVA) HOMEDIR('/home/OJASVA') ;
