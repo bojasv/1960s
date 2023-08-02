@@ -112,3 +112,13 @@ CL: MKDIR DIR('/home/OJASVA') ;
     -- *SECADM required to create or change user profiles.
 CL: CHGUSRPRF USRPRF(OJASVA) HOMEDIR('/home/OJASVA') ;
 stop ;
+-- Manual Activities to do in PDM
+-- Press Ctrl+Home to get the screen ruler
+-- WRKMBRPDM FILE(OJASVA/QRPGLESRC)
+-- Press Shift+F6 (F18=Change Defaults) and update the librray for 'Option file' from QGPL to OJASVA
+-- I personally prefer 'Compile in batch' and 'Change type and text' set to 'N'
+
+-- Manual Activities to do to setup keyboard (*.kmp file)
+-- Reassign the key from 'Delete Character' to 'Erase to End of Field'
+-- IBM i ACS > Edit > Keyboard > Category = 'Host Functions' > Erase to End of Field > Assign a Key > *press Delete* > Yes
+-- Save and find the user files (.kmp, .hod, .ini) at C:\Users\xxx\Documents\IBM\iAccessClient\Emulator
