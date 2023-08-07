@@ -42,7 +42,7 @@ INSERT INTO QAUOOPT VALUES('P1', 'RUNSQLSTM SRCFILE(&L/&F) SRCMBR(&N) COMMIT(*NO
 INSERT INTO QAUOOPT VALUES('QT', 'DSPLIB LIB(QTEMP)') ;
 INSERT INTO QAUOOPT VALUES('R1', 'CRTBNDRPG PGM(&L/&N) SRCFILE(&L/&F) SRCMBR(&N) DBGVIEW(*SOURCE)') ;
 INSERT INTO QAUOOPT VALUES('RQ', 'RUNQRY QRYFILE((&L/&N *FIRST))') ;
-INSERT INTO QAUOOPT VALUES('RS', 'RUNSQLSTM SRCFILE(&L/&F) SRCMBR(&M) COMMIT(*NONE)') ;
+INSERT INTO QAUOOPT VALUES('RS', 'RUNSQLSTM SRCFILE(&L/&F) SRCMBR(&N) COMMIT(*NONE)') ;
 INSERT INTO QAUOOPT VALUES('S1', 'CRTSQLRPGI OBJ(&L/&N) SRCFILE(&L/&F) SRCMBR(&N) COMMIT(*NONE) OBJTYPE(*MODULE) DBGVIEW(*SOURCE)') ;
 INSERT INTO QAUOOPT VALUES('SD', 'STRDBG PGM(&L/&N) UPDPROD(*YES) OPMSRC(*YES) DSPMODSRC(*YES)') ;
 INSERT INTO QAUOOPT VALUES('SL', 'CALL PGM(OXBLIB/SETLIBLOXB)') ;
@@ -61,7 +61,7 @@ INSERT INTO QAUOOPT VALUES('WS', 'WRKSBMJOB') ;
 INSERT INTO QAUOOPT VALUES('WU', 'WRKUSRJOB') ;
 INSERT INTO QAUOOPT VALUES('Y9', 'SIGNOFF ENDCNN(*YES)') ;
 INSERT INTO QAUOOPT VALUES('YC', 'CMPPFM NEWFILE(&L/&F) NEWMBR(&N) OLDFILE(#IAEMG/&F) OLDMBR(&N)') ;
-INSERT INTO QAUOOPT VALUES('YC', 'CRTBNDCL PGM(&L/&N) SRCFILE(&L/&F) REPLACE(*YES) DBGVIEW(*LIST)') ;
+INSERT INTO QAUOOPT VALUES('YC', 'CRTBNDCL PGM(&L/&N) SRCFILE(&L/&F) REPLACE(*YES) DBGVIEW(*SOURCE)') ;
 INSERT INTO QAUOOPT VALUES('YD', 'DLTSPLF FILE(*SELECT)') ;
 INSERT INTO QAUOOPT VALUES('YD', 'DLTSPLF FILE(*SELECT)') ;
 INSERT INTO QAUOOPT VALUES('YM', 'MRGSRC TGTFILE(&L/&F) TGTMBR(&N) MAINTFILE(&L/&F) MAINTMBR(TEST) ROOTFILE(&L/&F) ROOTMBR(&N)') ;
@@ -105,12 +105,28 @@ CL: CRTSRCPF FILE(OJASVA/QDDSSRC) RCDLEN(112) TEXT('DB Files - Data Description 
 CL: CRTSRCPF FILE(OJASVA/QDDLSRC) RCDLEN(240) TEXT('DB Files - Data Definition Language') ;
 CL: CRTSRCPF FILE(OJASVA/QSQLSRC) RCDLEN(240) TEXT('RUNSQLSTM Source Members') ;
 
+-- Add a dummy SRCMBR to change session defaults for SEU
+-- 'Amount to Roll' = 'C', 'Full screen mode' = 'Y', and 'Syntax Checking' = 'N'
+-- Full Screen mode helps you read/write 3 more records/page
+CL: ADDPFM FILE(OJASVA/QRPGLESRC) MBR(SEU_F13) TEXT('Use me to set session defaults') SRCTYPE(CLLE) ;
+
 -- RUNSQLSTM accepts STMF path upto 50 chars ('/qsys.lib/L123456789.lib/F123456789.file/M1234.mbr')
 
 -- Require for VS Code cfg
 CL: MKDIR DIR('/home/OJASVA') ;
-    -- *SECADM required to create or change user profiles.
-CL: CHGUSRPRF USRPRF(OJASVA) HOMEDIR('/home/OJASVA') ;
+
+-- Print Spool to check VRM using QSS1MRI (present in QUSRSYS or QGPL)
+CL: DSPDTAARA DTAARA(QSS1MRI) OUTPUT(*PRINT);
+-- or use following (also gives the details of the TR level)
+SELECT CURRENT SERVER CONCAT ' is running ' CONCAT Ptf_Group_Target_Release CONCAT ' with TR level: ' CONCAT Ptf_Group_Level AS Tr_Level
+FROM Qsys2.Group_Ptf_Info
+WHERE Ptf_Group_Description = 'TECHNOLOGY REFRESH'
+      AND Ptf_Group_Status = 'INSTALLED'
+ORDER BY Ptf_Group_Target_Release DESC
+FETCH FIRST 1 ROWS ONLY;
+
+-- *SECADM required to create or change user profiles.
+-- CL: CHGUSRPRF USRPRF(OJASVA) HOMEDIR('/home/OJASVA') ;
 stop ;
 -- Manual Activities to do in PDM
 -- Press Ctrl+Home to get the screen ruler
@@ -122,3 +138,6 @@ stop ;
 -- Reassign the key from 'Delete Character' to 'Erase to End of Field'
 -- IBM i ACS > Edit > Keyboard > Category = 'Host Functions' > Erase to End of Field > Assign a Key > *press Delete* > Yes
 -- Save and find the user files (.kmp, .hod, .ini) at C:\Users\xxx\Documents\IBM\iAccessClient\Emulator
+
+-- Login using Macro (provided a macro already exists)
+-- Alt+A > M > Enter > Enter
