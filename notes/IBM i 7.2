@@ -7,6 +7,7 @@ IBM i Processor/Feature code - DSPSYSVAL QPRCFEAT
 IBM i Serial number - DSPSYSVAL QSRLNBR
 IBM i LPAR number
 In addition, the IBM command QSYS/WRKHDWRSC TYPE(*PRC), Opt(7) on the Main Card Enclosure will give you the same information, along with the Interactive Processor features.
+select * from qsys2.SYSTEM_STATUS_INFO;
 
 Operations
 Create/Display/Work-with/Delete - CRT/DSP/WRK/DLT
