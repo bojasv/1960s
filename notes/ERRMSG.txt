@@ -1,0 +1,5 @@
+RNS*
+RNS9306: Unable to open member RPGPGM1 of file QRPGLESRC in library *LIBL.
+When: During compilation of a SRCMBR.
+Resolution: ADDLIBLE where the source member RPGPGM1 exists (say SRCLIB) and try recompile.
+RNS9310: Compilation failed. Program AIMBRPRSER not created in library OBJLIB.                                                          
