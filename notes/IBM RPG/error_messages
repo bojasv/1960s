@@ -341,6 +341,27 @@ Resolution: Match the PARM type in dcl-pr and dcl-pi
 ======>                                 aaaaaa                               
 *RNF3308 20 a      021900  Keyword name is not valid; the keyword is ignored.
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+dcl-s srcdta char(100);             
+dcl-s wk_Spec char(1) inz;
+srcdta = '/';                                                           
+if %subst(%trim(srcdta):1:2) = '//'; //RNX0100, RNQ0100 here
+  dsply 'k';                        
+endif;
+*inlr = *on;                        
+RNX0100 - Length or start position is out of range for the string operation. [Error during DBGVIEW]
+RNQ0100 - Length or start position is out of range for the string operation (C G D F). [Error on DSPPGMMSG-QSYS/QDDSPEXT(INQFMT)]
+Description: Here, The start position is fine i.e. 1, the length is defined as 2 while %trim(srcdta) reduces effective string length to 1, hence the err.
+Resolution: Add a var (say, strlen) to keep a track of effective length. (PFB)
+
+dcl-s srcdta char(100);                             
+dcl-s strlen uns(3) inz;                            
+dcl-s wk_Spec char(1) inz;                          
+srcdta = '/';                                       
+strlen = %len(%trim(srcdta));                       
+if strlen >= 2 and %subst(%trim(srcdta):1:2) = '//';
+  dsply 'k';                                        
+endif;
+*inlr = *on;                                        
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
