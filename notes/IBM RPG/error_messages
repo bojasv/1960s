@@ -342,7 +342,6 @@ Resolution: Match the PARM type in dcl-pr and dcl-pi
 *RNF3308 20 a      021900  Keyword name is not valid; the keyword is ignored.
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 dcl-s srcdta char(100);             
-dcl-s wk_Spec char(1) inz;
 srcdta = '/';                                                           
 if %subst(%trim(srcdta):1:2) = '//'; //RNX0100, RNQ0100 here
   dsply 'k';                        
@@ -355,7 +354,6 @@ Resolution: Add a var (say, strlen) to keep a track of effective length. (PFB)
 
 dcl-s srcdta char(100);                             
 dcl-s strlen uns(3) inz;                            
-dcl-s wk_Spec char(1) inz;                          
 srcdta = '/';                                       
 strlen = %len(%trim(srcdta));                       
 if strlen >= 2 and %subst(%trim(srcdta):1:2) = '//';
@@ -363,8 +361,58 @@ if strlen >= 2 and %subst(%trim(srcdta):1:2) = '//';
 endif;
 *inlr = *on;                                        
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+How to identify all the unreferenced variables in your program? - RNF7031
+Compile the PGM in QTEMP
+Access the compile listing
+Find string 'C r o s s   R e f e r e n c e'
+Next, find '*RNF7031 ' //(%subst(srcdta:1:9)
+These are the fields that are un-referenced need to be removed from the pgm source.
+RNF7031 - The name or indicator is not referenced.
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Other errors due to RNF0257
+
+ Msg id  Sv Number Message text                                                 
+*RNF0607 00      1 Text is skipped to recover from the previous error.          
+*RNF7031 00      1 The name or indicator is not referenced.                     
+*RNF7086 00      1 RPG handles blocking for the file. INFDS is updated only when
+                   blocks of data are transferred.                              
+*RNF0289 20      2 Entry contains data that is not valid; only valid data is    
+                   used.                                                        
+*RNF0312 20      1 A right parenthesis is expected but is not found.            
+*RNF0633 20      2 An unexpected right parenthesis was encountered; right       
+                   parenthesis is ignored.                                      
+*RNF2003 20      2 The File Type is not I, O, U, or C; defaults to O if File    
+                   Designation is blank, otherwise to I.                        
+*RNF2004 20      2 The End-of-File entry is not blank or E; defaults to blank.  
+*RNF2005 20      2 The Sequence entry is not blank, A, or D; defaults to blank. 
+*RNF2006 20      2 The File-Format entry is not F or E; defaults to F.          
+*RNF2007 20      2 The Record-Length entry is not valid.                        
+*RNF2013 20      2 The Device entry is not PRINTER, DISK, SEQ, WORKSTN or       
+                   SPECIAL; defaults to DISK.                                   
+*RNF2015 20      2 The File-Addition entry is not blank or A; defaults to blank.
+*RNF2016 20      1 Position 43 of a File Description specification is not blank.
+*RNF2041 20      1 The Record-Address-Type entry is not valid; defaults to      
+                   blank.                                                       
+*RNF2062 20      2 The Mode-of-Processing entry is not blank or L; defaults to  
+                   blank.                                                       
+*RNF2080 20      2 The File-Designation entry is not valid; defaults to F.      
+*RNF2117 20      2 File-Organization entry is not valid; defaults to blank.     
+*RNF2301 20      2 The Key-Length entry must be blank for this file.            
+*RNF0257 30     13 Form-Type entry for main procedure not valid or out of       
+                   sequence.                                                    
+*RNF2023 30      8 The keyword is not recognized; keyword is ignored.           
+*RNF2026 30      1 The File-Name entry is already specified; file ignored.      
+*RNF7023 40      1 The Compiler cannot determine how the program can end.
+
+code starting pos(7)
+*RNF0257 30     10 Form-Type entry for main procedure not valid or out of 
+                   sequence.                                              
+*RNF7023 40      1 The Compiler cannot determine how the program can end.
+
+no errors if free code starts pos(8)     
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*RNF0501 20      1 Length of character item exceeds 16773104; length defaults to 16773104.
+CHAR(16773104) - charmax 16773104 bytes
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
