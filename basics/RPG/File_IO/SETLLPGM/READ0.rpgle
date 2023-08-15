@@ -152,11 +152,11 @@
       setll 1 qrpgsrc;                          
       read qrpgsrc;                             
       for i=1 to n;                        
-        dsply %subst(srcdta:1:52);              
-        read qrpgsrc;                           
-        if %eof(qrpglesrc); //read(e) or %error keeps loop infinite                              
+        if %eof(qrpglesrc);                               
           leave;                                
-        endif;                                  
+        endif; 
+        dsply %subst(srcdta:1:52);              
+        read qrpgsrc;                                                            
       endfor;                                   
       *inLR = *On;                              
       ...............................................................................................
