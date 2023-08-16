@@ -41,3 +41,6 @@ BIFs
 %EQUAL (Return Exact Match Condition)
 %ERROR (Return Error Condition)
 %STATUS (Return File or Program Status)
+%TLOOKUPxx (Look Up a Table Element)
+%NULLIND (Query or Set Null Indicator)
+
