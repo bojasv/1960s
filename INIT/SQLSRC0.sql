@@ -118,6 +118,8 @@ CL: ADDPFM FILE(OJASVA/QRPGLESRC) MBR(SEU_F13) TEXT('Use me to set session defau
 
 -- Require for VS Code cfg
 CL: MKDIR DIR('/home/OJASVA') ;
+CL: CHGPRF HOMEDIR('/home/OJASVA');
+CL: CHGPDMDFT USER(OJASVA) RPLOBJ(*YES) CRTBCH(*NO) CHGTYPTXT(*NO) FILE(OJASVA/QAUOOPT) FULLSCN(*YES);
 
 -- Print Spool to check VRM using QSS1MRI (present in QUSRSYS or QGPL)
 CL: DSPDTAARA DTAARA(QSS1MRI) OUTPUT(*PRINT);
@@ -129,11 +131,13 @@ WHERE Ptf_Group_Description = 'TECHNOLOGY REFRESH'
 ORDER BY Ptf_Group_Target_Release DESC
 FETCH FIRST 1 ROWS ONLY;
 
+-- CL: CHGPRF INLPGM(OJASVA/INIT); 
 -- *SECADM required to create or change user profiles.
 -- CL: CHGUSRPRF USRPRF(OJASVA) HOMEDIR('/home/OJASVA') ;
 stop ;
 -- /qsys.lib/OJASVA.lib/
 -- Use above path to upload *SAVF and use PDM Opt B4 or command RSTLIB LIB(OJASVA) DEV(*SAVF) SAVF($OJSAVF);
+
 -- Manual Activities to do in PDM
 -- Press Ctrl+Home to get the screen ruler
 -- WRKMBRPDM FILE(OJASVA/QRPGLESRC)
