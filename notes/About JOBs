@@ -79,3 +79,20 @@ DSPJOB
 21. Media Library (MLB) attributes
 22. WRKENVVAR LEVEL(*JOB or *SYS)
       Variable name, value and CCSID
+
+MSGW: The ITOJ is waiting for a message from a message queue.
+TIMW: The ITOJ is waiting for a time interval to end.
+DEQW: The ITOJ is waiting for completion of a dequeue op. Like, QSYSARB and subsystem monitors generally   
+wait for work by waiting for a dequeue operation. 
+EVTW: The ITOJ is waiting for an event. Say, QLUS and SCPF generally wait for work by waiting for an event.
+PSRW: The ITOJ is a prestart job waiting for a program start request.
+THDW: The ITOJ is waiting for another thread to complete an operation.
+SELW: The ITOJ is in a select wait.  Read more about select() function of the Sockets APIs.
+DLYW: Due to the Delay Job (DLYJOB) command, the ITOJ is delayed while it waits for a time interval to end, or for a specific delay end time.  The function field shows either the
+DSPW: The ITOJ is waiting for input from a WRKSTN display.
+SIGW: The ITOJ is waiting for a signal.
+-------------------------------------------------------------------------------------
+HLD: The job is being held.
+RUN: The ITOJ is currently running in the activity level.
+END: The job has been ended with the *IMMED option, or delay time has ended with the *CNTRLD option.
+EOJ: The job is ending for a reason other than End Job (ENDJOB) or End Subsystem (ENDSBS).  For example, SIGNOFF, End Group Job (ENDGRPJOB), or an exception that is not being handled.
