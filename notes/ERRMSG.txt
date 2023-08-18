@@ -15,4 +15,24 @@ CPD0729: No executable commands found in source file.
 CPD0792: No data areas, variables, or labels used in program.
 
 SV30
-CPD0758: Command TFRCTL not allowed in an ILE module.      
+CPD0758: Command TFRCTL not allowed in an ILE module.
+
+File I/O - Query
+runqry *n flat112                                 
+Unable to retrieve query options file.            
+**** Starting optimizer debug message for query . 
+IDDU definition does not exist for member FLAT112.
+The query access plan has been rebuilt.           
+Arrival sequence access was used for file FLAT112.
+**** Ending debug message for query .             
+**** Starting optimizer debug message for query . 
+IDDU definition does not exist for member FLAT112.
+The query access plan has been rebuilt.           
+**** Ending debug message for query .             
+4 informational messages logged.                  
+Message . . . . :   IDDU definition does not exist for member FLAT112.     
+Cause . . . . . :   The file is program defined and an interactive data    
+  definition utility (IDDU) definition should be used; however, there is no
+  IDDU data dictionary definition linked to member FLAT112 file FLAT112 in 
+  library UDSMT.  The query will use the definition of the file as it was  
+  defined when it was created.                                             
