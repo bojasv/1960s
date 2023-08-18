@@ -192,3 +192,93 @@ Operating system types (OS/400 aka IBMi; further introduced 31 new SEU source ty
 91. *USRSPC - worked with/looks familiar
 92. *VLDL - new (validation list) CRT/DEL
 93. *WSCST
+
+# Important differences and nuances on IBM i
+- **Programming Models** : `OPM` (Original Program Model) or `ILE` (Integrated Language Environment)
+- **Ending a PGM** : `LR` and `RETURN`
+- **Looping** : `ITER` or `LEAVE`
+- **Variables** : `RESET` or `CLEAR`
+- **DB File** : `Record/Row` or `Field/Column`; `Record/Data` < `Field` < `RCDFMT` < `MBR` < `File`
+- **Reading a File** : `READ` or `EXFMT`
+- **Setting the file pointer** : `SETLL` or `SETGT` ; `SETLL-READ` or `SETFT-READP`
+- **File Pointer** : `SETLL` or `CHAIN`
+- **BIFs** :
+   - `%FOUND(filename-SETLL/SETGT/CHAIN/DELETE/CHECK/CHECKR/SCAN/LOOKUP)` or `%EQUAL(filename/SETLL/LOOKUP)`
+   - `%LEN()` or `%SIZE()`
+   - `%ELEM()` or `%SIZE()`
+   - `%SUBST(string:start:length)` or `%SUBDT(date-time:unit)`
+   - `%SCAN()` or `%SCANR()` and `%CHECK()` or `%CHECKR()`
+   - `%SCAN()`, `%REPLACE()` and `%SCANRPL()`
+   - `%EDITC()` or `%EDITW()` or `%EDITFLT()`
+   - `%ABS(packed)` or `%EDITC(packed : '1')`
+   - `%INT()` or `%UNS()`
+   - `%DEC()` or `%DECH()` and `%INT()` or `%INTH()` and `%UNS()` or `%UNSH()`
+   - `%DEC()` or `%FLOAT()`
+- **Program Entry Points (PEP)** : `Single` or `Multiple`
+- **Binding** :
+   - `Bind by Copy` (*MODULES) or `Bind by References` (*SRVPGM)
+   - `CRTBNDRPG` = `CRTRPGMOD` + `CRTPGM`
+   - `Procedure` (usually Main) or `Sub-procedure` (usually No-main)
+   - `Cycle Main Procedure` or `Linear Main Procedure`
+   - `EXPORTable Sub-proc` or `Local Sub-proc`
+- **Subfiles (SFLs)** :
+   - **MDT**
+   - `CA` or `CF`
+- **Reports (PRTF)** : `SKIPx` or `SPACEx` (x = A or B)
+- **LIBraries** : `PROD` or `TEST`
+- **RPG** :
+    - `char()` or `varchar()` - char(1) is preferred over varchar(1) as varchar needs 2 bytes to store varlen.
+    - `/COPY` or `/INCLUDE`
+- **CL** :
+    - MONMSG `CPF0000` or `CPF9999`
+    - `*TCAT / |<` or `*BCAT / |>` or `*CAT / ||`
+    - `OVRDBF` or `POSDBF`
+- **DB2** :
+    - `DSPFD` `DSPFFD` `DSPDBR`
+    - `DSPPFM` `RUNQRY` `STRSQL`
+    - `PF-SRC / *SRC` `PF-DTA / *DATA`
+    - flat files structured files or DDS files
+    - DDS DDL
+    - RLA (Record Level Access) vs SQL (DQL/DML)
+    - TEXT(''), ALIAS() and COLHDG('' '')
+- **IFS** :
+    - `STMF`/`PGM`/`CHRSF` are subsets of `DIR`
+    - `DSPF` or `WRKLNK` or `DSPOBJLNK`
+    - `RMVLNK` or `RMVDIR`
+    - `DSPF(5)` `EDTF(2)` `RMVLNK(4)` `RNM(7)` `CHGCURDIR(11)` `CHGATR (13)`
+    - `CPY(3)` or `MOV(10)`
+    - `ADDLNK` or `MKDIR`
+    - `RMVLNK` or `DEL` or `ERASE`
+    - `IMPF` or `STMF` and `CPYTOIMPF`, `CPYFRMIMPF`, `CPYTOSTMF` and `CPYFRMSTMF` 
+    - `/home/TSTUSER` or `/qsys.lib/TSTUSER.lib`
+    - `WRKLNK /` or `WRKLNK`
+    - home, bin, www, tmp, usr, var, dev, etc, lib, lib64, log, run
+    - QDLS, QIBM, QSYS.LIB
+- **Data Structures** :
+    - `variable` or `constant`
+    - `variable` or `field`
+    - `referenced` or `absolute`
+    - `Arrays` and `DS`
+    - DS, DS-SubField, Named Constant, Standalone Field, Array Definition, Table
+    - Standalone Field incl. CHAR, IND, GRAPHIC, PACKED, ZONED, INT, UNS, FLOAT, FIXED BINARY, POINTER, DATE, TIME, TIMESTAMP,
+- **Programming** :
+    - `KeyWord`, `OpCode`, and `Built-in Function (BIF)` Also: `Special Value`, `Token` 
+    - standalone-field or DS-subfield
+    - data structure data-struc subfield, named constant, table, standalone field, array definition
+    - `call by copy` or `call by reference`
+    - 
+- **Data Types** :
+    - `char` = alphabet, sp-char, digits and eth else
+    - `numeric` = digits (and often signs -/±/+)
+    - `string` = more than char(1) and usually alphanumeric, can be totally character or totally numeric
+    - `char` or `varchar`
+    - `char` or `string`
+    - Packed Decimal (P) Zoned Decimal (S)
+    - INT or UNS
+    - INT(3/5/10) or *INT(2/4)
+- **SQL** :
+    - `library` or `schema`; `file / PF` or `table`; `LF` or `view` `field` or `column`; `record` or `row` or `RRN`
+    - BIGINT INT SMALLINT
+    - Sub-queries
+    - CTE
+    - Table names can be upto 128 char long (SQL names aka alias)
