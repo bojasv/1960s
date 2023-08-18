@@ -3,3 +3,16 @@ RNS9306: Unable to open member RPGPGM1 of file QRPGLESRC in library *LIBL.
 When: During compilation of a SRCMBR.
 Resolution: ADDLIBLE where the source member RPGPGM1 exists (say SRCLIB) and try recompile.
 RNS9310: Compilation failed. Program AIMBRPRSER not created in library OBJLIB.                                                          
+
+RNF7416: The types of the right and left hand side do not match in the EVAL operation.
+Resolution: Check the data types of both fields/vars
+
+CLLE
+SV10
+CPD0740: PGM command missing.
+CPD0725: End of source file reached without ENDPGM command.
+CPD0729: No executable commands found in source file.
+CPD0792: No data areas, variables, or labels used in program.
+
+SV30
+CPD0758: Command TFRCTL not allowed in an ILE module.      
