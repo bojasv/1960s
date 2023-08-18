@@ -35,4 +35,8 @@ Cause . . . . . :   The file is program defined and an interactive data
   definition utility (IDDU) definition should be used; however, there is no
   IDDU data dictionary definition linked to member FLAT112 file FLAT112 in 
   library UDSMT.  The query will use the definition of the file as it was  
-  defined when it was created.                                             
+  defined when it was created.
+
+CPYSRCF
+CPF4011: Buffer length longer than record for member MBR1.
+Cause: When RCDLEN (destination ) > RCDLEN (source) 
