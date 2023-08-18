@@ -114,6 +114,10 @@ CL: CRTSRCPF FILE(OJASVA/QSQLSRC) RCDLEN(240) TEXT('RUNSQLSTM Source Members') ;
 -- 'Amount to Roll' = 'C', 'Full screen mode' = 'Y', and 'Syntax Checking' = 'N'
 -- Full Screen mode helps you read/write 3 more records/page
 CL: ADDPFM FILE(OJASVA/QRPGLESRC) MBR(SEU_F13) TEXT('Use me to set session defaults') SRCTYPE(CLLE) ;
+-- Can also check the VxRxMx of the OS by printing above SEU member and accessing its SPLF QPSUPRTF 
+-- CL: STRSEU SRCFILE(OJASVA/QRPGLESRC) SRCMBR(SEU_F13) OPTION(6);
+-- 5770WDS - IBM Rational Development Studio for i (5770-WDS), incl. ADTS, compilers for IBM ILE RPG, COBOL, C, C++, RPG/400®, S/36 RPGII and COBOL, S/38 RPGIII and COBOL, OPM COBOL etc.
+-- 5770SS1 - IBM Control Language Compiler
 
 -- RUNSQLSTM accepts STMF path upto 50 chars ('/qsys.lib/L123456789.lib/F123456789.file/M1234.mbr')
 
@@ -123,7 +127,25 @@ CL: CHGPRF HOMEDIR('/home/OJASVA');
 CL: CHGPDMDFT USER(OJASVA) RPLOBJ(*YES) CRTBCH(*NO) CHGTYPTXT(*NO) FILE(OJASVA/QAUOOPT) FULLSCN(*YES);
 
 -- Print Spool to check VRM using QSS1MRI (present in QUSRSYS or QGPL)
-CL: DSPDTAARA DTAARA(QSS1MRI) OUTPUT(*PRINT);
+-- For older releases, can also use QUSRSYS/QIZAVRM or QTOIVRM
+-- CL: DSPDTAARA DTAARA(QSS1MRI) OUTPUT(*PRINT); or use below SQL Query
+
+SELECT SUBSTRING(Data_Area_Value, 1, 8)
+  FROM Qsys2.Data_Area_Info
+  WHERE Data_Area_Library = 'QUSRSYS'
+        AND Data_Area_Name = 'QSS1MRI';
+
+-- WRKHDWRSC TYPE(*PRC) Look-out for Resource = Main Card Enclosure and Status = Operational
+SELECT Machine_Type AS System_Type#,
+       Machine_Model AS System_Model#,
+       Serial_Number AS System_Serial#,
+       Configured_Cpus AS Cpu_Count,
+       (Main_Storage_Size / 1000000) AS Total_Gbs,
+       Number_Of_Partitions AS Lpars,
+       Partition_Id AS Current_Lpar#,
+       Host_Name AS Server_Name
+  FROM Qsys2.System_Status_Info;
+
 -- or use following (also gives the details of the TR level)
 SELECT CURRENT SERVER CONCAT ' is running ' CONCAT Ptf_Group_Target_Release CONCAT ' with TR level: ' CONCAT Ptf_Group_Level AS Tr_Level
 FROM Qsys2.Group_Ptf_Info
@@ -131,6 +153,18 @@ WHERE Ptf_Group_Description = 'TECHNOLOGY REFRESH'
       AND Ptf_Group_Status = 'INSTALLED'
 ORDER BY Ptf_Group_Target_Release DESC
 FETCH FIRST 1 ROWS ONLY;
+
+-- GO LICPGM, then Option 10. Display installed licensed programs, then F11=Display release.
+SELECT Installed,
+       Expir_Date AS Expires,
+       Grace_Prd AS Grace,
+       Licpgm,
+       Lic_Term,
+       Rls_Lvl,
+       Feature,
+       Proc_Group AS Proc_Grp,
+       CAST(Label AS VARCHAR(100) CCSID 37) AS Description
+  FROM Qsys2.License_Info;
 
 -- CL: CHGPRF INLPGM(OJASVA/INIT); 
 -- *SECADM required to create or change user profiles.
