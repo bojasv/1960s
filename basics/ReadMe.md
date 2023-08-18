@@ -1,25 +1,26 @@
 # System Extremas
 
 `PF`
-The maximum members in a physical file = 32,767 (CRTPF/MAXMBRS) - 32767
-The number of maximum RCDFMTs in a PF = 1 
-Tha maximum records in a PF = 4,294,967,288 (DSPRCDLCK/RCDNBR) - 4294967288
+- The maximum members in a physical file = 32,767 (CRTPF/MAXMBRS) - 32767
+- The number of maximum RCDFMTs in a PF = 1 
+- The maximum records in a PF = 4,294,967,288 (DSPRCDLCK/RCDNBR) - 4294967288
+- Assuming RCDLEN of 112 bytes, blank members occupy 8192 bytes (data spcae size) - 8192, second most occured size is 16384
 
 
 `LF`
-Minimum logical page size = 32K (earlier it used to be 8K, then 16K)
-Minimum logical page size = 512K
+- Minimum logical page size = 32K (earlier it used to be 8K, then 16K)
+- Minimum logical page size = 512K
 
 `VARCHAR` : In IBM DB2, two extra bytes are used to store the length of a VARCHAR column because this length can be represented in two bytes.
 Each byte can store 256 possible values (0 to 255), so two bytes can store up to 65536 possible values (0 to 65535). This means that the length of a VARCHAR column in DB2 can be up to 65535 characters.
 
 `Access Path`
-The are created/updated as the file is opened, often maintained during the file I/O and 
-The access paths that are associated with a PF that has a keyed sequence access path.
-The access paths that are created for referential or unique constraints.                                                  
-Access paths that are created for LFs
-Access paths that are created for queries that refer to the data in a PF.
-Access path maintenance (MAINT) is only for keyed PF.
+- The are created/updated as the file is opened, often maintained during the file I/O and 
+- The access paths that are associated with a PF that has a keyed sequence access path.
+- The access paths that are created for referential or unique constraints.                                                  
+- Access paths that are created for LFs
+- Access paths that are created for queries that refer to the data in a PF.
+- Access path maintenance (MAINT) is only for keyed PF.
 
 \*IMMED - for UNIQUE key-fields; ACCPTH is updated on each C/U/D
 
