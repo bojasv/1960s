@@ -33,7 +33,20 @@
         //*Constant (hexadecimal)
         dcl-c CRLF const(x'0d25');
         dcl-c markUp const(.5);
-        
+
+        //figurative constants
+        *BLANK/*BLANKS
+        *ZERO/*ZEROS
+        *HIVAL
+        *LOVAL
+        *ON
+        *OFF
+        *ALLX'x1..'
+        *ALLG'oK1K2i'
+        *ALL'X..'
+        *NULL
+        *START and *END - for positioning DB files
+
         //*PLIST - no need to supplu pgm name; no need to declare the parmx1 outside the PI; Dcl-Pr is optional
         Dcl-Pi *n ;               
           parmx1 VarChar(100) ; 
