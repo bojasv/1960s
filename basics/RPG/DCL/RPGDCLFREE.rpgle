@@ -32,6 +32,7 @@
         dcl-c SINGLE_RECORD_EXISTS 1;
         //*Constant (hexadecimal)
         dcl-c CRLF const(x'0d25');
+        dcl-c markUp const(.5);
         
         //*PLIST - no need to supplu pgm name; no need to declare the parmx1 outside the PI; Dcl-Pr is optional
         Dcl-Pi *n ;               
