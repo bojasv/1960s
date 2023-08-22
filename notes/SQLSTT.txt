@@ -1,0 +1,25 @@
+SQLST ------------------------Description---------------------------------------- ---------SQLCOD--------------- ---Resolution-----------------------
+42703	An undefined column or parameter name was detected.                         -205, -206, -213, -5001 
+55019	The object is in an invalid state for the operation.	                      -7008, -7009, -20054, -20469    Add COMMIT = *NONE or WITH NC to INSERT
+42823	Multiple columns are returned from a subquery that only allows one column.	-412   													If using subselect, remove VALUE column
+23505                                                                             -803                            Make sure column data types is correct while COALEASCE/CAST
+xxxxx Journal the PF.                                                             -7008                           Either journal the PF or DROP CONSTRAINTs or Use any other lib than QTEMP or QGPL 
+xxxxx Current connection is to relational database P1310XPV.                       7971                           No Action Reqd
+
+08S01 Communication link failure. (Connection reset)                              -99999                          Reconnect to the RDB using Ctrl+F11
+42704 TSTFILE in TSTLIB type *FILE not found.                                     -204                            SET SCHEMA TSTLIB or ADDLIBLE TSTLIB POSITION(*FIRST)
+
+How to look SQL error details, cause and recovery on IBM i?
+WRKMSGD MSGID(SQL0100) MSGF(QSYS/QSQLMSG) and then Opt(5) to Display or Opt(6) to Print
+
+Ref:
+SQLSTATE - SQLCODE - https://www.ibm.com/docs/en/i/7.5?topic=codes-listing-sqlstate-values
+42823 - https://stackoverflow.com/questions/46515270/insert-value-from-three-tables-into-an-empty-table
+
+FYI:
+Prefer using SQLSTT over SQLCODE
+
+Object      Type      Library     Attribute   Text                        
+QSQL4MSG    *MSGF     QSQL                                                
+QSQCCMSG    *MSGF     QSYS                                                
+QSQLMSG     *MSGF     QSYS                                                
