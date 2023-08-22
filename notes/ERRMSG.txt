@@ -7,6 +7,25 @@ RNS9310: Compilation failed. Program AIMBRPRSER not created in library OBJLIB.
 RNF7416: The types of the right and left hand side do not match in the EVAL operation.
 Resolution: Check the data types of both fields/vars
 
+CTDATA
+*RNF8042 00                Not enough source records provided to load array or table.
+006400 dcl-s device_arr      char(7) dim(5)   ctdata perrcd(1);       
+...
+142400 ** ctdata device_arr and_here_starts_the_comment_area__________________                                                      
+        *--------------------------------------------------------------------*    
+        * Array . . . : DEVICE_ARR                                           *    
+        *--------------------------------------------------------------------*    
+142500 DISK                                                                       
+142600 WORKSTN                                                                    
+142700 PRINTER                                                                    
+142800 SEQ                                                                        
+142900 SPECIAL                                                                    
+143000                                                                            
+*RNF8041 20        143000  Too many records provided to initialize array or table;
+                           excess entries ignored.                                
+143100 ** ctdata opcde_arr and_here_starts_the_comment_area__________________
+Resolution: As the DIM(5), remove the excess blank line at the end (line# 143000) 
+
 CLLE
 SV10
 CPD0740: PGM command missing.
