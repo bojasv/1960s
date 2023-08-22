@@ -24,7 +24,11 @@ CTDATA
 *RNF8041 20        143000  Too many records provided to initialize array or table;
                            excess entries ignored.                                
 143100 ** ctdata opcde_arr and_here_starts_the_comment_area__________________
-Resolution: As the DIM(5), remove the excess blank line at the end (line# 143000) 
+RNF8041: Too many records provided to initialize array or table; excess entries ignored.
+Resolution: As the DIM(5), remove the excess blank line at the end (line# 143000)
+RNF8042: Not enough source records provided to load array or table.
+Resolution: Reduce the dimension. Check the ctdata records count using XX-XX on FMT line and determine if the DIM has been 
+            declared of a greater size than required.
 
 CLLE
 SV10
