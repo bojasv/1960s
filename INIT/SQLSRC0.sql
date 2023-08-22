@@ -46,7 +46,7 @@ INSERT INTO QAUOOPT VALUES('P1', 'RUNSQLSTM SRCFILE(&L/&F) SRCMBR(&N) COMMIT(*NO
 INSERT INTO QAUOOPT VALUES('QT', 'DSPLIB LIB(QTEMP)') ;
 INSERT INTO QAUOOPT VALUES('R1', 'CRTBNDRPG PGM(&L/&N) SRCFILE(&L/&F) SRCMBR(&N) DBGVIEW(*SOURCE)') ;
 INSERT INTO QAUOOPT VALUES('RQ', 'RUNQRY QRYFILE((&L/&N *FIRST))') ;
-INSERT INTO QAUOOPT VALUES('RS', 'RUNSQLSTM SRCFILE(&L/&F) SRCMBR(&N) COMMIT(*NONE)') ;
+INSERT INTO QAUOOPT VALUES('RS', 'RUNSQLSTM SRCFILE(&L/&F) SRCMBR(&N) COMMIT(*NONE) DFTRDBCOL(&L)') ;
 INSERT INTO QAUOOPT VALUES('S1', 'CRTSQLRPGI OBJ(&L/&N) SRCFILE(&L/&F) SRCMBR(&N) COMMIT(*NONE) OBJTYPE(*MODULE) DBGVIEW(*SOURCE)') ;
 INSERT INTO QAUOOPT VALUES('SD', 'STRDBG PGM(&L/&N) UPDPROD(*YES) OPMSRC(*YES) DSPMODSRC(*YES)') ;
 INSERT INTO QAUOOPT VALUES('SL', 'CALL PGM(OXBLIB/SETLIBLOXB)') ;
@@ -111,9 +111,15 @@ CL: CRTSRCPF FILE(OJASVA/QDDLSRC) RCDLEN(240) TEXT('DB Files - Data Definition L
 CL: CRTSRCPF FILE(OJASVA/QSQLSRC) RCDLEN(240) TEXT('RUNSQLSTM Source Members') ;
 
 -- Add a dummy SRCMBR to change session defaults for SEU
--- 'Amount to Roll' = 'C', 'Full screen mode' = 'Y', and 'Syntax Checking' = 'N'
--- Full Screen mode helps you read/write 3 more records/page
 CL: ADDPFM FILE(OJASVA/QRPGLESRC) MBR(SEU_F13) TEXT('Use me to set session defaults') SRCTYPE(CLLE) ;
+INSERT INTO OJASVA.QRPGLESRC VALUES(000001, 000000, 'RSTLIB OJASVA *SAVF SAVF(OJASVA/$OJSAVF)');
+INSERT INTO OJASVA.QRPGLESRC VALUES(000002, 000000, 'MONMSG CPF0000');
+INSERT INTO OJASVA.QRPGLESRC VALUES(000003, 000000, 'RSTLIB UDSMT *SAVF SAVF(OJASVA/$UDSAVF)');
+INSERT INTO OJASVA.QRPGLESRC VALUES(000004, 000000, 'MONMSG CPF0000');
+INSERT INTO OJASVA.QRPGLESRC VALUES(000005, 000000, 'RSTLIB UDSMTS *SAVF SAVF(OJASVA/$USSAVF)');
+INSERT INTO OJASVA.QRPGLESRC VALUES(000006, 000000, 'MONMSG CPF0000');
+CL: CRTBNDCL PGM(OJASVA/SEU_F13) SRCFILE(OJASVA/QRPGLESRC) SRCMBR(SEU_F13) DBGVIEW(*SOURCE);
+CL: DLTSPLF FILE(SEU_F13) JOB(OJASVA/QPRTJOB) SPLNBR(*LAST) JOBSYSNAME(*ANY) CRTDATE(*LAST);
 -- Can also check the VxRxMx of the OS by printing above SEU member and accessing its SPLF QPSUPRTF 
 -- CL: STRSEU SRCFILE(OJASVA/QRPGLESRC) SRCMBR(SEU_F13) OPTION(6);
 -- 5770WDS - IBM Rational Development Studio for i (5770-WDS), incl. ADTS, compilers for IBM ILE RPG, COBOL, C, C++, RPG/400®, S/36 RPGII and COBOL, S/38 RPGIII and COBOL, OPM COBOL etc.
@@ -166,6 +172,13 @@ SELECT Installed,
        CAST(Label AS VARCHAR(100) CCSID 37) AS Description
   FROM Qsys2.License_Info;
 
+-- P1310XPV is running V7R3M0 with TR level: 12
+
+-- /qsys.lib/OJASVA.lib/
+-- CL: CALL PGM(OJASVA/SEU_F13);
+-- WRKMBRPDM FILE(OJASVA/QRPGLESRC)
+-- Use above path to upload *SAVF and use PDM Opt B4 or command RSTLIB LIB(OJASVA) DEV(*SAVF) SAVF($OJSAVF);
+
 -- CL: CHGPRF INLPGM(OJASVA/INIT); 
 -- *SECADM required to create or change user profiles.
 -- CL: CHGUSRPRF USRPRF(OJASVA) HOMEDIR('/home/OJASVA') ;
@@ -173,16 +186,22 @@ stop ;
 -- /qsys.lib/OJASVA.lib/
 -- Use above path to upload *SAVF and use PDM Opt B4 or command RSTLIB LIB(OJASVA) DEV(*SAVF) SAVF($OJSAVF);
 
--- Manual Activities to do in PDM
+-- Manual Activities to do in PDM ---------------------------------------------------------------------------------------
 -- Press Ctrl+Home to get the screen ruler
 -- WRKMBRPDM FILE(OJASVA/QRPGLESRC)
--- Press Shift+F6 (F18=Change Defaults) and update the librray for 'Option file' from QGPL to OJASVA
--- I personally prefer 'Compile in batch' and 'Change type and text' set to 'N'
+-- Chnage (SEU) Session Defaults: 'Amount to Roll' = 'C', 'Full screen mode' = 'Y', and 'Syntax Checking' = 'N'
+-- Full Screen mode in SEU helps you read/write 4 more records/page (default=20, full-screen=24 records)
+-- Full Screen mode in PDM helps you read/update 8 more SRCMBR/page (default=8, full-screen=16 SRCMBRs)
 
--- Manual Activities to do to setup keyboard (*.kmp file)
+-- Manual Activities to do to setup keyboard (*.kmp file) ----------------------------------------------------------------
 -- Reassign the key from 'Delete Character' to 'Erase to End of Field'
 -- IBM i ACS > Edit > Keyboard > Category = 'Host Functions' > Erase to End of Field > Assign a Key > *press Delete* > Yes
 -- Save and find the user files (.kmp, .hod, .ini) at C:\Users\xxx\Documents\IBM\iAccessClient\Emulator
 
+-- ACS Shortcuts ----------------------------------------------------------------------------------------------------------
 -- Login using Macro (provided a macro already exists)
 -- Alt+A > M > Enter > Enter
+-- Open 'Run SQL Scripts'
+-- Alt+A > R > Ctrl+O (select the .sql file to open)
+-- Open IFS
+-- Alt+A > I
