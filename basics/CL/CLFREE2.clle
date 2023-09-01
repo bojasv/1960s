@@ -1,0 +1,24 @@
+dcl &det        *char 1     '1'                                                                 
+dcl &data_32    *char                                                                           
+dcl &curVer     *char 10    value(*blanks)                                                      
+                                                                                                
+rtvdtaara qtemp/usrdtaara0 &data_32                                                             
+monmsg CPF1015 exec(do)                                                                         
+  crtdtaara qtemp/usrdtaara0 type(*char) len(11) +                                              
+    text('123456789a123456789b123456789c123456789d12345678')                                    
+enddo                                                                                           
+                                                                                                
+/* DSPLIB shows text as 123456789a123456789b1                                                 */
+/* WRKOBJ shows text as 123456789a123456789b1234567                                           */
+/* DTAARA can hold upto 123456789a123456789b123456789c123456789d12345678                      */
+                                                                                                
+chgdtaara (qtemp/usrdtaara0 (1 10)) '123456789a'
+chgdtaara (qtemp/usrdtaara0 (11 1)) 'x'                                                         
+rtvdtaara (qtemp/usrdtaara0 (1 10)) &curVer                                                     
+rtvdtaara qtemp/usrdtaara0 &data_32                                                             
+                                                                                                
+sndusrmsg &curVer                                                                               
+sndusrmsg &data_32                                                                              
+                                                                                                
+/* delays the job by 60 secs                                                                  */
+dlyjob 60                                                                                       
