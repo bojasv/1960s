@@ -1,0 +1,57 @@
+/*34567890                                                                                 EOL*/    
+/* 92 char of compile listing line-space available, excl. 4 pos used by comment delimiters    */    
+pgm                                                                                                 
+/* same-line initialization + compile listing friendly                                        */    
+dcl &a *char 78 '123456789a123456789b123456789c123456789d123456789e123456789f123456789g12345678'    
+/* same-line inz + performane maxima                                                          */    
+dcl &c *char 82 '123456789a123456789b123456789c123456789d123456789e123456789f123456789g123456789h12'
+/* same-line inz + pgm-structure friendly                                                     */    
+dcl &char_spc73 *char 73    '123456789a123456789b123456789c123456789d123456789e123456789f123456789g'
+/* pgm-structure friendly (used max data-type len)                                            */    
+dcl &char_spcmx *char 32767 '123456789a123456789b123456789c123456789d123456789e123456789f123456'    
+dcl &dec_space  *dec (15 9) 999999.999999999                                                        
+dcl &int_space  *int  8     99999999                                                                
+dcl &uint_space *uint 8     12345678                                                                
+dcl &indicator  *lgl  1     '0'                                                                     
+dcl &ptr_space  *ptr                                                                                
+/* *ptr is fixed length data-type with len of 16bytes                                         */    
+/* *ptr is to hold (16 byte long) address of a variable                                       */    
+/* *lgl can hold either '1' or '0'                                                            */    
+/* *int is for signed binary values                                                           */
+/* *uint is for unsigned binary values                                                        */
+                                                                                                
+dcl &def_char   *char /* defaults to 32 bytes, with maxima of 32767 bytes                     */
+dcl &def_dec    *dec  /* defaults to 16 bytes as (15,5), with maxima as (15,9)                */
+dcl &def_lgl    *lgl                                                                            
+dcl &def_int    *int  /* defaults to 4 bytes, maxima of 8 bytes                               */
+dcl &def_uint   *uint /* defaults to 4 bytes, maxima of 8 bytes                               */
+                                                                                                
+dcl &time_stamp *char 20                                                                        
+                                                                                                
+/* chgvar &dec_space6 123456789012345                                                         */
+/* Receiver value too small to hold the result as &dec_space6 is (15,9)                       */
+
+/*  Predefined value Predefined symbol Meaning               Type                             */
+/*                   +                 Addition              Arithmetic /Character string op  */
+/*                   -                 Subtraction           Arithmetic operator              */
+/*                   *                 Multiplication        Arithmetic operator              */
+/*                   /                 Division              Arithmetic operator              */
+/*  *CAT            ||                 Concatenation         Character string operator        */
+/*  *BCAT           |>                 Blank insert + concat Character string operator        */
+/*  *TCAT           |<                 Blank trunc + concat  Character string operator        */
+/*  *AND             &                 AND                   Logical operator                 */
+/*  *OR              |                 OR                    Logical operator                 */
+/*  *NOT             ¬                 NOT                   Logical operator                 */
+/*  *EQ              =                 Equal                 Relational operator              */
+/*  *GT              >                 Greater than          Relational operator              */
+/*  *LT              <                 Less than             Relational operator              */
+/*  *GE             >=                 Greater than or equal Relational operator              */
+/*  *LE             <=                 Less than or equal    Relational operator              */
+/*  *NE             ¬=                 Not equal             Relational operator              */
+/*  *NG             ¬>                 Not greater than      Relational operator              */
+/*  *NL             ¬<                 Not less than         Relational operator              */
+
+rtvsysval QDATETIME &time_stamp                                                                 
+sndusrmsg &time_stamp                                                                           
+                                                                                                
+endpgm                                                                                          
