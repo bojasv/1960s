@@ -11,6 +11,9 @@
 - Minimum logical page size = 32K (earlier it used to be 8K, then 16K)
 - Minimum logical page size = 512K
 
+`DDL`
+- The maximum records in a SQL table can be as much as BIGINT UNSIGNED i.e 18446744073709551615 records or 18 quintillions/20 Bytes, if BIGINT then half of it, i.e. 9223372036854775807 or 9 quintillions/20 Bytes.
+
 `VARCHAR` : In IBM DB2, two extra bytes are used to store the length of a VARCHAR column because this length can be represented in two bytes.
 Each byte can store 256 possible values (0 to 255), so two bytes can store up to 65536 possible values (0 to 65535). This means that the length of a VARCHAR column in DB2 can be up to 65535 characters.
 
