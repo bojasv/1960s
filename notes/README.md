@@ -193,6 +193,71 @@ Operating system types (OS/400 aka IBMi; further introduced 31 new SEU source ty
 92. *VLDL - new (validation list) CRT/DEL
 93. *WSCST
 
+# before we start further...
+- constants
+   - named costant (PFB)
+   - figurative constant (aka implied literals)
+      - `*BLANK`/`*BLANKS`: for char
+         - char: x'40'
+         - graphic: x'4040'
+         - UCS-2 - x'0020'
+      - `*ZERO`/`*ZEROS`: usually for numerics, rarely for chars
+         - numeric: 0
+            - float: 0E0
+         - char: x'F0'
+      - `*ON`/`*OFF`: for indicators. x'F1' for *ON (i.e. 1) and x'F0' for *OFF (i.e. 0). default is *OFF
+      - `*HIVAL`/`*LOVAL`: usually for numerics and rarely for char
+         - `*HIVAL`
+            - char: x'FF'
+            - numeric: depends   
+         - `*LOVAL`
+      - `*ALL'x'`: *ALL'0' for SQLSTATE
+      - `*NULL`: used for pointers
+   - lierals - self-defining constant declared to refer in program/proc
+      - character
+         - graphic (aka DBCS): g'oK1K2i'
+         - UCS-2: u'Xxxx'
+      - indicator
+      - numeric
+         - integers: 0, 00000, or 007
+         - decimals: 9.9; +99.999; -0.001; 99,999 (, as a decimal sep)
+         - float: <mantissa>E<exponent> - upto 16 digits of mantissa, and exponent ranging from -308 to +308
+            - 1E1 = 10
+            - 1.2e-1 = 0.12
+            - -1234.9E0 = -1234.9
+            - 12e9 = 12000000000 (i.e. 12 followed by 12 zeros) = 12GB
+      - calander
+         - date: d'xx-xx-xx' (say D'12-31-2022' / using *mdy- format)
+         - time: T'xx:xx:xx'
+         - timestamp: z'yyyy-mm-dd-hh.mm.ss.fractional__'
+      - hex
+      - zero-length literals: are same as inz left without PARMs (i.e. inz;) for e.g. inz('  ') or inz(G'oi') or inz(U'')
+- standalone-fields (aka work fields, as opposed to file fields or DS sub-fields)
+   - char
+   - numeric
+   - array
+      - pointer-based
+      - dynamic
+      - compile time
+      - used as PLIST (Parameter List)
+      - used as KLIST (Key-field List)
+      - used as matrix processor using multi-dimension (say, i x j x k)
+      - used as SQL host structure
+   - pointer
+   - table
+- data structures (and sub-fields)
+   - PLIST
+   - KLIST (also implemented using %KDS)
+   - array
+   - file I/O
+   - data-areas
+   - SQL host structures
+- procedure interface (PI)
+- prototype for a call (PR)
+
+named constant vs literal
+![image](https://github.com/bojasv/1970/assets/59419054/8ea0c6a9-60ef-4f72-aaf1-f923e3c46073)
+
 # Important differences and nuances on IBM i
 - **Programming Models** : `OPM` (Original Program Model) or `ILE` (Integrated Language Environment)
 - **Ending a PGM** : `LR` and `RETURN`
@@ -222,7 +287,7 @@ Operating system types (OS/400 aka IBMi; further introduced 31 new SEU source ty
    - `Cycle Main Procedure` or `Linear Main Procedure`
    - `EXPORTable Sub-proc` or `Local Sub-proc`
 - **Subfiles (SFLs)** :
-   - **MDT**
+   - **MDT** (Modified Data Tag)
    - `CA` or `CF`
 - **Reports (PRTF)** : `SKIPx` or `SPACEx` (x = A or B)
 - **LIBraries** : `PROD` or `TEST`
@@ -280,5 +345,6 @@ Operating system types (OS/400 aka IBMi; further introduced 31 new SEU source ty
     - `library` or `schema`; `file / PF` or `table`; `LF` or `view` `field` or `column`; `record` or `row` or `RRN`
     - BIGINT INT SMALLINT
     - Sub-queries
-    - CTE
+    - CTE (Common Table Expression)
+    - MQT (Materialized Query Tables) 
     - Table names can be upto 128 char long (SQL names aka alias)
