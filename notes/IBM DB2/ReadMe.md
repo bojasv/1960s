@@ -1,0 +1,45 @@
+### Aspects of DB2
+
+- QSYS -> User Library -> (Flat-files) -> PF-SRC -> DDS-files (e.g. PF-DTA, LF, DSPF, PRTF, STMF)
+- PF-SRC and PF-DTA
+- Access Path Maintenance (*IMMED (DFT), *DLY and *REBLD)
+- Open Data Path (ODP)
+- Journalling of Objects, Libraries, PFs and Access Paths
+- Optimizer
+- System Value - Performance Adjustment (QPFRADJ) - usually set to '3' i.e. Automatic adjust, rather requiring IPL
+- QAQQINI and CHGQRYA
+- Query Dispatcher
+  - CQE (Classic Query Engine)
+  - SQE (SQL Query Engine) - IBM i 7.2 onwards, some CQE DB access began using SQE
+    - Query Optimizer
+      - Index Advisor (SYSIXADV)
+        - Maintained Temporary Index (MTI) - created when DB2 overhead is huge
+        - Radix Index Probe
+        - Radix Index Scan
+        - Encoded Vector Index (EVI) Probe
+        - Index Types (Unique, Dericed and Sparse)
+      - Cache Plan
+      - Database Monitor (DBMon) Data
+      - Debug Info Messages
+      - Query Feedback Messages
+- RLA (record-Level Access)
+- Buffer Manager - Deals with Data and Indexes
+- Buffer Pool (8K)
+- Temporal Tables
+- Performance Collection and Tracing (STRPRFTRC, CRTPRFDTA, DMPTRC, ENDPRFTRC, and DMPMEMINF)
+- Performance Explorer (PEX) PTFs (ADDPEXDFN, STRPEX, ENDPEX, QPEXDATA, and PRTPEXRPT)
+- Helpful System Commands
+  - WRKSYSSTS
+  - WRKDSKSTS
+  - WRKSYSACT
+  - WRKACTJOB
+
+## DB2 System Catalogs
+- SYSTABLES
+- SYSINDEXES
+- SYSCST
+- SYSTRIGGERS
+- SYSVIEWS
+- SYSFUNCS
+- SYSPROCS
+- SYSPARMS
