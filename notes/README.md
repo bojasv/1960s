@@ -348,3 +348,18 @@ named constant vs literal
     - CTE (Common Table Expression)
     - MQT (Materialized Query Tables) 
     - Table names can be upto 128 char long (SQL names aka alias)
+- **Calandar** :
+    - `Date` usually occupies, 6, 8 or 10 chars
+       - char(5) - *JUL - YYDDD (Space-optimum date type for a file that gets cleared annually)
+       - char(6) - *JUL - YY/DDD - with separator 
+       - char(6) - *CJUL - CYYDDD (Most space-optimum date type)
+       - char(6) - *MDY/*DMY/*YMD - has a shorter range i.e. from 1940 to 2039  
+       - char(7) - *LONGJUL - YYYYDDD
+       - char(8) - *LONGJUL - YYYY/DDD
+       - char(8) - *ISO - YYYYMMDD (also 
+       - char(9) - *CYMD - CYY-MM-DD
+       - char(10) - *ISO - YYYY-MM-DD (Most commonly used date-type; has range from 0001-01-01 to 9999-12-31)
+       - Representations using other date data type with a longer range
+          - *USA - MM/DD/YYYY (use instead of *MDY)
+          - *EUR - DD.MM.YYYY (use instead of *DMY; '.' is used as sep instead of '/'
+          - *JIS - same as *ISO i.e. YYYY-MM-DD
