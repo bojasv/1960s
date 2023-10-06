@@ -36,6 +36,13 @@ for data-transmission
 2. IBM IFS
 3. IBM WebServices
 
+open source support (OSS) for IBM i
+5733-SC1 (OpenSSL and OpenSSH) - necessary for SSH clients like PuTTY, Code For i (VSCode Pkg)
+5770-DG1 (Apache HTTP Server and XML Service)
+5770-JV1 (Java)
+5773-OPS (Open Source for IBM i) - created in 2014; deprecated since 2019-12-15; not supported beyond 7.2; use RPM-based open source pkgs
+
+
 RPG
 
 
