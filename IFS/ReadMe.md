@@ -1,11 +1,14 @@
 ##Some special CCSIDs used on IBM i
-- 1252 or `*PCASCII`
-- 437 or `*STDASCII`
-- 1208 for .txt files
-- 37
-- 65535 for LANGID=ENU and RegionID=US; Default CCSID for flat files; SQL on MSVC hates this
-- 273 for LANGID=ENU and RegionID=US
-- `*JOBCCSID` - Default CCSID for PF-SRC
+- 1           CCSID for STMF during HTTP?
+- 37          for EBCDIC
+- 273         for LANGID=ENU and RegionID=US
+- 437         or `*STDASCII` aka USACII
+- 819         for ISO88591 (default for STMF during HTTP?)
+- 1200        for UTF16
+- 1208        for UTF8 (default for .txt files)
+- 1252        or `*PCASCII`
+- 65535       for LANGID=ENU and RegionID=US; Default CCSID for flat files; SQL on MSVC hates this
+- `*JOBCCSID` default CCSID for PF-SRC
 
 ##De-limiters (DLM) on IFS
 1. #Record - *EOR (DFT), *CRLF, *CR, *LF, and *LFCR
