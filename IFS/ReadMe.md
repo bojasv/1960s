@@ -16,11 +16,19 @@
 3. #Field - ',' (DFT) and user-defined
 
 ### MKDIR
-While creating a object, names are not case-sensitive i.e. If an object 'Folder01' already exists, you can not create 'folder01'.  
-MKDIR '/home/"Folder01"'  
-MKDIR '/home/\Folder01'  
-MKDIR '/home/''''Folder01'''''  
+While creating a object, names are case-sensitive i.e. If an object 'Folder01' already exists, you can not create 'folder01'.  
+`MKDIR '/home/"Folder01"'  `  
+`MKDIR '/home/\Folder01'  `  
+`MKDIR '/home/''''Folder01'''''  `  
 Above all 3 configurations to add a folder, ends up in error `CPFA0A0 Object already exist.`.  
+While accessing an object, names are case-insensitive i.e.  
+`WRKLNK '/home/folder01'`  
+and  
+`WRKLNK '/home/Folder01'` will both lead you to same location.  
+To access the folder contents, suffix the command with `*` or `?` pattern, as shown below...  
+`WRKLNK '/home/Folder01/*'`  
+or  
+`WRKLNK '/home/Folder01/?'`
 
 ### SRTSEQ for IFS directory names
 IFS usually follow HEX sorting sequence.  
