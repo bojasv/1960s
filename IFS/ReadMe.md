@@ -17,10 +17,10 @@
 
 ### MKDIR
 While creating a object, names are not case-sensitive i.e. If an object 'Folder01' already exists, you can not create 'folder01'.  
-MKDIR '/home/"Folder01"'
-MKDIR '/home/\Folder01'
-MKDIR '/home/''''Folder01'''''
-Above all 3 configurations to add a folder, ends up in error `CPFA0A0 Object already exist.`.
+MKDIR '/home/"Folder01"'  
+MKDIR '/home/\Folder01'  
+MKDIR '/home/''''Folder01'''''  
+Above all 3 configurations to add a folder, ends up in error `CPFA0A0 Object already exist.`.  
 
 ### SRTSEQ for IFS directory names
 IFS usually follow HEX sorting sequence.  
