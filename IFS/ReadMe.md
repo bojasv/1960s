@@ -15,6 +15,19 @@
 2. #String - *DBLQUOTE (DFT), *NONE and user-defined
 3. #Field - ',' (DFT) and user-defined
 
+###MKDIR
+While creating a object, names are not case-sensitive i.e. If an object 'Folder01' already exists, you can not create 'folder01'.  
+MKDIR '/home/"Folder01"'
+MKDIR '/home/\Folder01'
+MKDIR '/home/''''Folder01'''''
+Above all 3 configurations to add a folder, ends up in error `CPFA0A0 Object already exist.`.
+
+##SRTSEQ for IFS directory names
+IFS usually follow HEX sorting sequence.  
+Following characters are allowed and they appear in sequence as mentioned.  
+( + & $ % _ # @ = a A 0 1 9  
+Exceptions: Some patterns are not allowed in path name (CPFA089). For e.g. you can't start a name by `*` or `?`.
+
 ```
 drop table qtemp.ddsfile;
 create table qtemp.ddsfile (dta0 char(10), dta1 num(10), dta2 dec(10));
