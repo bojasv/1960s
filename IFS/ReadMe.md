@@ -1,4 +1,4 @@
-##Some special CCSIDs used on IBM i
+### Some special CCSIDs used on IBM i
 - 1           CCSID for STMF during HTTP?
 - 37          for EBCDIC
 - 273         for LANGID=ENU and RegionID=US
@@ -10,19 +10,19 @@
 - 65535       for LANGID=ENU and RegionID=US; Default CCSID for flat files; SQL on MSVC hates this
 - `*JOBCCSID` default CCSID for PF-SRC
 
-##De-limiters (DLM) on IFS
+### De-limiters (DLM) on IFS
 1. #Record - *EOR (DFT), *CRLF, *CR, *LF, and *LFCR
 2. #String - *DBLQUOTE (DFT), *NONE and user-defined
 3. #Field - ',' (DFT) and user-defined
 
-###MKDIR
+### MKDIR
 While creating a object, names are not case-sensitive i.e. If an object 'Folder01' already exists, you can not create 'folder01'.  
 MKDIR '/home/"Folder01"'
 MKDIR '/home/\Folder01'
 MKDIR '/home/''''Folder01'''''
 Above all 3 configurations to add a folder, ends up in error `CPFA0A0 Object already exist.`.
 
-##SRTSEQ for IFS directory names
+### SRTSEQ for IFS directory names
 IFS usually follow HEX sorting sequence.  
 Following characters are allowed and they appear in sequence as mentioned.  
 ( + & $ % _ # @ = a A 0 1 9  
