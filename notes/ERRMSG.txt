@@ -1,3 +1,25 @@
+Class of Error Messages (x = hex-char) - often varies by each licensed product
+System/CL/COBOL
+       CPDxxxx
+       CPFxxxx
+              CPF9999 - OPM function check (also CPF9901)
+       MCHxxxx
+RPG
+       RNSxxxx
+       RNFxxxx
+       RNXxxxx - exceptions issues by RPG procedure
+SQL
+       SQLxxxx
+PDM
+       PDMxxxx (PDM0413)
+SEU/RLU
+       EDTxxxx
+              EDT0244: You're in debug mode. UPDPROD(*YES) *PROD lib
+              EDT0303: Record length greater than 240. (SRCMBR)
+              EDT5105: Record length of source file greater than 92. (PRTF)
+SDA
+       SDAxxxx (SDA0765)
+
 RNS*
 RNS9306: Unable to open member RPGPGM1 of file QRPGLESRC in library *LIBL.
 When: During compilation of a SRCMBR.
