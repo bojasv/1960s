@@ -15,6 +15,10 @@
 2. #String - *DBLQUOTE (DFT), *NONE and user-defined
 3. #Field - ',' (DFT) and user-defined
 
+### Access a directory (aka link)
+`wrklnk '/*'` - directly opens-up root directory  
+`wrklnk /` - shows root directory  
+
 ### MKDIR
 While creating a object, names are case-sensitive i.e. If an object 'Folder01' already exists, you can not create 'folder01'.  
 `MKDIR '/home/"Folder01"'  `  
@@ -53,3 +57,9 @@ CL: CPYTOIMPF FROMFILE(QTEMP/DDSFILE *FIRST) TOSTMF('/home/OJAY/ddsfile_STRDLM.t
 ```
 
 ![image](https://github.com/bojasv/1970/assets/59419054/9bb6c4c3-8512-44f7-9c0e-a1fd055a3562)
+
+### Search a string on IFS using QShell  
+grep -F -R -i "string to search" /directory  
+-F -> search the flat string (as opposed to a RegEx)  
+-R -> search all directories and sub-directories in the given directory  
+-i -> make the search case-insensitive  
