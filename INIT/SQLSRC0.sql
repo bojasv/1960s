@@ -152,6 +152,7 @@ SELECT Machine_Type AS System_Type#,
        Host_Name AS Server_Name
   FROM Qsys2.System_Status_Info;
 
+-- Or use CALL QSYS/QLZARCAPI and see the joblog
 -- or use following (also gives the details of the TR level)
 SELECT CURRENT SERVER CONCAT ' is running ' CONCAT Ptf_Group_Target_Release CONCAT ' with TR level: ' CONCAT Ptf_Group_Level AS Tr_Level
 FROM Qsys2.Group_Ptf_Info
