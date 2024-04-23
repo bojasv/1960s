@@ -1,0 +1,29 @@
+/* pgm to fetch datetime for job when it entered system */
+pgm                                                     
+dcl &rcvvar  *char  600                                 
+dcl &rcvlen  *dec    3                                  
+/*                  %len(&rcvvar)                  */   
+dcl &fmtnam  *char   8 'JOBI0400'                       
+dcl &jobnam  *char  26 'QZDASOINITQUSER     582025'     
+/*                      JOB_NAME__JOB_USER__JOBNBR */   
+dcl &intjob  *char  16                                  
+dcl &errds   *char  128 ' '                             
+  dcl &msgid *char stg(*defined) len(7) defvar(&errds 9)
+                                                        
+chgvar  &rcvlen (%size(&rcvvar))                        
+call    qsys/qusrjobi ((&rcvvar) +                      
+                       (&rcvlen) +                      
+                       (&fmtnam) +                      
+                       (&jobnam) +                      
+                       (&intjob) +                      
+                       (&errds))                        
+if (&msgid = ' ') do                                    
+  sndpgmmsg %sst(&rcvvar 63 13)                         
+  /* 1240422073424                                 */   
+  /* CYYMMDDHHMMSS                                 */   
+enddo                                                   
+else do                                              
+  sndpgmmsg ('ERR: DSPMSGD' |> &msgid)               
+  /* alt of &msgid is %sst(&errds 9 7)             */
+enddo                                                
+endpgm                                               
