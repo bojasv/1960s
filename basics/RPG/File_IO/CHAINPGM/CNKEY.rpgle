@@ -15,6 +15,7 @@
       // ****** ********  End of report  ********           
                                                             
       //key   = 1;  106,103,101,102,100,105,107             
+      //key   = 5;  100,105,107             
       //key   = *loval - compilation error                  
       //key   = *hival - no result; no indicator gets set-on
       //key   = *start - compilation error                  
