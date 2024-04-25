@@ -8,6 +8,22 @@ SETLL can set both %Found and %Equal. In case of %Equal it works as SETLL+READE.
 
 CPYF re-orders records in ascending manner while copying record from a keyed file to a non-keyed file.
 
+       // Line   ....+....1....+....2....+..             
+       //        ORDER  ITEM                             
+       // 000001  106   Item Dsc #106                    
+       // 000002  103   Item Dsc #103                    
+       // 000003  101   Item Dsc #101                    
+       // 000004  102   Item Dsc #102                    
+       // 000005  100   Item Dsc #100                    
+       // 000006  105   Item Dsc #105                    
+       // 000007  107   Item Dsc #107                    
+       // ****** ********  End of report  ******** 
+
+Keyed file: SETLL 104 - tries to set pointer on 104, but as the record doesn't exist it sets the pointer on the immediate higher value, i.e. 105.
+Keyed file: SETLL 104 and %Equal- tries to set pointer on 104, but as the record doesn't exist and it is %Equal, so %EOF sets-on.
+Keyed file: CHAIN 104 - tries to set pointer on 104, but as the record doesn't exist it sets the pointer on the immediate higher value, i.e. 105 and reads it.
+
+
 File I/O Keywords, OpCodes and BIFs
 
 KeyWords
