@@ -1,6 +1,11 @@
 Summary:
 SETLL, SETGT, CHAIN - when used on a keyed file, process records in a sequential manner. In ascending order when SETLL and CHAIN and descending when SETGT.
 
+%Found - If the key is found, all the remaining record gets processed (incl. the key) 
+%Equal - If the key is found, only key records are processed, else EOF.
+CHAIN can only set %Found.
+SETLL can set both %Found and %Equal. In case of %Equal it works as SETLL+READE.
+
 File I/O Keywords, OpCodes and BIFs
 
 KeyWords
