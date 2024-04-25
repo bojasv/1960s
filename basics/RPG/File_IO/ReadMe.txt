@@ -1,3 +1,6 @@
+Summary:
+SETLL, SETGT, CHAIN - when used on a keyed file, process records in a sequential manner. In ascending order when SETLL and CHAIN and descending when SETGT.
+
 File I/O Keywords, OpCodes and BIFs
 
 KeyWords
