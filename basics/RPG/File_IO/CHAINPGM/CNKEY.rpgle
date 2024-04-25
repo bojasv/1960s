@@ -25,6 +25,7 @@
       //key   = *hival - on removing if %found - 0,106,103,101,102,100,105,107
                                                                               
       //chain 1 TestFr;                                                       
+      //chain 5 TestFr;                                                       
       chain *hival TestFr;                                                    
       isFound = %found;                                                       
       isEOF   = %eof;                                                         
