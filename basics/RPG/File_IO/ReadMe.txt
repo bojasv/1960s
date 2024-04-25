@@ -6,6 +6,8 @@ SETLL, SETGT, CHAIN - when used on a keyed file, process records in a sequential
 CHAIN can only set %Found.
 SETLL can set both %Found and %Equal. In case of %Equal it works as SETLL+READE.
 
+CPYF re-orders records in ascending manner while copying record from a keyed file to a non-keyed file.
+
 File I/O Keywords, OpCodes and BIFs
 
 KeyWords
