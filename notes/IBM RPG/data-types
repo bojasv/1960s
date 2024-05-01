@@ -35,8 +35,15 @@ CLLE - The IBM i CL command prompter displays a maximum input field of 512 chara
 CLLE - *DATE is always 7 characters long and *TIME is always 6 characters long.
 
 
-int(x)  - range  |        exact range                   | size   | nickname 
-int(3)  - // 100 | from -128 to 127                     | 8-bit  | shortint 
-int(5)  - // 30k | from -32768 to 32767                 | 16-bit | int      
-int(10) - // 2B  | from -2,147,483,648 to 2,147,483,647 | 32-bit | longint  
+int(x)  - range  |        exact range                   | size   | DB2 SQL-equivalent 
+int(3)  - // 100 | from -128 to 127                     | 8-bit  |  
+int(5)  - // 30k | from -32768 to 32767                 | 16-bit | SMALLINT      
+int(10) - // 2B  | from -2,147,483,648 to 2,147,483,647 | 32-bit | INT
+
+BIGINT doesn't have a supported data type in RPG. Range of big int is in Quintillions (9Q) from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 (64-bit)
+BIGINT > Zoned(18)
+INT > Zoned(9)
+SMALLINT > Zoned(4)
+
+Fun fact: YouTube had to start using 64-bit integers after Gangnam Style video reached 2147483647 views, which is the limit of a 32-bit integer.
 
