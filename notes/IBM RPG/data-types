@@ -34,16 +34,34 @@ The maximum length for a fixed-length character field is 16773104. The maximum l
 CLLE - The IBM i CL command prompter displays a maximum input field of 512 characters, even if the parameter length is longer than 512 characters.
 CLLE - *DATE is always 7 characters long and *TIME is always 6 characters long.
 
+___________________________________________________________________________________________________
+| RPG-eqv - range  |        exact range                   | size   | DB2 SQL-equivalent | CL-equiv
+|__________________________________________________________________________________________________
+| int(3)  - // 100 | from -128 to 127                     | 8-bit  |                    | 
+| int(5)  - // 30k | from -32768 to 32767                 | 16-bit | SMALLINT           | *INT(2)
+| int(10) - // 2B  | from -2,147,483,648 to 2,147,483,647 | 32-bit | INT                | *INT(4)
+|__________________________________________________________________________________________________
 
-int(x)  - range  |        exact range                   | size   | DB2 SQL-equivalent 
-int(3)  - // 100 | from -128 to 127                     | 8-bit  |  
-int(5)  - // 30k | from -32768 to 32767                 | 16-bit | SMALLINT      
-int(10) - // 2B  | from -2,147,483,648 to 2,147,483,647 | 32-bit | INT
+DYK: The SQL standard has no concept of unsigned integers.
+DYK: CL doesn't support Zoned numeric
+DYK: IPv4 is 4.3 x 10^9 (i.e. 32-bit), while IPv6 is 3.4 x 10^38 (i.e. 128-bit)
+DYK: In SQLRPG, DEC(10)/Packed(10) and DEC(11)/Packed(11), both takes 6-bytes
+DYK: CL doesn't support beyond DEC(15) / Packed(15) i.e. 8-bytes
 
 BIGINT doesn't have a supported data type in RPG. Range of big int is in Quintillions (9Q) from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 (64-bit)
-BIGINT > Zoned(18)
-INT > Zoned(9)
-SMALLINT > Zoned(4)
+BIGINT, 8-bytes > Packed(18) = 10-bytes [not supported thru CL, as *DEC 15 is a MAX]
+INT, 4-byte > Packed(9) or Packed(8) = 5-bytes
+SMALLINT, 1-byte > Packed(4) or Packed(5) = 3-bytes
+
+________________________________________________________________________________________
+Range   SQL        SQL      CLLE       RPGLE     RPG-equiv       RPG-equiv      RPG
+                   Bytes    Bytes      Bytes    SQL-compliant    higher-range   Bytes
+________________________________________________________________________________________
+127     n/a        n/a       n/a       int(3)    packed(2)       packed(3)       2
+32k     SMALLINT    1       *INT(2)    int(5)    packed(4)       packed(5)       3
+2B      INT         4       *INT(4)    int(10)   packed(9)       n/a             5
+9Q      BIGINT      8       *INT(8)     n/a      packed(18)      packed(19)      10
+_________________________________________________________________________________________
 
 Fun fact: YouTube had to start using 64-bit integers after Gangnam Style video reached 2147483647 views, which is the limit of a 32-bit integer.
 
