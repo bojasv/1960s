@@ -15,7 +15,43 @@ Jun 1988 + AS/400 announced, first released on Aug 1988
 XXX 2008 - System p + System i = IBM Power Systems
     XXX 2009 - IBM's green-screen aka TN5250 emulator copyright end; Wiki
     Sep 2013 - AS/400 Discontinued - AS/400e, eServer iSeries, eServer i5, System i
+    Jun 2014 - POWER8 launched
+    xxx 2017 - POWER9 launched
+    Sep 2021 - Power10 launched (E1080, E1050, S1024, L1024, S1022, L1022, S1014)
     XXX 2021 - IBM's green-screen aka TN5250 emulator copyright end; (C) COPYRIGHT IBM CORP. 1980, 2021. - PUB400
+
+
+Power10: E1080, E1050, S1024, L1024, S1022, L1022, S1014
+POWER9: AC922, S914, S922, S924, H922, H924, E950, E980m HMC 7063-CR2, Magna PE2112GTX, USDoE's the Summit and the Sierra, MareNostrum 4
+POWER8: S812L, S814, S822, S824, S821, E850, E870, E880, S812, HMC 7063-CR1 
+
+E -> Enterprise, runs AIX/IBM i/Linux
+S -> can runn AIX/IBM i/Linux (pref with PowerVM).
+L -> Linux (made for Linux, but are allowed to run AIX and IBM i on up to 25% of available CPU cores.)
+H -> PowerVM running SAP HANA (on Linux) with AIX/IBM i on up to 25% of the system.
+
+2022-23 (personal): IBM 9009 41G S914 iSEries Power9 Servers ; 2.3-3.8 GHz
+IBM 9009 41G iSeries Power9 EP52 8-Core ($55k)
+IBM 9009 41G iSeries Power9 EP51 6-Core ($47k)
+IBM 9009 41G iSeries Power9 EP50 4-Core ($21k)
+Features:
+19-inch rack mount
+once-processor socket
+4 EIA units
+max 16 DDR4 DIMM slots
+8/16/32/64 GB support
+runs @ speed 2133, 2400, and 2666 Mbps
+max sys memory = 1024 GB
+[ref: datatechcomputer]
+
+Hierarchy of Systems [New to Old]
+Power 10
+Power 9 Server running POWER9 processor
+
+Power System S914 – 4U, 1× POWER9 SMT8, 4–8 cores, up to 1 TiB DDR4 RAM, PowerVM running AIX/IBM i/Linux.[38][39]
+[ref: wikipedia.org/wiki/POWER9]
+
+
 
 CPU - 1000 CPW (POWER5 or newer processors recommended)
 4 GB memory (in a private (non-shared) pool dedicated to Sterling B2B Integrator)
