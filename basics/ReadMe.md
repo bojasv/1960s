@@ -71,3 +71,7 @@ they automatically share the same keyed sequence access path.
 It is the amount of bytes of the [access path]() that can be moved into the [job's storage pool]() from the auxiliary storage for a [page fault]().
 It specifies the [access path logical page size]() that is used when the access path is created.
 The access path logical page size is used by the system to determine the size of each page of the [index]().
+
+`*LIBL Size` 
+There could be maximum 250 libraries that be specified as user/app library, rest first 15 library positions are reserved for system libraries like QSYS, QSYS2, QUSRSYS, and QHLPSYS.  
+QGPL and QTEMP, both are user libraries
