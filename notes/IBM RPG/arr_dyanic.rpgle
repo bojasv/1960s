@@ -19,8 +19,7 @@
            pos = %lookup(arr1(i) : arr1 : 1 : (i-1));             
            if pos = *zero;               
              iter;                       
-           endif;                        
-           if pos < i;                   
+           elseif pos < i;                   
              Clear arr1(i);              
            endif;                        
          endif;                          
