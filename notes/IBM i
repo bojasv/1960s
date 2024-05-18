@@ -1,6 +1,68 @@
 Notes for the operating system of IBM Power Systems, IBM i.
 Version/Release/Modification/Technology_Refresh/Program Temporary Fix : V7R2M0 TR6 PTF
 
+OS:
+DB2:
+RPGLE:
+CLLE:
+
+Timeline
+Late 80s
+• 1988-Aug-26 - OS/400's V1R1 released; Program support ended on 1993-May-31. Support lasted for 1739 days.
+• 1988-Nov-25 - OS/400's V1R1M2 released; Program support ended on 1993-May-31. Support lasted for 1648 days.
+• 1989-Oct-27 - OS/400's V1R2 released; Program support ended on 1993-May-31. Support lasted for 1312 days.
+
+Early 90s
+• 1990-Sep-28 - OS/400's V1R3 released; Program support ended on 1993-May-31. Support lasted for 976 days.
+• 1991-May-24 - OS/400's V2R1 released; Program support ended on 1994-Jun-30. Support lasted for 1133 days.
+• 1992-Mar-06 - OS/400's V2R1M1 released; Program support ended on 1994-Jun-30. Support lasted for 846 days.
+• 1992-Sep-18 - OS/400's V2R2 released; Program support ended on 1995-Mar-31. Support lasted for 924 days.
+• 1993-Dec-17 - OS/400's V2R3 released; Program support ended on 1996-May-31. Support lasted for 896 days.
+• 1994-May-04 - OS/400's V3R0M5 released; Program support ended on 1997-May-31. Support lasted for 1123 days.
+• 1994-Nov-25 - OS/400's V3R1 released; Program support ended on 1998-Oct-31. Support lasted for 1436 days.
+              - [Changed] F-Spec and D-Spec: PREFIX (prefix_string {:nbr_of_char_replaced}); D-Spec: CONST{(constant)}; OpCode: RETURN (now returns a value, if specified)
+              - [New] P-Spec (PR and PI)
+              - [New] C-Spec: NOMAIN, COPYRIGHT('text'), EXTBININT; D-Spec: EXTPGM(pgmname), EXTPROC(procname), OPTIONS(*NOPASS *OMIT *VARSIZE), STATIC, VALUE
+              - [New] BIF: %PARMS; OpCode: CALLP
+
+Late 90s
+• 1995-Dec-22 - OS/400's V3R6 released; Program support ended on 1998-Oct-31. Support lasted for 1044 days.
+              - [Changed] D-Spec: OPTIONS(*STRING)
+              - [New] OpCode: ALLOC, DEALLOC and REALLOC
+              - [New] BIF: %LEN, %SCAN, %EDITC, %EDITW, %EDITFLT, %ABS, %DEC-%DECH-%DECPOS, %INT-%INTH, %UNS-%UNSH, 5FLOAT
+• 1996-Jun-21 - OS/400's V3R2 released; Program support ended on 2000-May-31. Support lasted for 1440 days.
+• 1996-Nov-08 - OS/400's V3R7 released; Program support ended on 1999-Jun-30. Support lasted for 964 days.
+              - [New] *LONGJUL (yyyy/ddd), *CMDY (cmm/dd/yy), *CDMY (cdd/mm/yy); OpCode Extender: E (to be used with CALLP along with %ERROR and %STATUS)
+• 1997-Aug-29 - OS/400's V4R1 released; Program support ended on 2000-May-31. Support lasted for 1006 days.
+• 1998-Feb-27 - OS/400's V4R2 released; Program support ended on 2000-May-31. Support lasted for 824 days.
+• 1998-Sep-11 - OS/400's V4R3 released; Program support ended on 2001-Jan-31. Support lasted for 873 days.
+• 1999-May-21 - OS/400's V4R4 released; Program support ended on 2001-May-31. Support lasted for 741 days.
+
+Y2K Year
+• 2000-Jul-28 - OS/400's V4R5 released; Program support ended on 2002-Jul-31. Support lasted for 733 days. - The shortest served release of OS/400.
+
+21st Century
+• 2001-May-25 - OS/400's V5R1 released; Program support ended on 2005-Sep-30. Support lasted for 1589 days.
+• 2002-Aug-30 - OS/400's V5R2 released; Program support ended on 2007-Apr-30. Support lasted for 1704 days.
+              - DDS incremented numeric size by 1 digit to 31 digits for packed and zoned numerics.
+• 2004-Jun-11 - i5/OS's V5R3 released; Program support ended on 2009-Apr-30. Support lasted for 1784 days.
+• 2006-Feb-14 - i5/OS, later IBM i's V5R4 / 5.4 released; Program support ended on 2013-Sep-30. Support lasted for 2785 days.
+• 2008-Mar-21 - i5/OS, later IBM i's V6R1 / 6.1 released; Program support ended on 2015-Sep-30. Support lasted for 2749 days.
+• 2009-Oct-23 - IBM i's 6.1.1 released; Program support ended on 2015-Sep-30. Support lasted for 2168 days.
+
+2010s
+• 2010-Apr-23 - IBM i's 7.1 released; Program support ended on 2018-Apr-30. Support lasted for 2929 days. - The longest served release of IBM i.
+• 2014-May-02 - IBM i's 7.2 released; Program support ended on 2021-Apr-30. Support lasted for 2555 days.
+• 2016-Apr-15 - IBM i's 7.3 released; Program support ended on 2023-Sep-30. Support lasted for 2724 days.
+• 2019-Jun-21 - IBM i's 7.4 released; End of Program support TBA.
+
+2020s
+• 2022-May-10 - IBM i's 7.5 released; End of Program support TBA.
+
+Fun Facts
+• 1500 days is the avergae release service period i.e. ~ 4 years
+• Most BIF first existed as an OpCode in earlier releases
+
 IBM i OS version
 IBM i Model number - DSPSYSVAL QMODEL
 IBM i Processor/Feature code - DSPSYSVAL QPRCFEAT
