@@ -5,6 +5,8 @@
 - Timestamp - *SYS initializes 3 ms;
 - DB2: DFT user and server name fields are VarChar(18)
 - Quiesce time: The amount of time required to render a computer system inactive, or the amount of time between periods of inactivity.
+- Job Priority: 1 is the highest, while 99 is lowest
+
 
 `PF`
 - The maximum members in a physical file = 32,767 (CRTPF/MAXMBRS) - 32767
@@ -102,6 +104,23 @@ The access path logical page size is used by the system to determine the size of
 `*LIBL Size` 
 There could be maximum 250 libraries that be specified as user/app library, rest first 15 library positions are reserved for system libraries like QSYS, QSYS2, QUSRSYS, and QHLPSYS.  
 QGPL and QTEMP, both are user libraries
+
+`CLLE`
+- max level of nesting (logical expressions) = 5
+- max level of nesting (list of values) = 3
+- *Char(9999)
+- *DEC(15) or *DEC(15,9)
+- A folder/doc names should be between 1 and 12
+- Folder Path can have max Char(63)
+- max len of the path name char string on a CL command is Char(5000)
+- Max Nesting for DO groups = 25
+- *UINT - 4 bytes - 4294967295
+- max PARMs per CL = 255
+- MAXLEN for DTAQ entries = 64512 (min 128)
+- CL CMD can have max 99 PARM statements
+- CMD: CPP and VPP - Command Processing Program and Validity Checking Program
+- CMD: max ELEM statements = 300
+- CMD: max QUAL statements = 300
 
 `HTTP Server for i`
 - Max length for target buffer that receives the API response can be max 61,000 bytes or Char(61000)
