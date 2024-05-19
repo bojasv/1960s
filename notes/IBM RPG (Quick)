@@ -50,3 +50,11 @@ RNQ0222 - Pointer or parameter error (C G D F).
 func_code          char(2) const options(*nopass);              
 //'LIKE' keyword doesn't go well with const/within PR.                          
 //func_code          like($FUNC) const options(*nopass);        
+
+------------------------------------------------------------------------------------------------------------------------
+DSPLY - invokes QSYS.QRNXUTIL --> QSYS.QRNXDSP --> DoDsply stt 7
+DSPLY - writes output to a special MSGQ *EXT, with MSGID RNI5334, msgtyp *INFO, severity 0 and CCSID 65535
+The message is sent to the external message queue.
+DSPLY{(E)} {message {message-queue {response}}}
+
+
