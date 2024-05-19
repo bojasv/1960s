@@ -7,7 +7,7 @@
 - 1200        for UTF16
 - 1208        for UTF8 (default for .txt files)
 - 1252        or `*PCASCII`
-- 65535       for LANGID=ENU and RegionID=US; Default CCSID for flat files; SQL on MSVC hates this
+- 65535       for LANGID=ENU and RegionID=US; Default CCSID for flat files; SQL on MSVC hates this. CCSID(*HEX)
 - `*JOBCCSID` default CCSID for PF-SRC
 
 ### De-limiters (DLM) on IFS
