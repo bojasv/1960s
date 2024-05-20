@@ -20,6 +20,7 @@ Early 90s
 • 1993-Dec-17 - OS/400's V2R3 released; Program support ended on 1996-May-31. Support lasted for 896 days.
 • 1994-May-04 - OS/400's V3R0M5 released; Program support ended on 1997-May-31. Support lasted for 1123 days.
 • 1994-Nov-25 - OS/400's V3R1 released; Program support ended on 1998-Oct-31. Support lasted for 1436 days.
+              - [New] Integrated File System, the POSIX compatible file system embedded to OS/400
               - [Changed] F-Spec and D-Spec: PREFIX (prefix_string {:nbr_of_char_replaced}); D-Spec: CONST{(constant)}; OpCode: RETURN (now returns a value, if specified)
               - [New] P-Spec (PR and PI)
               - [New] C-Spec: NOMAIN, COPYRIGHT('text'), EXTBININT; D-Spec: EXTPGM(pgmname), EXTPROC(procname), OPTIONS(*NOPASS *OMIT *VARSIZE), STATIC, VALUE
@@ -46,8 +47,10 @@ Y2K Year
 • 2002-Aug-30 - OS/400's V5R2 released; Program support ended on 2007-Apr-30. Support lasted for 1704 days.
               - DDS incremented numeric size by 1 digit to 31 digits for packed and zoned numerics.
 • 2004-Jun-11 - i5/OS's V5R3 released; Program support ended on 2009-Apr-30. Support lasted for 1784 days.
+              - [New] IFS: Open/close scanning via exit point integration (QIBM_QP0L_SCAN_OPEN adn QIBM_QP0L_SCAN_CLOSE) - QSCANFS, QSCANFSCTL
 • 2006-Feb-14 - i5/OS, later IBM i's V5R4 / 5.4 released; Program support ended on 2013-Sep-30. Support lasted for 2785 days.
 • 2008-Mar-21 - i5/OS, later IBM i's V6R1 / 6.1 released; Program support ended on 2015-Sep-30. Support lasted for 2749 days.
+              - [New] IFS: added subtree support so that users can check out/in entire folders or directories.
 • 2009-Oct-23 - IBM i's 6.1.1 released; Program support ended on 2015-Sep-30. Support lasted for 2168 days.
 
 2010s
@@ -70,6 +73,11 @@ IBM i Serial number - DSPSYSVAL QSRLNBR
 IBM i LPAR number
 In addition, the IBM command QSYS/WRKHDWRSC TYPE(*PRC), Opt(7) on the Main Card Enclosure will give you the same information, along with the Interactive Processor features.
 select * from qsys2.SYSTEM_STATUS_INFO;
+
+In IBM i, every object has data authorities and object authorities. 
+Data authorities consist of: Read, Add, Update, Delete, and Execute 
+Object Authorities consist of: Opr, Mgt, Exist, Alter, and Ref 
+IBM i authorities (data and object) are typically assigned using one of four IBM-supplied templates: *USE, *CHANGE, *ALL, and *EXCLUDE
 
 Operations
 Create/Display/Work-with/Delete - CRT/DSP/WRK/DLT
@@ -316,5 +324,8 @@ The additional free-form RPG support provides free-form programming for H, F, D 
 existing RPG programmers and to those trying to learn RPG. 
 The required software to enable the new support on IBM i 7.1 is RPG Compiler PTF SI51094 and IBM® DB2® PTF Group SF99701 Level 26. 
 The new support is in the base for IBM i 7.2 and later releases. Go ahead and give it a try!
+
+Released in the late 1980s, POSIX (Portable Operating System Interface) is a family of standards created to make sure that applications developed on one UNIX flavor can run on other UNIXes. The POSIX standard describes how system calls must behave.
+Integrated File System — on IBM midrange & mainframe systems (e.g. OS/400, MVS, VM/CMS), the POSIX compatible file system provided by the operating system, as opposed to the traditional non POSIX file system it also supplies
 
 ref: https://www.ibm.com/docs/en/txseries/8.2?topic=conversion-sbcs-dbcs-mbcs-data-considerations
