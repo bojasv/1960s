@@ -6,7 +6,16 @@ DB2:
 RPGLE:
 CLLE:
 
+Display: 24x80 or 27x132
+24x80  - for WRMBRPDM, WRKOBJ, WRKLNK, UPDDTA, DSPPGM, DSPMODSRC
+27x132 - for STRSEU, DSPSPLF, RUNQRY, DSPFD, DSPFFD, DSPF, QSH etc.
+
 Timeline
+
+1973 - SAP R/1 System RF
+1979 - SAP R/2 Mainframe System
+1983 - KornShell (default shell of IBM i) was announced by David Korn at Bell Labs. It was based on Bourne shell source code.
+
 Late 80s
 • 1988-Aug-26 - OS/400's V1R1 released; Program support ended on 1993-May-31. Support lasted for 1739 days.
 • 1988-Nov-25 - OS/400's V1R1M2 released; Program support ended on 1993-May-31. Support lasted for 1648 days.
@@ -16,6 +25,7 @@ Early 90s
 • 1990-Sep-28 - OS/400's V1R3 released; Program support ended on 1993-May-31. Support lasted for 976 days.
 • 1991-May-24 - OS/400's V2R1 released; Program support ended on 1994-Jun-30. Support lasted for 1133 days.
 • 1992-Mar-06 - OS/400's V2R1M1 released; Program support ended on 1994-Jun-30. Support lasted for 846 days.
+• 1992-Jul-06 - SAP R/3 was officially launched. Various releases of the software were made through the 1990s. R/3 was the last release that ran on EBCDIC, later switched to Unicode.
 • 1992-Sep-18 - OS/400's V2R2 released; Program support ended on 1995-Mar-31. Support lasted for 924 days.
 • 1993-Dec-17 - OS/400's V2R3 released; Program support ended on 1996-May-31. Support lasted for 896 days.
 • 1994-May-04 - OS/400's V3R0M5 released; Program support ended on 1997-May-31. Support lasted for 1123 days.
@@ -31,6 +41,7 @@ Late 90s
               - [Changed] D-Spec: OPTIONS(*STRING)
               - [New] OpCode: ALLOC, DEALLOC and REALLOC
               - [New] BIF: %LEN, %SCAN, %EDITC, %EDITW, %EDITFLT, %ABS, %DEC-%DECH-%DECPOS, %INT-%INTH, %UNS-%UNSH, 5FLOAT
+              - [New] SAP on i
 • 1996-Jun-21 - OS/400's V3R2 released; Program support ended on 2000-May-31. Support lasted for 1440 days.
 • 1996-Nov-08 - OS/400's V3R7 released; Program support ended on 1999-Jun-30. Support lasted for 964 days.
               - [New] *LONGJUL (yyyy/ddd), *CMDY (cmm/dd/yy), *CDMY (cdd/mm/yy); OpCode Extender: E (to be used with CALLP along with %ERROR and %STATUS)
@@ -56,6 +67,8 @@ Y2K Year
 2010s
 • 2010-Apr-23 - IBM i's 7.1 released; Program support ended on 2018-Apr-30. Support lasted for 2929 days. - The longest served release of IBM i.
 • 2014-May-02 - IBM i's 7.2 released; Program support ended on 2021-Apr-30. Support lasted for 2555 days.
+• 2013-Jun-10 - Mr. S. Hutchinson started blogging about IBM i on www.RPGPGM.com. 'Family tree of the IBM i' as first blog post. 932 posts so far as of May 2024
+• 2015-Nov-xx - SAP S/4HANA 1511
 • 2016-Apr-15 - IBM i's 7.3 released; Program support ended on 2023-Sep-30. Support lasted for 2724 days.
 • 2019-Jun-21 - IBM i's 7.4 released; End of Program support TBA.
 
