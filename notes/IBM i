@@ -11,10 +11,22 @@ Display: 24x80 or 27x132
 27x132 - for STRSEU, DSPSPLF, RUNQRY, DSPFD, DSPFFD, DSPF, QSH etc.
 
 Timeline
+1959-xxx-xx - COBOL launched
+1964-xxx-xx - PL/I (Programming Language One or PL/1) launched. It is a procedural, imperative computer programming language initially developed by IBM.
+1966-xxx-xx - IBM Information Management System (IMS) launched. It is a joint hierarchical database and information management system that supports transaction processing.
+1969-Jul-08 - IBM CICS (Customer Information Control System)
+1971-xxx-xx - IBM 3270 launched. Related: TN3270, ISPF
+1973-xxx-xx - SAP R/1 System RF
+1974-xxx-xx - An early version of ISPF, called Structured Programming Facility (SPF) introduced in SVS and MVS systems.
+1977-xxx-xx - IBM 5250 launched. Related: TN5250
+1979-xxx-xx - SAP R/2 Mainframe System
+1979-xxx-xx - Rexx (Restructured Extended Executor) launched. It is a programming language that can be interpreted or compiled. It was developed at IBM by Mike Cowlishaw.
 
-1973 - SAP R/1 System RF
-1979 - SAP R/2 Mainframe System
-1983 - KornShell (default shell of IBM i) was announced by David Korn at Bell Labs. It was based on Bourne shell source code.
+1983-xxx-xx - KornShell (default shell of IBM i) was announced by David Korn at Bell Labs. It was based on Bourne shell source code.
+1984-xxx-xx - Synon (CA 2E) - Synon Ltd was founded in London by Simon Williams (CEO), Melinda Horton (COO) and Nick Knowles (CTO) 
+                       with the objective of developing an application generator for the IBM System/38 platform. They were soon joined by Simon Haigh (VP Sales).
+1987-xxx-xx - Synon v1.0 (Synon/2)
+
 
 Late 80s
 • 1988-Aug-26 - OS/400's V1R1 released; Program support ended on 1993-May-31. Support lasted for 1739 days.
@@ -36,7 +48,7 @@ Early 90s
               - [New] C-Spec: NOMAIN, COPYRIGHT('text'), EXTBININT; D-Spec: EXTPGM(pgmname), EXTPROC(procname), OPTIONS(*NOPASS *OMIT *VARSIZE), STATIC, VALUE
               - [New] BIF: %PARMS; OpCode: CALLP
 
-Late 90s
+Late 90s (ODBC)
 • 1995-Dec-22 - OS/400's V3R6 released; Program support ended on 1998-Oct-31. Support lasted for 1044 days.
               - [Changed] D-Spec: OPTIONS(*STRING)
               - [New] OpCode: ALLOC, DEALLOC and REALLOC
@@ -48,18 +60,24 @@ Late 90s
 • 1997-Aug-29 - OS/400's V4R1 released; Program support ended on 2000-May-31. Support lasted for 1006 days.
 • 1998-Feb-27 - OS/400's V4R2 released; Program support ended on 2000-May-31. Support lasted for 824 days.
 • 1998-Sep-11 - OS/400's V4R3 released; Program support ended on 2001-Jan-31. Support lasted for 873 days.
+  1998-xxx-xx - Synon Corp acquired by Sterling Software
 • 1999-May-21 - OS/400's V4R4 released; Program support ended on 2001-May-31. Support lasted for 741 days.
 
 Y2K Year
 • 2000-Jul-28 - OS/400's V4R5 released; Program support ended on 2002-Jul-31. Support lasted for 733 days. - The shortest served release of OS/400.
+  2000-xxx-xx - Sterling Software (owner of Synon/2) acquired by Computer Associates (CA) 
 
 21st Century
+  2001-Mar-30 - z/OS launched. It is a 64-bit operating system for IBM z/Architecture mainframes.
 • 2001-May-25 - OS/400's V5R1 released; Program support ended on 2005-Sep-30. Support lasted for 1589 days.
+  2002-xxx-xx - COBOL became object-oriented language
 • 2002-Aug-30 - OS/400's V5R2 released; Program support ended on 2007-Apr-30. Support lasted for 1704 days.
               - DDS incremented numeric size by 1 digit to 31 digits for packed and zoned numerics.
 • 2004-Jun-11 - i5/OS's V5R3 released; Program support ended on 2009-Apr-30. Support lasted for 1784 days.
               - [New] IFS: Open/close scanning via exit point integration (QIBM_QP0L_SCAN_OPEN adn QIBM_QP0L_SCAN_CLOSE) - QSCANFS, QSCANFSCTL
 • 2006-Feb-14 - i5/OS, later IBM i's V5R4 / 5.4 released; Program support ended on 2013-Sep-30. Support lasted for 2785 days.
+              - PASE Shared Libraries (supported by Java)
+• 2007-xxx-xx - PHP on i thru PASE
 • 2008-Mar-21 - i5/OS, later IBM i's V6R1 / 6.1 released; Program support ended on 2015-Sep-30. Support lasted for 2749 days.
               - [New] IFS: added subtree support so that users can check out/in entire folders or directories.
 • 2009-Oct-23 - IBM i's 6.1.1 released; Program support ended on 2015-Sep-30. Support lasted for 2168 days.
@@ -68,9 +86,13 @@ Y2K Year
 • 2010-Apr-23 - IBM i's 7.1 released; Program support ended on 2018-Apr-30. Support lasted for 2929 days. - The longest served release of IBM i.
 • 2014-May-02 - IBM i's 7.2 released; Program support ended on 2021-Apr-30. Support lasted for 2555 days.
 • 2013-Jun-10 - Mr. S. Hutchinson started blogging about IBM i on www.RPGPGM.com. 'Family tree of the IBM i' as first blog post. 932 posts so far as of May 2024
+• 2014-xxx-xx - Ruby on i thru PASE
 • 2015-Nov-xx - SAP S/4HANA 1511
+              - Node.js, Python and GCC Compiler on i thru PASE
 • 2016-Apr-15 - IBM i's 7.3 released; Program support ended on 2023-Sep-30. Support lasted for 2724 days.
+  2018-xxx-xx - Broadcom acquires CA (owner of Synon/2) for $19B in cash.
 • 2019-Jun-21 - IBM i's 7.4 released; End of Program support TBA.
+  2019-xxx-xx - CA 2E (Synon) v8.7 released. Former names include COOL 2E, Advantage 2E, AllFusion 2E and CA 2E
 
 2020s
 • 2022-May-10 - IBM i's 7.5 released; End of Program support TBA.
