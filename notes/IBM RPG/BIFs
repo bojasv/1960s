@@ -1,0 +1,5 @@
+dcl-s pos uns(3) inz;
+pos = %check('abc':'defabc');   //1
+pos = %scan('abc':'defabc');    //4
+pos = %checkr('abc':'defabc');  //3
+pos = %scanr('abc':'defabc');   //4
