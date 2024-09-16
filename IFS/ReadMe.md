@@ -2,14 +2,16 @@
 - 1           CCSID for STMF during HTTP?
 - 37          for EBCDIC
 - 273         for LANGID=ENU and RegionID=US
-- 437         or `*STDASCII` aka USACII (incl. .txt files with all five text encodings viz. UTF8, UTF8-BOM, UTF16-LE (Win default), UTF16-BE, and ANSI) 
-- 819         for ISO88591 (default for STMF during HTTP?)
+- 437         or `*STDASCII` aka USACII 
+- 819         for ISO88591 (default for STMF during HTTP?; for CSV)
+- 835         default CCSID for GRAPHIC fields, preferred 1200
 - 1200        for UTF16
 - 1208        for UTF8 (default for .txt files)
 - 1252        or `*PCASCII`
 - 65535       for LANGID=ENU and RegionID=US; Default CCSID for flat files; SQL on MSVC hates this. CCSID(*HEX)
 - `*JOBCCSID` default CCSID for PF-SRC
 
+// 437 - .txt files with all five text encodings viz. UTF8, UTF8-BOM, UTF16-LE (Win default), UTF16-BE, and ANSI; also CSV; basically any file uploaded from Windows PC shall have 437
 //The UCS-2 standard (or US2), an early version of Unicode, is limited to 65 535 characters. However, the data processing industry needs over 94 000 characters; the UCS-2 standard has been superseded by the Unicode UTF-16 standard.
 //UTF-8 reduces file size while allowing for a much larger number of less-common characters.
 //UTF-16 data can potentially take more storage than UTF-8 data, but because no conversion occurs when you use UTF-16 data, you avoid a significant performance impact.
